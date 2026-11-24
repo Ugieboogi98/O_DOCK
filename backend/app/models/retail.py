@@ -48,3 +48,19 @@ class RetailOffer(Base):
     observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     source_url: Mapped[str] = mapped_column(Text)
     observation_hash: Mapped[str] = mapped_column(String(64))
+
+
+class RetailOfferHistory(Base):
+    """Append-only price/stock observations; ``retailer_offers`` keeps only the latest one."""
+    __tablename__ = 'retailer_offer_history'
+    __table_args__ = (
+        UniqueConstraint('listing_id', 'observed_at'),
+        CheckConstraint('sale_price IS NULL OR sale_price >= 0'),
+        CheckConstraint('list_price IS NULL OR list_price >= 0'),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    listing_id: Mapped[int] = mapped_column(ForeignKey('retailer_listings.id', ondelete='CASCADE'), index=True)
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    list_price: Mapped[int | None]
+    sale_price: Mapped[int | None]
+    availability: Mapped[str] = mapped_column(String(30))

@@ -10,7 +10,7 @@ from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 
 from app.collectors.retailers.preview_sources import SOURCES
 from app.models.entities import Retailer
-from app.models.retail import RetailListing, RetailOffer
+from app.models.retail import RetailListing, RetailOffer, RetailOfferHistory
 from app.services.collection_preferences import excluded_retail_product
 
 def link_verified_identifier(db, listing, row):
@@ -110,4 +110,7 @@ def save_offer(db, source_code, row):
     db.execute(offer_stmt.on_conflict_do_update(index_elements=['listing_id'],
         set_={key: offer_stmt.excluded[key] for key in offer_values if key != 'listing_id'},
         where=RetailOffer.observed_at <= observed))
+    history = insert(RetailOfferHistory).values(listing_id=listing_id, observed_at=observed, list_price=row.get('list_price'),
+                                                sale_price=row.get('sale_price'), availability=row['availability'])
+    db.execute(history.on_conflict_do_nothing(index_elements=['listing_id', 'observed_at']))
     return 'updated' if existing else 'inserted'

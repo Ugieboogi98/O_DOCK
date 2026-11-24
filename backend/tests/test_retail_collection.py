@@ -157,3 +157,48 @@ def test_confirmed_variant_prices_and_match_survive_price_refresh(session):
     save_offer(session, 'maniahouse', changed_identity)
     session.commit()
     assert domestic_comparison(session, variant.id, [])['lowest_price'] is None
+
+
+def _catalog(session):
+    maker = Manufacturer(name='Kotobukiya', name_ko='코토부키야', official_url='https://example.com')
+    session.add(maker); session.flush()
+    figure = Figure(manufacturer_id=maker.id, name_original='ARTFX J 架空キャラ', name_ko='ARTFX J 가공 캐릭터',
+                    official_url='https://example.com/p', scale='1/8')
+    session.add(figure); session.flush()
+    variant = FigureVariant(figure_id=figure.id, variant_key='standard', jan_code=None)
+    session.add(variant); session.commit()
+    return figure, variant
+
+
+def _app(session, monkeypatch):
+    from app.core.config import get_settings
+    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin-token-0123456789')
+    app = FastAPI(); app.include_router(router)
+    app.dependency_overrides[get_db] = lambda: session
+    return TestClient(app)
+
+
+def test_history_keeps_every_observation_and_manual_match_survives_reobservation(session, monkeypatch):
+    from app.models.retail import RetailOfferHistory
+    figure, variant = _catalog(session)
+    row = {**observation(), 'title_raw': 'ARTFX J 가공 캐릭터 1/8', 'observed_at': '2026-11-01T00:00:00+00:00'}
+    save_offer(session, 'maniahouse', row); session.commit()
+    save_offer(session, 'maniahouse', {**row, 'sale_price': 8000, 'observed_at': '2026-11-02T00:00:00+00:00'}); session.commit()
+    save_offer(session, 'maniahouse', row); session.commit()  # stale re-delivery adds nothing
+    assert [h.sale_price for h in session.scalars(select(RetailOfferHistory).order_by(RetailOfferHistory.observed_at))] == [10000, 8000]
+    c = _app(session, monkeypatch)
+    admin = {'X-Admin-Token': 'fixture-admin-token-0123456789'}
+    assert c.get('/api/admin/retail-matches').status_code == 403
+    queue = c.get('/api/admin/retail-matches', headers=admin).json()
+    assert queue['total'] == 1 and queue['items'][0]['candidates'][0]['variant_id'] == variant.id
+    listing_id = queue['items'][0]['listing_id']
+    assert c.post(f'/api/admin/retail-matches/{listing_id}', json={'variant_id': variant.id}).status_code == 403
+    assert c.post(f'/api/admin/retail-matches/{listing_id}', json={'variant_id': variant.id}, headers=admin).status_code == 200
+    # A later observation of the same listing keeps the confirmed link.
+    save_offer(session, 'maniahouse', {**row, 'sale_price': 7000, 'observed_at': '2026-11-03T00:00:00+00:00'}); session.commit()
+    assert session.get(RetailListing, listing_id).catalog_variant_id == variant.id
+    history = c.get(f'/api/figures/{figure.id}/price-history?days=730').json()
+    assert [p['sale_price'] for p in history['series'][0]['points']] == [10000, 8000, 7000]
+    assert history['lowest_observed'] == 7000
+    assert c.get('/api/admin/retail-matches', headers=admin).json()['total'] == 0
+    assert c.delete(f'/api/admin/retail-matches/{listing_id}', headers=admin).json()['catalog_variant_id'] is None

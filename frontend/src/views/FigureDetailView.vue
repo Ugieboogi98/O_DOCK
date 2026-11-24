@@ -8,6 +8,7 @@ import SourceList from '../components/SourceList.vue'
 import FavoriteButton from '../components/FavoriteButton.vue'
 import LocalPrices from '../components/LocalPrices.vue'
 import DomesticPrices from '../components/DomesticPrices.vue'
+import PriceHistory from '../components/PriceHistory.vue'
 import KoreanName from '../components/KoreanName.vue'
 import {semanticValue,semanticNotice} from '../services/semantics'
 const route=useRoute(),store=useArchive()
@@ -88,6 +89,7 @@ watch(variant,(value,old)=>{if(old&&value!==old)details()})
      <h1>{{figure.name_ko||figure.name_original}}</h1><p class="product-original" v-if="figure.name_ko">{{figure.name_original}}</p>
      <label class="product-variant" v-if="figure.variants.length>1">상품 버전<select v-model="variant"><option v-for="v in figure.variants" :key="v.id" :value="v.id">{{v.edition||v.variant_key}} {{v.release_date||''}}</option></select></label>
      <DomesticPrices :comparison="prices?.domestic_comparison" :loading="priceLoading" :error="priceError" @retry="details"/>
+     <PriceHistory :figure-id="figure.id" :variant-id="variant"/>
      <div class="product-primary-actions"><FavoriteButton :figure="figure" labeled/><RouterLink :to="`/purchases?figure=${figure.id}&variant=${variant}`" class="button"><Check :size="18"/>구매 완료 등록</RouterLink></div>
      <div class="product-price-box">
       <div class="product-price-label"><span>일본 공식 표시가</span><a v-if="officialPrice?.source_url" :href="safeUrl(officialPrice.source_url)" target="_blank" rel="noopener noreferrer">출처 <ArrowUpRight :size="13"/></a></div>
