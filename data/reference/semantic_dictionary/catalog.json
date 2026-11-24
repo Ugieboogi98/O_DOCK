@@ -47,7 +47,7 @@
     },
     {
       "file": "local_semantic_title_terms.json",
-      "sha256": "1384cb15658fb47d439f727aab252527e8fe5d4c6a92e29304339b45a01b7e68"
+      "sha256": "16ac4accd6e8add9058cad83a33e9b68ec9739bbfc91682d8465e116ab5569da"
     },
     {
       "file": "local_semantic_tuning_lexicon.json",
@@ -71,7 +71,7 @@
     },
     {
       "file": "semantic_rules.py",
-      "sha256": "6ac8105f385c58bfe9729402a8dcb52b47a753bf2aa04c80abca53773919d7de"
+      "sha256": "2fefd7ae590884ec2ab6d9bb22b5791d914a510fb6d3eb146a39a39becabf309"
     },
     {
       "file": "semantic_recovery_dictionary.json",
@@ -25843,7 +25843,7 @@
     },
     "劇場版『チェンソーマン レゼ篇』": {
       "ko": "체인소 맨 레제편",
-      "figure_id": 991,
+      "figure_id": 6977,
       "context": {
         "manufacturer": "MegaHouse",
         "franchise": null,
@@ -69972,7 +69972,7 @@
       "provenance": "source_current_validated_profile"
     }
   },
-  "unverified_catalog_titles_excluded": 2146,
+  "unverified_catalog_titles_excluded": 2173,
   "learned": {
     "version": "learned-aliases-v1",
     "min_support": 2,
@@ -70220,7 +70220,7 @@
         "original": "シュタルク",
         "ko": "슈타르크",
         "work": "장송의 프리렌",
-        "support": 3
+        "support": 4
       },
       {
         "kind": "character",
@@ -70409,7 +70409,7 @@
         "original": "ヒンメル",
         "ko": "힘멜",
         "work": "장송의 프리렌",
-        "support": 2
+        "support": 3
       },
       {
         "kind": "character",
@@ -70423,7 +70423,7 @@
         "original": "フェルン",
         "ko": "페른",
         "work": "장송의 프리렌",
-        "support": 5
+        "support": 6
       },
       {
         "kind": "character",
@@ -71183,13 +71183,6 @@
       },
       {
         "kind": "character",
-        "original": "胡蝶しのぶ",
-        "ko": "코쵸우 시노부",
-        "work": "귀멸의 칼날",
-        "support": 3
-      },
-      {
-        "kind": "character",
         "original": "脹相",
         "ko": "쵸소우",
         "work": "주술회전",
@@ -71235,13 +71228,6 @@
         "original": "釘崎野薔薇",
         "ko": "쿠기사키 노바라",
         "work": "주술회전",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "鏡音レン",
-        "ko": "카가미네 린·렌",
-        "work": "하츠네 미쿠",
         "support": 2
       },
       {
@@ -74161,15 +74147,6 @@
         "figure_form": "chibi_figure"
       },
       {
-        "figure_id": 841,
-        "name_original": "オカルティックソフビコレクション TVアニメ『ダンダダン』 透明怪獣",
-        "franchise_ko": "단다단",
-        "characters_ko": [
-          "투명 괴수"
-        ],
-        "figure_form": "soft_vinyl"
-      },
-      {
         "figure_id": 844,
         "name_original": "COLLECTION 04 機動戦士ガンダム 地球連邦軍 セイラ・マス【再販】",
         "franchise_ko": "기동전사 건담",
@@ -74408,7 +74385,7 @@
         "name_original": "鬼滅の刃 胡蝶しのぶ にっこりver.",
         "franchise_ko": "귀멸의 칼날",
         "characters_ko": [
-          "코쵸우 시노부"
+          "코쵸 시노부"
         ],
         "figure_form": "chibi_figure"
       },
@@ -74996,6 +74973,15 @@
         "franchise_ko": "은하특급 밀키 서브웨이",
         "characters_ko": [
           "맥스"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 1239,
+        "name_original": "銀河特急 ミルキー☆サブウェイ カート",
+        "franchise_ko": "은하특급 밀키 서브웨이",
+        "characters_ko": [
+          "카트"
         ],
         "figure_form": "chibi_figure"
       },
@@ -82589,7 +82575,7 @@
         "name_original": "ぬーどるストッパーフィギュアー鏡音レン・学生スタイルver.ー",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
-          "카가미네 린·렌"
+          "카가미네 렌"
         ],
         "figure_form": "lottery_goods"
       },
@@ -87045,6 +87031,42 @@
           "스파이더맨"
         ],
         "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6980,
+        "name_original": "ねんどろいど フェルン",
+        "franchise_ko": "장송의 프리렌",
+        "characters_ko": [
+          "페른"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6981,
+        "name_original": "ねんどろいど シュタルク",
+        "franchise_ko": "장송의 프리렌",
+        "characters_ko": [
+          "슈타르크"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6982,
+        "name_original": "ねんどろいど ヒンメル",
+        "franchise_ko": "장송의 프리렌",
+        "characters_ko": [
+          "힘멜"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6985,
+        "name_original": "ねんどろいど マカ＝アルバーン",
+        "franchise_ko": "소울이터",
+        "characters_ko": [
+          "마카 아루반"
+        ],
+        "figure_form": "nendoroid"
       }
     ],
     "product_words": [
@@ -87122,5 +87144,5 @@
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "8859030ae76c3ec6f5b0b6c9675dd0269e942a9094a1717beafe0e5ba20d040b"
+  "fingerprint": "e2ac4a6ed58efa4c782bcdf2f249f938d24fb2275fc4c2c4c264be434564952d"
 }

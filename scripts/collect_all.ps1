@@ -14,10 +14,17 @@ if (-not $token) { Write-Host '.env에 ADMIN_TOKEN이 없습니다.' -Foreground
 $headers = @{ 'X-Admin-Token' = $token }
 $labels = @{ completed = '완료'; partial = '일부 완료'; skipped = '건너뜀'; failed = '실패'; running = '진행 중'; pending = '대기'; not_requested = '선택 안 함' }
 function Get-Label($state) { if ($labels.ContainsKey($state)) { $labels[$state] } else { $state } }
+# Windows PowerShell 5.1 decodes JSON without a charset as Latin-1; read the bytes as UTF-8 instead.
+function Invoke-Api($Path, $Method = 'Get', $Body = $null) {
+    $params = @{ Uri = "$BaseUrl$Path"; Method = $Method; Headers = $headers; UseBasicParsing = $true }
+    if ($Body) { $params.ContentType = 'application/json; charset=utf-8'; $params.Body = [Text.Encoding]::UTF8.GetBytes($Body) }
+    $response = Invoke-WebRequest @params
+    [Text.Encoding]::UTF8.GetString($response.RawContentStream.ToArray()) | ConvertFrom-Json
+}
 
 $body = if ($Steps.Count) { @{ steps = $Steps } | ConvertTo-Json -Compress } else { '{}' }
 try {
-    $run = Invoke-RestMethod -Method Post -Uri "$BaseUrl/api/admin/pipeline/run" -Headers $headers -ContentType 'application/json; charset=utf-8' -Body $body
+    $run = Invoke-Api '/api/admin/pipeline/run' 'Post' $body
 } catch {
     Write-Host "백엔드에 연결할 수 없습니다 ($BaseUrl). Docker가 켜져 있는지, scripts\update.ps1로 최신 이미지를 반영했는지 확인하세요." -ForegroundColor Red
     exit 1
@@ -27,7 +34,7 @@ if ($run.reason -eq 'already_running') { Write-Host '이미 실행 중인 작업
 $last = ''
 do {
     Start-Sleep -Seconds 3
-    $run = Invoke-RestMethod -Uri "$BaseUrl/api/admin/pipeline" -Headers $headers
+    $run = Invoke-Api '/api/admin/pipeline'
     $line = ($run.steps | ForEach-Object { "$($_.label): $(Get-Label $_.state)" }) -join ' | '
     if ($line -ne $last) { Write-Host ("[{0:HH:mm:ss}] {1}" -f (Get-Date), $line); $last = $line }
 } while ($run.state -eq 'running')
