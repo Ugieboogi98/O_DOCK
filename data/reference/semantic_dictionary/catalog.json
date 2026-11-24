@@ -43,7 +43,7 @@
     },
     {
       "file": "local_semantic_domain_extension.json",
-      "sha256": "1d316b61e0c1dc0e0ed0c05247daea7f93cda513b671cb85ee4274f80b44ea3b"
+      "sha256": "15fe541a686f50aa77243615bac4b8d39d815fd061cd5cbad12ad5082a0ac617"
     },
     {
       "file": "local_semantic_title_terms.json",
@@ -71,7 +71,7 @@
     },
     {
       "file": "semantic_rules.py",
-      "sha256": "3517ced47241fb4edfafadd595ffb9c4c064419392f4654780b8bee4c4ed95c7"
+      "sha256": "0c0214abe49b48b8eb9659e963876d9371707effb6c7239c8dde174a2fd824cc"
     },
     {
       "file": "semantic_recovery_dictionary.json",
@@ -23198,6 +23198,132 @@
         ]
       ],
       "title_is_character": true
+    },
+    {
+      "work": "나츠메 우인장",
+      "aliases": [
+        "夏目友人帳"
+      ],
+      "characters": [
+        [
+          "夏目貴志",
+          "나츠메 타카시"
+        ],
+        [
+          "ニャンコ先生",
+          "냥코 선생"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "약사의 혼잣말",
+      "aliases": [
+        "薬屋のひとりごと"
+      ],
+      "characters": [
+        [
+          "猫猫",
+          "마오마오"
+        ],
+        [
+          "壬氏",
+          "진시"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "이야기 (소설 시리즈)",
+      "aliases": [
+        "〈物語〉シリーズ",
+        "物語シリーズ"
+      ],
+      "characters": [
+        [
+          "戦場ヶ原ひたぎ",
+          "센조가하라 히타기"
+        ],
+        [
+          "千石撫子",
+          "센고쿠 나데코"
+        ],
+        [
+          "忍野忍",
+          "오시노 시노부"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "치토세 군은 라무네 병 속에",
+      "aliases": [
+        "千歳くんはラムネ瓶のなか"
+      ],
+      "characters": [
+        [
+          "七瀬悠月",
+          "나나세 유즈키"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "귀멸의 칼날",
+      "aliases": [
+        "鬼滅の刃"
+      ],
+      "characters": [
+        [
+          "獪岳",
+          "카이가쿠"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "도검난무",
+      "aliases": [
+        "刀剣乱舞ONLINE",
+        "刀剣乱舞"
+      ],
+      "characters": [
+        [
+          "山姥切国広",
+          "야만바기리 쿠니히로"
+        ],
+        [
+          "山姥切長義",
+          "야만바기리 쵸우기"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "옆집 천사님 때문에 어느샌가 인간적으로 타락한 사연",
+      "aliases": [
+        "お隣の天使様にいつの間にか駄目人間にされていた件"
+      ],
+      "characters": [
+        [
+          "椎名真昼",
+          "시이나 마히루"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "하츠네 미쿠",
+      "aliases": [
+        "初音ミク"
+      ],
+      "characters": [
+        [
+          "桜ミク",
+          "사쿠라 미쿠"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
     },
     {
       "work": "원신",
@@ -69843,7 +69969,7 @@
       "provenance": "source_current_validated_profile"
     }
   },
-  "unverified_catalog_titles_excluded": 1716,
+  "unverified_catalog_titles_excluded": 1814,
   "learned": {
     "version": "learned-aliases-v1",
     "min_support": 2,
@@ -69923,7 +70049,7 @@
         "original": "アルベド",
         "ko": "알베도",
         "work": "오버로드",
-        "support": 13
+        "support": 14
       },
       {
         "kind": "character",
@@ -70049,7 +70175,7 @@
         "original": "スパイダーマン",
         "ko": "스파이더맨",
         "work": "스파이더맨",
-        "support": 3
+        "support": 4
       },
       {
         "kind": "character",
@@ -70161,7 +70287,7 @@
         "original": "パワー",
         "ko": "파워",
         "work": "체인소 맨",
-        "support": 6
+        "support": 7
       },
       {
         "kind": "character",
@@ -70280,7 +70406,7 @@
         "original": "ライスシャワー",
         "ko": "라이스 샤워",
         "work": "우마무스메 프리티 더비",
-        "support": 3
+        "support": 4
       },
       {
         "kind": "character",
@@ -70392,7 +70518,7 @@
         "original": "乙骨憂太",
         "ko": "옷코츠 유타",
         "work": "주술회전",
-        "support": 5
+        "support": 6
       },
       {
         "kind": "character",
@@ -70420,6 +70546,13 @@
         "original": "五条新菜",
         "ko": "고죠 와카나",
         "work": "그 비스크 돌은 사랑을 한다",
+        "support": 2
+      },
+      {
+        "kind": "character",
+        "original": "井ノ上たきな",
+        "ko": "이노우에 타키나",
+        "work": "리코리스 리코일",
         "support": 2
       },
       {
@@ -70525,7 +70658,7 @@
         "original": "喜多川海夢",
         "ko": "키타가와 마린",
         "work": "그 비스크 돌은 사랑을 한다",
-        "support": 12
+        "support": 13
       },
       {
         "kind": "character",
@@ -70679,7 +70812,7 @@
         "original": "日向翔陽",
         "ko": "히나타 쇼요",
         "work": "하이큐!!",
-        "support": 4
+        "support": 5
       },
       {
         "kind": "character",
@@ -70791,7 +70924,7 @@
         "original": "爆豪勝己",
         "ko": "바쿠고 카츠키",
         "work": "나의 히어로 아카데미아",
-        "support": 7
+        "support": 8
       },
       {
         "kind": "character",
@@ -70799,6 +70932,13 @@
         "ko": "이누마키 토게",
         "work": "주술회전",
         "support": 4
+      },
+      {
+        "kind": "character",
+        "original": "白上フブキ",
+        "ko": "시라카미 후부키",
+        "work": "홀로라이브",
+        "support": 2
       },
       {
         "kind": "character",
@@ -70911,6 +71051,13 @@
         "ko": "키리사메 마리사",
         "work": "동방 프로젝트",
         "support": 3
+      },
+      {
+        "kind": "character",
+        "original": "魔王ちゃん",
+        "ko": "마오우찬",
+        "work": "스텔라 소라",
+        "support": 2
       },
       {
         "kind": "character",
@@ -71383,6 +71530,13 @@
       },
       {
         "kind": "franchise",
+        "original": "ネコぱら セカイコネクト",
+        "ko": "네코파라 세계코넥트",
+        "work": null,
+        "support": 2
+      },
+      {
+        "kind": "franchise",
         "original": "ライダーマン",
         "ko": "가면라이더 V3",
         "work": null,
@@ -71412,6 +71566,24 @@
     ],
     "examples": [
       {
+        "figure_id": 31,
+        "name_original": "刀剣乱舞ONLINE 山姥切国広",
+        "franchise_ko": "도검난무",
+        "characters_ko": [
+          "야마우라키리쿠니히로"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 32,
+        "name_original": "刀剣乱舞ONLINE 山姥切長義",
+        "franchise_ko": "도검난무",
+        "characters_ko": [
+          "야마우라키 야스요시"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
         "figure_id": 33,
         "name_original": "転生したらスライムだった件 リムル=テンペスト",
         "franchise_ko": "전생했더니 슬라임이었던 건에 대하여",
@@ -71426,6 +71598,15 @@
         "franchise_ko": "전생했더니 슬라임이었던 건에 대하여",
         "characters_ko": [
           "디아블로"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 35,
+        "name_original": "アオのハコ 鹿野千夏",
+        "franchise_ko": "파랑의 상자",
+        "characters_ko": [
+          "카노 치나츠"
         ],
         "figure_form": "chibi_figure"
       },
@@ -71466,6 +71647,15 @@
         "figure_form": "chibi_figure"
       },
       {
+        "figure_id": 41,
+        "name_original": "鬼滅の刃 獪岳",
+        "franchise_ko": "귀멸의 칼날",
+        "characters_ko": [
+          "카타케이"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
         "figure_id": 42,
         "name_original": "鬼滅の刃 我妻善逸 むん！ver.",
         "franchise_ko": "귀멸의 칼날",
@@ -71473,6 +71663,33 @@
           "아가츠마 젠이츠"
         ],
         "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 48,
+        "name_original": "TENITOL 魔王ちゃん [mini]",
+        "franchise_ko": "스텔라 소라",
+        "characters_ko": [
+          "마오우찬"
+        ],
+        "figure_form": "mini_figure"
+      },
+      {
+        "figure_id": 49,
+        "name_original": "TENITOL ヴェルジュ(バニー) [mini]",
+        "franchise_ko": "스텔라 소라",
+        "characters_ko": [
+          "베루쥬"
+        ],
+        "figure_form": "mini_figure"
+      },
+      {
+        "figure_id": 50,
+        "name_original": "TENITOL ヴェルナー(バニー) [mini]",
+        "franchise_ko": "스텔라 소라",
+        "characters_ko": [
+          "베루나"
+        ],
+        "figure_form": "mini_figure"
       },
       {
         "figure_id": 103,
@@ -83492,6 +83709,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6385,
+        "name_original": "ねんどろいど ジャン・キルシュタイン",
+        "franchise_ko": "진격의 거인",
+        "characters_ko": [
+          "장 키르슈타인"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6389,
         "name_original": "ねんどろいど 博麗霊夢 2.0",
         "franchise_ko": "동방 프로젝트",
@@ -83515,6 +83741,15 @@
         "franchise_ko": "홀로라이브",
         "characters_ko": [
           "우사다 페코라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6396,
+        "name_original": "ねんどろいど パワー 私服Ver. べーしっく",
+        "franchise_ko": "체인소 맨",
+        "characters_ko": [
+          "파워"
         ],
         "figure_form": "nendoroid"
       },
@@ -83609,6 +83844,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6420,
+        "name_original": "グッスマくじ ハイキュー!! A賞 ねんどろいど 日向翔陽 制服笑顔Ver. べーしっく",
+        "franchise_ko": "하이큐!!",
+        "characters_ko": [
+          "히나타 쇼요"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6422,
         "name_original": "初音ミク 十面埋伏Ver.",
         "franchise_ko": "하츠네 미쿠",
@@ -83623,6 +83867,24 @@
         "franchise_ko": "붕괴: 스타레일",
         "characters_ko": [
           "반디"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6432,
+        "name_original": "G.S.Collection 白上フブキ Date Style 私服衣装 Ver.",
+        "franchise_ko": "홀로라이브",
+        "characters_ko": [
+          "시라카미 후부키"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6436,
+        "name_original": "ねんどろいど 魔王ちゃん",
+        "franchise_ko": "스텔라 소라",
+        "characters_ko": [
+          "마오우찬"
         ],
         "figure_form": "nendoroid"
       },
@@ -83708,6 +83970,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6477,
+        "name_original": "ねんどろいど 爆豪勝己 雄英制服Ver.",
+        "franchise_ko": "나의 히어로 아카데미아",
+        "characters_ko": [
+          "바쿠고 카츠키"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6496,
         "name_original": "ねんどろいど 初音ミク V4X",
         "franchise_ko": "하츠네 미쿠",
@@ -83744,6 +84015,24 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6503,
+        "name_original": "ねんどろいど ガッツ",
+        "franchise_ko": "버서르크",
+        "characters_ko": [
+          "갓츠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6505,
+        "name_original": "ねんどろいどどーる ファイノン 列車巡遊Ver.",
+        "franchise_ko": "붕괴: 스타레일",
+        "characters_ko": [
+          "화이논"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6512,
         "name_original": "ねんどろいど フリーレン べーしっく",
         "franchise_ko": "장송의 프리렌",
@@ -83767,6 +84056,15 @@
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6526,
+        "name_original": "ねんどろいど ポムニ",
+        "franchise_ko": "아메이징 디지털 사가스",
+        "characters_ko": [
+          "포문이"
         ],
         "figure_form": "nendoroid"
       },
@@ -83803,6 +84101,16 @@
         "franchise_ko": "클라나드 (비디오 게임)",
         "characters_ko": [
           "후루카와 나기사"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6534,
+        "name_original": "ねんどろいどどーる 桜ミク ひろはこ 2025Ver.（弘前）",
+        "franchise_ko": "하츠네 미쿠",
+        "characters_ko": [
+          "히로바코",
+          "사쿠라미쿠"
         ],
         "figure_form": "nendoroid"
       },
@@ -83861,6 +84169,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6552,
+        "name_original": "ねんどろいど ニーソックス",
+        "franchise_ko": "뉴 팬티 & 스타킹 with 가터벨트",
+        "characters_ko": [
+          "니솟쿠스"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6553,
         "name_original": "ねんどろいど 五条悟",
         "franchise_ko": "주술회전",
@@ -83906,11 +84223,29 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6560,
+        "name_original": "ねんどろいど さくらみこ 私服衣装Ver.",
+        "franchise_ko": "홀로라이브",
+        "characters_ko": [
+          "사쿠라 미코"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6564,
         "name_original": "ねんどろいど フリーレン",
         "franchise_ko": "장송의 프리렌",
         "characters_ko": [
           "프리렌"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6576,
+        "name_original": "ねんどろいど アルベド 鎧Ver. べーしっく",
+        "franchise_ko": "오버로드",
+        "characters_ko": [
+          "알베도"
         ],
         "figure_form": "nendoroid"
       },
@@ -83947,6 +84282,24 @@
         "franchise_ko": "주술회전",
         "characters_ko": [
           "게토 스구루"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6583,
+        "name_original": "ねんどろいど ショコラ《ネコぱら セカイコネクト》Ver.",
+        "franchise_ko": "네코파라 세계코넥트",
+        "characters_ko": [
+          "쇼코라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6584,
+        "name_original": "ねんどろいど バニラ《ネコぱら セカイコネクト》Ver.",
+        "franchise_ko": "네코파라 세계코넥트",
+        "characters_ko": [
+          "바니라"
         ],
         "figure_form": "nendoroid"
       },
@@ -83996,11 +84349,38 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6602,
+        "name_original": "サクラコ（アイドル）",
+        "franchise_ko": "블루 아카이브",
+        "characters_ko": [
+          "아이돌"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6605,
         "name_original": "ねんどろいど 初音ミク V3",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6608,
+        "name_original": "ねんどろいど ラインハルト・フォン・ローエングラム",
+        "franchise_ko": "은하영웅전설",
+        "characters_ko": [
+          "라인하루토 폰 로엔구라무"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6610,
+        "name_original": "ねんどろいどどーる 喜多川海夢 私服Ver.",
+        "franchise_ko": "그 비스크 돌은 사랑을 한다",
+        "characters_ko": [
+          "키타가와 마린"
         ],
         "figure_form": "nendoroid"
       },
@@ -84019,6 +84399,15 @@
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6624,
+        "name_original": "ねんどろいど  宝鐘クマリン",
+        "franchise_ko": "홀로라이브",
+        "characters_ko": [
+          "호우쥬우 쿠마린"
         ],
         "figure_form": "nendoroid"
       },
@@ -84095,6 +84484,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6664,
+        "name_original": "ねんどろいど ライオス",
+        "franchise_ko": "던전밥",
+        "characters_ko": [
+          "라이오스"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6670,
         "name_original": "ねんどろいど フリーレン 修業時代Ver.",
         "franchise_ko": "장송의 프리렌",
@@ -84113,11 +84511,38 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6680,
+        "name_original": "ねんどろいどどーる 井ノ上たきな 喫茶リコリコ制服Ver.",
+        "franchise_ko": "리코리스 리코일",
+        "characters_ko": [
+          "이노우에 타키나"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6688,
+        "name_original": "ライスシャワー～あこがれの景色～",
+        "franchise_ko": "우마무스메 프리티 더비",
+        "characters_ko": [
+          "라이스 샤워"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6690,
         "name_original": "ねんどろいど 初音ミク LAWSON 50th Anniversary Special LIVE Ver.",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6698,
+        "name_original": "ねんどろいど 乙骨憂太 死滅回游Ver.",
+        "franchise_ko": "주술회전",
+        "characters_ko": [
+          "옷코츠 유타"
         ],
         "figure_form": "nendoroid"
       },
@@ -84149,11 +84574,29 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6720,
+        "name_original": "ねんどろいど 七瀬悠月",
+        "franchise_ko": "치토세 군은 라무네병 속에",
+        "characters_ko": [
+          "나나세 유즈키"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6721,
         "name_original": "ねんどろいど 初音ミク 深海少女Ver.",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6722,
+        "name_original": "ねんどろいど メルエム",
+        "franchise_ko": "헌터×헌터",
+        "characters_ko": [
+          "머레움"
         ],
         "figure_form": "nendoroid"
       },
@@ -84257,6 +84700,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6763,
+        "name_original": "ねんどろいど フジマサマーチ",
+        "franchise_ko": "우마무스메 프리티 더비",
+        "characters_ko": [
+          "후지마사마치"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6764,
         "name_original": "ねんどろいど 初音ミク 開かれた窓のセカイVer.",
         "franchise_ko": "하츠네 미쿠",
@@ -84347,6 +84799,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6816,
+        "name_original": "ねんどろいど  角楯カリン",
+        "franchise_ko": "블루 아카이브",
+        "characters_ko": [
+          "카린"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6818,
         "name_original": "ウマ娘 プリティーダービー メジロマックイーン～名門メジロ家の至宝～",
         "franchise_ko": "우마무스메 프리티 더비",
@@ -84354,9 +84815,90 @@
           "메지로 맥퀸"
         ],
         "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6896,
+        "name_original": "【炎スタジオ】 『スパイダーマン:フレンドリー・ネイバーフッド』 1/6スケールフィギュア スパイダーマン(レッド・ホームメイド・スーツ版)",
+        "franchise_ko": "스파이더맨",
+        "characters_ko": [
+          "스파이더맨"
+        ],
+        "figure_form": "scale_figure"
       }
+    ],
+    "product_words": [
+      "1/1スケール",
+      "1/4スケールフィギュア",
+      "1/6スケールフィギュア",
+      "1/7スケールフィギュア",
+      "1/7スケールフィギュアセット",
+      "1/8スケールフィギュア",
+      "6個入",
+      "BIGぬーどるストッパーフィギュア",
+      "BOX/再販",
+      "Gストラクチャ",
+      "TVアニメ",
+      "てのひら",
+      "とびマス",
+      "どきゅーと",
+      "どきゅーとぷち",
+      "ぬいっぽ",
+      "ぬーどるストッパーフィギュア",
+      "ねんどろいど",
+      "ねんどろいどさぷらいず",
+      "ねんどろいどどーる",
+      "ひっかけフィギュア",
+      "ふわぷち",
+      "べーしっく",
+      "みんなのくじ",
+      "らいと",
+      "アニメ",
+      "アリス",
+      "ウエディングドレス",
+      "キャラクターフィギュア",
+      "コレクション",
+      "スケールフィギュア",
+      "スペシャルセット",
+      "スペシャルフィギュア",
+      "スーパーシチュエーションフィギュア",
+      "タイクレ限定",
+      "チャイナドレスver.",
+      "ディズニ",
+      "デフォルメフィギュア",
+      "ニットver.",
+      "バディコレ",
+      "フィギュア",
+      "ホワイト",
+      "ポンチョ",
+      "マシンビルド",
+      "マスコット",
+      "マテリアルカラーエディション",
+      "ミニチュアコレクション",
+      "メモリアルコレクションフィギュア1",
+      "リアルフィギュア",
+      "リリィ",
+      "事後販売",
+      "再販",
+      "劇場版",
+      "吉徳×F:NEX",
+      "和バニ",
+      "商品名",
+      "完全受注生産",
+      "招き猫FORTUNE",
+      "新条アカネ",
+      "日本人形",
+      "水着Ver.",
+      "水着ver.",
+      "浴衣",
+      "特大ぬいぐるみ",
+      "白無垢",
+      "私服Ver.",
+      "缶バッジコレクション",
+      "胸像フィギュア",
+      "超特大ぬいぐるみ",
+      "限定復刻版"
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "ebba37e0a77c165afeb1722a10ebc5f47f6f4113dff9aee110a2106b6c4dcad4"
+  "fingerprint": "3d4fbbc19490790da1b3616b3ba495662e7c4f50082cfef10c4cb8f541f279e1"
 }

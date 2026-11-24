@@ -104,9 +104,25 @@ def source_hash(source):
                            + json.dumps(glossary(), ensure_ascii=False, sort_keys=True)).encode()).hexdigest()
 
 
+_ALLOWED_SCRIPTS = ('HANGUL', 'LATIN', 'FULLWIDTH LATIN', 'GREEK', 'COMBINING', 'DIGIT', 'FULLWIDTH DIGIT',
+                    'SUPERSCRIPT', 'SUBSCRIPT', 'ROMAN NUMERAL', 'SMALL ROMAN NUMERAL', 'CIRCLED',
+                    # used as a dash between title parts (Figureー初音ミクー)
+                    'KATAKANA-HIRAGANA PROLONGED', 'HALFWIDTH KATAKANA-HIRAGANA PROLONGED')
+
+
+def foreign_letters(value):
+    """Letters or marks from scripts a Korean title never needs (Thai in model output, Arabic, ...)."""
+    for c in value:
+        if unicodedata.category(c)[0] in 'LM' and not unicodedata.name(c, '').startswith(_ALLOWED_SCRIPTS):
+            if not re.match(JAPANESE_TEXT_PATTERN, c):
+                return True
+    return False
+
+
 def korean(value):
     return (isinstance(value, str) and 0 < len(value.strip()) <= 1500 and bool(re.search('[가-힣]', value))
-            and not re.search(JAPANESE_TEXT_PATTERN,value) and not re.search('[\u0400-\u052f]',value))
+            and not re.search(JAPANESE_TEXT_PATTERN,value) and not re.search('[\u0400-\u052f]',value)
+            and not foreign_letters(value))
 
 
 def evidence(item, source, allowed):

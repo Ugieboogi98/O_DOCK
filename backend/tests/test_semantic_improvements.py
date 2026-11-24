@@ -258,3 +258,64 @@ def test_known_katakana_spelling_is_used_only_when_it_sounds_like_the_reading(kn
     mapping = resolve_glossary([{'span': span, 'kind': 'name', 'reading': '', 'ko': known}], [span])
     assert (mapping[span] == known) is accepted
     assert mapping[span] == known or mapping[span] == to_hangul(span)
+
+
+def test_rerun_never_downgrades_a_ready_field_but_takes_new_ready_fields():
+    from app.services.product_semantics import keep_ready_fields
+    old = {'franchise_ko': '원신', 'character_ko': None, 'characters': [], 'figure_form': 'nendoroid', 'figure_form_ko': '넨도로이드',
+           'evidence': {'franchise': {'original': '原神'}, 'figure_form': {'code': 'nendoroid'}},
+           'field_status': {'name_ko': 'ready', 'franchise_ko': 'ready', 'character_ko': 'missing', 'figure_form': 'ready'},
+           'classification_status': 'partial'}
+    new = {'name_ko': '넨도로이드 나히다', 'franchise_ko': None, 'character_ko': '나히다', 'characters': [{'original': 'ナヒーダ', 'ko': '나히다'}],
+           'figure_form': None, 'figure_form_ko': None, 'evidence': {'characters': [{'original': 'ナヒーダ'}]},
+           'field_status': {'name_ko': 'ready', 'franchise_ko': 'review', 'character_ko': 'ready', 'figure_form': 'missing'},
+           'field_issues': {'franchise_ko': ['X'], 'figure_form': []}, 'classification_status': 'review'}
+    out = keep_ready_fields(new, old)
+    assert out['franchise_ko'] == '원신' and out['figure_form'] == 'nendoroid' and out['character_ko'] == '나히다'
+    assert out['evidence']['franchise'] == {'original': '原神'} and out['field_issues']['franchise_ko'] == []
+    assert out['classification_status'] == 'ready' and set(out['kept_previous_fields']) == {'franchise_ko', 'figure_form'}
+    # A manual override is never replaced by the previous automatic value.
+    overridden = {**new, 'classification_overrides': {'franchise_ko': {}}}
+    assert keep_ready_fields(overridden, old)['franchise_ko'] is None
+
+
+def test_genre_introduced_work_and_single_title_name_become_relations():
+    from app.services.split_semantics import title_relations
+    s = {'name_original': '刀剣乱舞ONLINE 山姥切国広', 'manufacturer': 'MegaHouse',
+         'document_0': 'るかっぷシリーズよりPCブラウザ・スマホアプリゲーム「刀剣乱舞ONLINE」の山姥切国広が登場です！'}
+    assert [(r['kind'], r['original']) for r in title_relations(s)] == [('franchise', '刀剣乱舞ONLINE'), ('character', '山姥切国広')]
+    known = {'name_original': '鬼滅の刃 獪岳', 'document_0': 'るかっぷシリーズより「獪岳」が新規造形で登場です！'}
+    assert [r['original'] for r in title_relations(known, '鬼滅の刃')] == ['獪岳']
+    # Product words and non-name mentions are not characters.
+    line = {'name_original': 'バディコレ  SPY×FAMILY', 'document_0': 'TVアニメ「SPY×FAMILY」より「バディコレ」が登場'}
+    assert all(r['kind'] != 'character' for r in title_relations(line, stop={'バディコレ'}))
+    col = {'name_original': 'コレクション ブルーロック vol.2', 'document_0': 'TVアニメ「ブルーロック」のコレクション第2弾'}
+    assert all(r['kind'] != 'character' for r in title_relations(col))
+
+
+def test_foreign_script_rejected_and_unknown_kanji_names_not_published(tmp_path):
+    from app.services.semantic_rules import korean
+    assert not korean('냐ัง코 선생님') and not korean('패치ولي 노우ledge') and korean('사이키 쿠스오의 Ψ난 Ⅱ')
+    class C:
+        def model_digest(self, m): return m
+        def infer(self, model, prompt, data, schema):
+            return {'franchise': None, 'figure_form': None, 'characters': [
+                {'original': '獪岳', 'ko': '카타케이', 'evidence_field': 'name_original', 'evidence': '獪岳', 'confidence': 1},
+                {'original': 'テスト', 'ko': '테스토', 'evidence_field': 'name_original', 'evidence': 'テスト', 'confidence': 1}]}, {'seconds': 0}
+    p = Pipeline({'fingerprint': 'u', 'titles': {}}, C(), tmp_path)
+    out = p.classify({'name_original': 'ねんどろいど 架空 獪岳 テスト', 'type': 'figure'}, {'name_ko': 'x'})
+    assert [c['original'] for c in out['result']['characters']] == ['テスト']
+    assert [c['original'] for c in out['unverified_characters']] == ['獪岳']
+    assert set(out['result']) == {'franchise', 'characters', 'figure_form'}
+
+
+def test_repair_removes_unknown_kanji_names_and_recomputes_state():
+    from scripts.repair_unverified_names import repaired
+    fields = {'characters': [{'original': '獪岳', 'ko': '카타케이'}, {'original': 'アスナ', 'ko': '아스나'}],
+              'character_ko': '카타케이 · 아스나', 'franchise_ko': 'x', 'figure_form': 'nendoroid',
+              'field_status': {'name_ko': 'ready', 'franchise_ko': 'ready', 'character_ko': 'ready', 'figure_form': 'ready'}}
+    out, removed = repaired(fields, set())
+    assert [c['ko'] for c in removed] == ['카타케이'] and out['character_ko'] == '아스나' and out['classification_status'] == 'ready'
+    only, _ = repaired({**fields, 'characters': fields['characters'][:1]}, set())
+    assert only['character_ko'] is None and only['field_status']['character_ko'] == 'missing' and only['classification_status'] == 'partial'
+    assert repaired(fields, {'獪岳'})[0] is None

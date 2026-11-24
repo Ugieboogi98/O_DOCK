@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import importlib.util
 from pathlib import Path
 
@@ -32,7 +32,7 @@ def observation():
     return {'external_product_id': '123', 'product_url': 'https://maniahouse.co.kr/product/detail.html?product_no=123',
             'title_raw': '예약상품', 'manufacturer_raw': 'Maker', 'jan_ean': None, 'model_code': None,
             'currency': 'KRW', 'sale_price': 10000, 'list_price': 12000, 'availability': 'PREORDER',
-            'observed_at': datetime.now(timezone.utc).isoformat(), 'has_shop_bonus': False,
+            'observed_at': (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat(), 'has_shop_bonus': False,
             'conditional_price': False, 'payment_options': [], 'warnings': [],
             'match': {'status': 'UNMATCHED', 'reason': 'NO_JAN_CANDIDATE', 'candidates': []}}
 
@@ -43,7 +43,7 @@ def test_repeat_update_and_older_observation_keep_one_current_offer(session):
     session.commit()
     assert save_offer(session, 'maniahouse', row) == 'updated'
     session.commit()
-    newer = {**row, 'sale_price': 9000, 'observed_at': datetime.now(timezone.utc).isoformat()}
+    newer = {**row, 'sale_price': 9000, 'observed_at': (datetime.fromisoformat(row['observed_at']) + timedelta(seconds=1)).isoformat()}
     assert save_offer(session, 'maniahouse', newer) == 'updated'
     session.commit()
     assert save_offer(session, 'maniahouse', row) == 'stale'
@@ -149,7 +149,7 @@ def test_confirmed_variant_prices_and_match_survive_price_refresh(session):
     listing.match_status = 'MATCHED'
     session.commit()
     assert domestic_comparison(session, variant.id, [])['lowest_price'] == 10000
-    newer = {**row, 'sale_price': 9000, 'observed_at': datetime.now(timezone.utc).isoformat()}
+    newer = {**row, 'sale_price': 9000, 'observed_at': (datetime.fromisoformat(row['observed_at']) + timedelta(seconds=1)).isoformat()}
     save_offer(session, 'maniahouse', newer)
     session.commit()
     assert domestic_comparison(session, variant.id, [])['lowest_price'] == 9000

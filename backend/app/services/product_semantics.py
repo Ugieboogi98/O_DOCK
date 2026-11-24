@@ -97,6 +97,53 @@ def valid_sql(statuses=('ready', 'partial')):
     return checks
 
 
+_FIELD_PARTS = {
+    'name_ko': (('name_ko',), None),
+    'franchise_ko': (('franchise_ko',), 'franchise'),
+    'character_ko': (('character_ko', 'characters'), 'characters'),
+    'figure_form': (('figure_form', 'figure_form_ko'), 'figure_form'),
+}
+
+
+def keep_ready_fields(new, old):
+    """A re-run never downgrades a field that was already verified for the same source.
+
+    Per field: when the previous result was 'ready' and the new one is not, the previous value,
+    its evidence and its state are kept. New fields that became ready are taken as they are.
+    """
+    import copy
+    if not isinstance(old, dict) or not isinstance(new, dict):
+        return new
+    out = copy.deepcopy(new)
+    old_states, new_states = old.get('field_status') or {}, out.setdefault('field_status', {})
+    kept = []
+    for key, (values, evidence_key) in _FIELD_PARTS.items():
+        # A manual override (including not_applicable) already decided this field; never replace it.
+        if key in (out.get('classification_overrides') or {}):
+            continue
+        if old_states.get(key) == 'ready' and new_states.get(key) not in ('ready', 'not_applicable'):
+            for name in values:
+                out[name] = copy.deepcopy(old.get(name))
+            if evidence_key:
+                out.setdefault('evidence', {})
+                if evidence_key in (old.get('evidence') or {}):
+                    out['evidence'][evidence_key] = copy.deepcopy(old['evidence'][evidence_key])
+                else:
+                    out['evidence'].pop(evidence_key, None)
+            new_states[key] = 'ready'
+            out.setdefault('field_issues', {})[key] = []
+            kept.append(key)
+    if kept:
+        from app.services.semantic_policy import FIELDS
+        out['missing_fields'] = [k for k in FIELDS if k != 'name_ko' and not out.get(k)]
+        out['translation_status'] = new_states.get('name_ko')
+        classification = [new_states.get(k) for k in FIELDS if k != 'name_ko']
+        out['classification_status'] = ('review' if 'review' in classification else
+                                         'partial' if 'missing' in classification else 'ready')
+        out['kept_previous_fields'] = kept
+    return out
+
+
 def save_record(db, record):
     """Validate imported reports again; never trust a stored model response as authorization."""
     f = db.get(Figure, record['figure_id'], populate_existing=True, with_for_update=True)
@@ -109,6 +156,7 @@ def save_record(db, record):
     if p and p.source_hash == record['source_hash']:
         from app.services.verified_classification import merge_overrides
         fields = merge_overrides(fields, p.fields, record['source_hash'])
+        fields = keep_ready_fields(fields, p.fields)
         issues = [error for errors in fields.get('field_issues', {}).values() for error in errors]
     if p is None:
         p = ProductSemantics(figure_id=f.id)

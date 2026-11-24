@@ -108,6 +108,21 @@ def build_learned(rows):
     return {'version': 'learned-aliases-v1', 'min_support': MIN_SUPPORT, 'aliases': aliases, 'examples': examples}
 
 
+def product_words(rows, min_works=3):
+    """Title tokens seen with >= ``min_works`` different works are product lines (バディコレ), not names.
+
+    rows: iterable of (name_original, work_label)."""
+    seen = defaultdict(set)
+    for title, work in rows:
+        if not work:
+            continue
+        for token in re.split(r'[\s　【】\[\]（）()『』「」]+', title or ''):
+            token = token.strip('！!・、,~〜-ー－')
+            if token and re.search(r'[ぁ-ヿ㐀-鿿]', token):
+                seen[token].add(work)
+    return sorted(t for t, works in seen.items() if len(works) >= min_works)
+
+
 def learned_candidates(source, learned, work_ko=None, work_original=None):
     """Return {'franchise': item|None, 'characters': [items]} grounded in literal source text."""
     result = {'franchise': None, 'characters': []}

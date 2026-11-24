@@ -10,7 +10,7 @@ from app.models.semantics import ProductSemantics
 from app.services.product_semantics import source_of,source_hash
 from app.services.semantic_rules import glossary,FORMS
 from app.services.local_semantic_lexicon import load
-from app.services.semantic_neighbors import build_learned
+from app.services.semantic_neighbors import build_learned,product_words
 from scripts.product_semantics import atomic_report
 
 def build():
@@ -27,7 +27,7 @@ def build():
         groups+=json.loads((root/name).read_text(encoding='utf-8')).get('groups',[])
     path=get_settings().data_dir/'reference/semantic_dictionary/catalog.json'
     previous_titles=json.loads(path.read_text(encoding='utf-8')).get('titles',{}) if path.exists() else {}
-    titles={};quarantined=0;learned_rows=[]
+    titles={};quarantined=0;learned_rows=[];work_rows=[]
     with SessionLocal() as db:
         figures=list(db.scalars(select(Figure)))
         profiles={p.figure_id:p for p in db.scalars(select(ProductSemantics))}
@@ -35,6 +35,7 @@ def build():
             p=profiles.get(f.id)
             if p and isinstance(p.fields,dict) and p.source_hash==source_hash(source_of(f)):
                 learned_rows.append((f.id,f.name_original,p.fields))
+            work_rows.append((f.name_original,(p.fields.get('franchise_ko') if p and isinstance(p.fields,dict) else None) or f.franchise))
             context={'manufacturer':f.manufacturer.name,'franchise':f.franchise,'product_line':f.product_line.name if f.product_line else None}
             previous_title=previous_titles.get(f.name_original,{})
             retained=p and previous_title.get('ko')==p.fields.get('name_ko') and previous_title.get('context')==context
@@ -55,6 +56,19 @@ def build():
           # Only aliases agreed by >=2 validated products with no disagreement; still need literal source evidence.
           'learned':build_learned(learned_rows),
           'policy':'No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.'}
+    # Names used across many works (初音ミク, 綾波レイ) are still names: drop every known entity alias.
+    known=set()
+    def collect(rows):
+        for row in rows or []:
+            if isinstance(row,dict):known.update(a for a in row.get('aliases',[]) if isinstance(a,str))
+    for kind in ('franchises','characters'):collect(aliases.get(kind))
+    for kind in ('works','characters'):collect(knowledge.get(kind))
+    for g in groups:
+        known.update(g.get('aliases',[]))
+        for names,_ in g.get('characters',[]):known.update(names.split('|') if isinstance(names,str) else names)
+    known.update(a['original'] for a in data['learned']['aliases'])
+    known={k for k in known if isinstance(k,str)}
+    data['learned']['product_words']=[w for w in product_words(work_rows) if w not in known]
     data['fingerprint']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     path=get_settings().data_dir/'reference/semantic_dictionary/catalog.json'
     atomic_report(path.parent/'versions'/(data['fingerprint']+'.json'),data)

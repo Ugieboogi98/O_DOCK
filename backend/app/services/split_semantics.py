@@ -11,7 +11,7 @@ from app.services.semantic_rules import validate_result,context_candidates,norma
 from app.services.kana_hangul import to_hangul,is_kana
 from app.services.semantic_neighbors import learned_candidates,NgramIndex
 
-VERSION='split-semantics-v7'
+VERSION='split-semantics-v8'
 GLOSSARY=('For each Japanese span from this product title decide its kind. kind=name for a proper name '
           '(person, character, creature, place, work title); give its reading in katakana with family and given names separated '
           'by a space, and in ko its usual Korean spelling if you know it (ベルセルク -> 베르세르크), else an empty string. '
@@ -154,6 +154,52 @@ def grounded_dictionary(source,dictionary):
             ground['characters'].append(item)
     return ground
 
+WORK_INTRO=re.compile(r'(?:アニメ|ゲーム|映画|劇場版|漫画|マンガ|コミック|小説|作品|番組|ドラマ)\s*(?:Season\s*\d+\s*)?[「『]([^」』\n]{1,60})[」』]')
+_NOISE=re.compile(r'(?i)(?:ver\.?|version|ねんどろいど(?:どーる|さぷらいず)?|るかっぷ|ぬーどるストッパー|フィギュア|スケール|完成品|再販|特典|付き?|限定|第\S+弾|【[^】]*】|\[[^\]]*\]|（[^）]*）|\([^)]*\))')
+
+def title_relations(source,known_work=None,stop=()):
+    """Work introduced by genre in the description (TVアニメ「アオのハコ」) and literally in the title,
+    plus the single remaining name in the title when the description mentions it too.
+    ``known_work`` is a dictionary-grounded work already found in the title (鬼滅の刃)."""
+    title=source.get('name_original') or ''
+    intro=((source.get('document_0') or '').split('※',1)[0])[:1200]
+    skip={normalize(source.get('manufacturer')),normalize(source.get('product_line')),'るかっぷ','lookup'}
+    works=[w for w in dict.fromkeys(WORK_INTRO.findall(intro)) if w in title and normalize(w) not in skip]
+    if known_work and known_work in title:
+        work,found=known_work,[]
+    elif len(works)==1:
+        work=works[0]
+        found=[{'kind':'franchise','original':work,'evidence_field':'name_original','evidence':work}]
+    else:
+        return []
+    rest=_NOISE.sub(' ',title.replace(work,' '))
+    tokens=[t.strip('！!・、,~〜-ー－') for t in rest.split()]
+    names=[t for t in tokens if t and re.search(JAPANESE_TEXT_PATTERN,t) and t not in stop]
+    # The description must use it as a name: 「獪岳」, 山姥切国広が登場, 鹿野千夏と … (not コレクション第2弾).
+    used_as_name=lambda n:re.search('[「『]'+re.escape(n)+'[」』]|'+re.escape(n)+'(?:が|を|と|ちゃん|くん|さん)',intro)
+    if len(names)==1 and 2<=len(names[0])<=12 and names[0] in title and used_as_name(names[0]):
+        found.append({'kind':'character','original':names[0],'evidence_field':'name_original','evidence':names[0]})
+    return found
+
+KANJI=re.compile('[㐀-䶿一-鿿々]')
+
+def known_entity_aliases(dictionary):
+    """Every original-language entity spelling with a curated or agreed Korean label."""
+    from app.services.local_semantic_lexicon import load,tuning_lexicon
+    from app.services.semantic_rules import glossary
+    known=set()
+    lexicon,g=load(),glossary()
+    for kind in ('franchises','characters'):
+        for row in lexicon.get(kind,[])+g.get(kind,[]):known.update(row.get('aliases',[]))
+    for row in tuning_lexicon().get('characters',[]):known.update(row.get('aliases',[]))
+    for group in dictionary.get('domain_groups',[]):
+        known.update(group.get('aliases',[]))
+        for names,_ in group.get('characters',[]):known.update(names.split('|') if isinstance(names,str) else names)
+    for kind in ('works','characters'):
+        for row in (dictionary.get('knowledge') or {}).get(kind,[]):known.update(row.get('aliases',[]))
+    known.update(a['original'] for a in (dictionary.get('learned') or {}).get('aliases',[]))
+    return {normalize(k) for k in known if isinstance(k,str)}
+
 def classification_input(source):
     """Select bounded literal evidence windows; retain complete source in the report."""
     out={k:source.get(k) for k in ('name_original','manufacturer','product_line','franchise','character','scale','type')}
@@ -172,6 +218,7 @@ class Pipeline:
         self.cache.mkdir(parents=True,exist_ok=True)
         self.digests={m:client.model_digest(m) for m in (translation_model,classification_model)}
         self.neighbors=NgramIndex((dictionary.get('learned') or {}).get('examples',[]))
+        self.known=None  # built lazily: known_entity_aliases(dictionary)
         # One spelling per span across products (ニャンコ must not be 냥코 here and 고양이 there).
         self.memory_path=self.cache/'span_memory.json'
         try:self.span_memory=json.loads(self.memory_path.read_text(encoding='utf-8')) if self.memory_path.exists() else {}
@@ -228,6 +275,12 @@ class Pipeline:
         """
         from app.services.semantic_rules import korean,same_subject
         relations=context_candidates(source)
+        # Without the bracketed 『作品』の「キャラ」 form, fall back to genre-introduced work + title remainder.
+        if not any(r['kind']=='character' for r in relations):
+            known=(ground['franchise'] or {}).get('original') if (ground['franchise'] or {}).get('evidence_field') in ('name_original','franchise') else None
+            stop=set((self.dictionary.get('learned') or {}).get('product_words',[]))
+            relations=relations+[r for r in title_relations(source,known,stop)
+                                 if not (r['kind']=='franchise' and any(x['kind']=='franchise' for x in relations))]
         missing=[]
         works={r['original']:r for r in relations if r['kind']=='franchise'}
         if not ground['franchise'] and len(works)==1:missing.append(next(iter(works.values())))
@@ -258,6 +311,8 @@ class Pipeline:
         for m in missing:
             ko=mapping.get(m['original'])
             if not ko:continue
+            # A model's reading of a kanji name is often wrong (獪岳 -> 카타케이); it is not a searchable fact.
+            if KANJI.search(m['original']):continue
             item={'original':m['original'],'ko':ko,'evidence_field':m['evidence_field'],'evidence':m['evidence'],
                   'confidence':0.9,'method':'explicit_relation_glossary'}
             if m['kind']=='franchise':ground['franchise']=item
@@ -332,6 +387,13 @@ class Pipeline:
             for k in ('franchise','figure_form'):
                 if ground[k]:result[k]=ground[k]
             originals={g['original'] for g in ground['characters']}
-            result['characters']=ground['characters']+[c for c in result['characters'] if c.get('original') not in originals and c.get('ko') not in {g['ko'] for g in ground['characters']}]
-            return {'result':result,'method':'classification_model',**metrics}
+            proposed=[c for c in result['characters'] if c.get('original') not in originals and c.get('ko') not in {g['ko'] for g in ground['characters']}]
+            # Kanji names the dictionary does not know keep the model's guess for review only.
+            if self.known is None:self.known=known_entity_aliases(self.dictionary)
+            unverified=[c for c in proposed if isinstance(c,dict) and isinstance(c.get('original'),str)
+                        and KANJI.search(c['original']) and normalize(c['original']) not in self.known]
+            result['characters']=ground['characters']+[c for c in proposed if c not in unverified]
+            out={'result':result,'method':'classification_model',**metrics}
+            if unverified:out['unverified_characters']=unverified  # kept in the report for review, never published
+            return out
         return self.stage('classification',{'source':source,'translation':translation['name_ko']},run)

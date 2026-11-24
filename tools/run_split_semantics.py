@@ -15,6 +15,10 @@ sys.path.insert(0,str(root/'backend'))
 module='scripts.split_semantics_worker'
 if '--build-dictionary' in sys.argv:
     sys.argv.remove('--build-dictionary');module='scripts.build_semantic_dictionary'
+if '--repair-names' in sys.argv:
+    sys.argv.remove('--repair-names');module='scripts.repair_unverified_names'
+if '--reprocess' in sys.argv:
+    sys.argv.remove('--reprocess');module='scripts.reprocess_semantics'
 if '--recover-classifications' in sys.argv:
     sys.argv.remove('--recover-classifications');module='scripts.recover_dictionary_classifications'
 runpy.run_module(module,run_name='__main__')
