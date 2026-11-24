@@ -1,0 +1,4 @@
+# Local experimental merged model; no publication or automatic worker activation.
+FROM /root/.ollama/odock-qwen3-8b-v2-q4_k_m.gguf
+PARAMETER temperature 0
+PARAMETER num_ctx 32768

@@ -1,0 +1,115 @@
+{
+  "franchises": [
+    {
+      "aliases": [
+        "NARUTO",
+        "ナルト",
+        "NARUTO-ナルト-"
+      ],
+      "ko": "나루토"
+    },
+    {
+      "aliases": [
+        "NARUTO-ナルト- 疾風伝",
+        "NARUTO-ナルト-疾風伝",
+        "ナルト 疾風伝"
+      ],
+      "ko": "나루토 질풍전"
+    },
+    {
+      "aliases": [
+        "ONE PIECE",
+        "ワンピース"
+      ],
+      "ko": "원피스"
+    },
+    {
+      "aliases": [
+        "鬼滅の刃"
+      ],
+      "ko": "귀멸의 칼날"
+    },
+    {
+      "aliases": [
+        "呪術廻戦"
+      ],
+      "ko": "주술회전"
+    },
+    {
+      "aliases": [
+        "葬送のフリーレン"
+      ],
+      "ko": "장송의 프리렌"
+    },
+    {
+      "aliases": [
+        "ステラソラ",
+        "Stella Sora"
+      ],
+      "ko": "스텔라 소라",
+      "reference_urls": [
+        "https://www.stellasora.kr/",
+        "https://play.google.com/store/apps/details?id=com.YoStarJP.StellaSora"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "aliases": [
+        "うちはイタチ"
+      ],
+      "ko": "우치하 이타치"
+    },
+    {
+      "aliases": [
+        "イタチ"
+      ],
+      "ko": "이타치"
+    },
+    {
+      "aliases": [
+        "うずまきナルト"
+      ],
+      "ko": "우즈마키 나루토"
+    },
+    {
+      "aliases": [
+        "初音ミク"
+      ],
+      "ko": "하츠네 미쿠"
+    },
+    {
+      "aliases": [
+        "フリーレン"
+      ],
+      "ko": "프리렌",
+      "incorrect_ko": [],
+      "franchise": {
+        "ko": "장송의 프리렌",
+        "original": "葬送のフリーレン",
+        "reference_urls": [
+          "https://frieren-anime.jp/character/chara_group1/1-1/",
+          "https://www.tving.com/contents/P001781702"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "フェルン"
+      ],
+      "ko": "페른",
+      "incorrect_ko": [
+        "펀",
+        "페룬"
+      ],
+      "franchise": {
+        "ko": "장송의 프리렌",
+        "original": "葬送のフリーレン",
+        "reference_urls": [
+          "https://frieren-anime.jp/character/chara_group1/1-5/",
+          "https://www.tving.com/contents/P001781702"
+        ]
+      }
+    }
+  ]
+}

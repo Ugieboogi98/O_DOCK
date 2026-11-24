@@ -1,0 +1,198 @@
+[
+  {
+    "width": 1440,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(255, 255, 255)"
+  }
+]

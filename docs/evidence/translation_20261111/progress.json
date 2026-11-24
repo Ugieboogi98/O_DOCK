@@ -1,0 +1,13 @@
+{
+  "state": "blocked",
+  "total": 6161,
+  "workers": 16,
+  "counts": {
+    "cached": 2570,
+    "partial": 46,
+    "review": 6,
+    "failed": 16
+  },
+  "finished": 2638,
+  "updated_at": "2026-11-11T00:38:13.200820+00:00"
+}

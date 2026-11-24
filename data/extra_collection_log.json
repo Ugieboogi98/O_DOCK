@@ -1,0 +1,98 @@
+[
+  {
+    "url": "https://tamashiiweb.com/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://tamashiiweb.com/item/14690/",
+    "status": 200,
+    "sha256": "aa2cfbf893c561f5245536645f73bb9b9e5ef79040a6318400d147a15ba2050b",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://tamashiiweb.com/item/14735/",
+    "status": 200,
+    "sha256": "477e9f0d201a7dfbbdab36f0b2d02ceaae4094f35f44784670dfbe5502bc02fb",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://tamashiiweb.com/item/15747/",
+    "status": 200,
+    "sha256": "b0dfd354d4d13b551d22674c4ead5f02fadc4df2f227da2318fea3a3e91edf02",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/prize/D121425/",
+    "status": 200,
+    "sha256": "ad0edf82cc81c6ad81ba46a85c4f5a4c2c72a0c16382ee8ab97dc148b77a504c",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/prize/D122835/",
+    "status": 200,
+    "sha256": "280a93b8cb338591d73beadabe4fa5040409b7dfa7d4beddda095bd97022d171",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/prize/D123005/",
+    "status": 200,
+    "sha256": "18b0e9f52ea2836203b00809decc3f448d7e93c865ed398df9faf056052971dd",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/robots.txt",
+    "status": 200,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/taito-prize/0451852500",
+    "status": 200,
+    "sha256": "c7022eab3a0bd17c86cc62a7d6857650a72eb36b2a2fc9f2c2076b7a236e3d89",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/taito-prize/0451950600",
+    "status": 200,
+    "sha256": "695a47076e7f6bed43ae2b41da09bc6c048619ce70e406f659d0ce2e9a3fc610",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/en/taito-prize/0451972800",
+    "status": 200,
+    "sha256": "c278ee9ab8600a90df79f63a664360afd35f411f93a3b1719c5a8169536eb4b5",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/item/view/100008115.php",
+    "status": 200,
+    "sha256": "e3ba0e31b0e5fb86a6365eeae94f3b52becaa11c67266901d4dbd95b05b36cd6",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/item/view/100007491.php",
+    "status": 200,
+    "sha256": "c6495422e88d3f9faaa608c15310c375a3c969a1c13ed70613f0ceb09da75110",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/item/view/100009109",
+    "status": 200,
+    "sha256": "8f3463e2f82d8889b1cea592f89dfbf47d34b3b04339698eb99de19e44370c4b",
+    "checked_at": "2026-10-21"
+  }
+]

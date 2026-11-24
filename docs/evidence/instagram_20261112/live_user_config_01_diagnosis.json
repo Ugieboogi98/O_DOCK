@@ -1,0 +1,22 @@
+{
+  "checked_date": "2026-11-12",
+  "initial_report": "live_user_config_01.json",
+  "additional_read_only_requests": 2,
+  "self_account_error": {
+    "http_status": 400,
+    "meta_code": 12,
+    "message_redacted": "(#12) cannot_access_user_username_field is deprecated for versions v2.0 and higherusername field is deprecated for versions v2.0 and higher"
+  },
+  "token_owner_comparison": {
+    "endpoint": "/me?fields=id",
+    "http_status": 200,
+    "configured_ig_id_equals_token_owner_id": true,
+    "token_type_from_debug": "SYSTEM_USER"
+  },
+  "diagnosis": "META_IG_USER_ID currently identifies the SYSTEM_USER token owner, not a verified Instagram professional account. Replace with the connected Instagram Graph account ID confirmed via official assets/API.",
+  "decision": "NO-GO",
+  "discovery_requests_sent": 0,
+  "db_written": false,
+  "automatic_collection_started": false,
+  "paid_api_called": false
+}

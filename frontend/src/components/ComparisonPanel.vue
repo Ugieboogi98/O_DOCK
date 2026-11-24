@@ -1,0 +1,12 @@
+<script setup>
+import {ref,watch,nextTick} from 'vue';import {useArchive} from '../stores/archive';import {api,money,safeUrl} from '../services/api';import {X} from 'lucide-vue-next'
+const store=useArchive(),open=ref(false),rows=ref([]),error=ref(''),busy=ref(false)
+const dialog=ref(null);let trigger=null
+watch(open,async value=>{if(value){trigger=document.activeElement;await nextTick();dialog.value?.querySelector('button')?.focus()}else trigger?.focus()})
+function trapFocus(event){const nodes=[...dialog.value.querySelectorAll('button:not(:disabled),a[href],input,select,[tabindex="0"]')];const first=nodes[0],last=nodes.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}
+async function compare(){busy.value=true;error.value='';open.value=true;try{rows.value=(await api('/compare',{method:'POST',body:{figure_ids:store.comparison}})).items}catch(e){error.value=e.message}finally{busy.value=false}}
+</script>
+<template>
+ <div class="comparison-tray" v-if="store.comparison.length"><span>{{store.comparison.length}} / 4 제품 선택</span><button :disabled="store.comparison.length<2" @click="compare">사양 비교하기</button><button class="icon-button" aria-label="선택 해제" @click="store.comparison=[]"><X :size="18"/></button></div>
+ <div class="modal-backdrop" v-if="open" @click.self="open=false"><section ref="dialog" class="modal" @keydown.esc="open=false" @keydown.tab="trapFocus" role="dialog" aria-modal="true" aria-label="제품 비교"><div class="section-title"><h2>나란히 비교하기</h2><button @click="open=false" class="icon-button" aria-label="닫기"><X/></button></div><p v-if="busy" role="status">제품 사양을 불러오는 중…</p><p class="error" v-if="error">{{error}}</p><div class="table-wrap" v-if="!busy&&rows.length"><table><thead><tr><th>항목</th><th v-for="f in rows" :key="f.id">{{f.name_original}}</th></tr></thead><tbody><tr v-for="[label,key] in [['제조사','manufacturer'],['스케일','scale'],['높이 (mm)','height_mm'],['재질','material'],['작품','franchise']]" :key="key"><th>{{label}}</th><td v-for="f in rows" :key="f.id">{{f[key]??'미확인'}}</td></tr><tr><th>일본 공식 발매가</th><td v-for="f in rows" :key="f.id">{{money(f.prices.japan_release_price?.price_amount)}}</td></tr><tr><th>공식 출처</th><td v-for="f in rows" :key="f.id"><a :href="safeUrl(f.official_url)" target="_blank" rel="noopener noreferrer">공식 제품 페이지 ↗</a></td></tr></tbody></table></div></section></div>
+</template>

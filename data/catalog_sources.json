@@ -1,0 +1,71 @@
+{
+  "domestic_enabled": true,
+  "domestic_max_products_per_source": 20,
+  "max_pages_per_source": 3,
+  "max_new_products_per_run": 60,
+  "sources": [
+    {
+      "manufacturer": "Bandai Spirits",
+      "start_url": "https://www.bnkrmall.co.kr/goods/category.do?cate=1607",
+      "driver": "bnkr",
+      "category": 1607,
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "Bandai Spirits",
+      "start_url": "https://www.bnkrmall.co.kr/goods/category.do?cate=1608",
+      "driver": "bnkr",
+      "category": 1608,
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "MegaHouse",
+      "start_url": "https://megahobby.jp/products/",
+      "auto_enabled": true,
+      "note": "Previously manually tested. Confirm automated access against current terms before enabling in a deployed application."
+    },
+    {
+      "manufacturer": "FuRyu",
+      "start_url": "https://furyu-hm.com/collections/scale-figures",
+      "auto_enabled": true,
+      "note": "Public factual metadata only; verified 2026-10-22. Images and prose excluded."
+    },
+    {
+      "manufacturer": "Bandai Spirits",
+      "start_url": "https://bsp-prize.jp/item/",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "Bandai Spirits",
+      "start_url": "https://tamashiiweb.com/item/",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "Good Smile Company",
+      "start_url": "https://www.goodsmile.com/ja/search/list?filter=%7B%22search_keyword%22%3A%22%22%2C%22search_over18%22%3Afalse%2C%22search_category%22%3A%5B1%2C15%2C59%2C63%2C57%2C51%2C61%2C21%2C64%2C20%5D%2C%22search_maker%22%3A%5B1%5D%2C%22search_title%22%3A%5B%5D%2C%22search_status%22%3A%220%22%2C%22release_date_from%22%3A%22%22%2C%22release_date_to%22%3A%22%22%2C%22search_bonus%22%3Afalse%2C%22search_exclusive%22%3Afalse%2C%22search_sale%22%3Afalse%2C%22search_sales_origin%22%3Afalse%2C%22tag%22%3A%5B%5D%7D&orderBy=1&limit=60&offset=0&couponId=null&searchIndex=-1",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "SEGA",
+      "start_url": "https://segaplaza.jp/prize/",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "Kotobukiya",
+      "start_url": "https://www.kotobukiya.co.jp/product/",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "TAITO",
+      "start_url": "https://www.taito.co.jp/taito-prize",
+      "auto_enabled": true
+    },
+    {
+      "manufacturer": "Hot Toys",
+      "start_url": "https://www.hottoys.jp/item/",
+      "auto_enabled": false,
+      "note": "Excluded by user request on 2026-11-17. Existing records retained."
+    }
+  ],
+  "max_products_per_source": 20
+}

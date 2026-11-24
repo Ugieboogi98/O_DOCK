@@ -1,0 +1,7 @@
+{
+  "provenance": "Conventional Korean labels with official Korean references; Japanese relationships must still be explicit in each product source.",
+  "groups": [
+    {"work":"원신","aliases":["原神","Genshin Impact"],"characters":[["ナヒーダ|Nahida","나히다"]],"references":["https://genshin.hoyoverse.com/ko/news/detail/159335"]},
+    {"work":"파이널판타지14","aliases":["ファイナルファンタジーXIV","FINAL FANTASY XIV"],"characters":[["エメトセルク|Emet-Selch","에메트셀크"]],"references":["https://www.ff14.co.kr/main","https://ff14.game.naver.com/events/Pub/Endwalker/5"]}
+  ]
+}

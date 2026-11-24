@@ -1,0 +1,1 @@
+[{"variant_id":1,"kind":"retail","source_url":"https://example.invalid/product/1","amount":"10000","currency":"KRW","observed_at":"2026-10-21T00:00:00Z","availability":"in_stock","price_type":"displayed","retailer_name":"TEST ONLY","candidate":{"sku":"TEST","manufacturer":"TEST"},"rights_note":"synthetic automated-test fixture; not market data"}]

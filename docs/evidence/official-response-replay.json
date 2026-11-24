@@ -1,0 +1,147 @@
+{
+  "figures": 1,
+  "variants": 1,
+  "source_documents": 1,
+  "embedding_provider": "hash",
+  "pending_index_jobs": 0,
+  "manufacturers": [
+    {
+      "manufacturer": "FuRyu",
+      "figures": 1,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 1,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 1
+    },
+    {
+      "manufacturer": "Bandai Spirits",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "MegaHouse",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "Good Smile Company",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "SEGA",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "Kotobukiya",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "TAITO",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    },
+    {
+      "manufacturer": "Hot Toys",
+      "figures": 0,
+      "missing": {
+        "name_original": 0,
+        "franchise": 0,
+        "scale": 0,
+        "height_mm": 0,
+        "material": 0,
+        "sku": 0,
+        "jan_code": 0,
+        "release_date": 0,
+        "official_price": 0
+      },
+      "variant_count": 0
+    }
+  ],
+  "index": {
+    "metadata": 1,
+    "documents": 1
+  },
+  "metadata_count_matches": true,
+  "first_result": "created",
+  "second_result": "existing",
+  "evidence_contains_260mm": true,
+  "retrieval_warnings": [],
+  "provenance": "Official HTTP product response replayed offline; isolated SQLite + actual ChromaDB; not user PostgreSQL"
+}

@@ -1,0 +1,22 @@
+{
+  "health": 200,
+  "frontend": 200,
+  "filters": {
+    "prize_figure": {
+      "total": 960,
+      "example_id": 1581,
+      "example_form": "prize_figure"
+    },
+    "noodle_stopper": {
+      "total": 144,
+      "example_id": 5008,
+      "example_form": "noodle_stopper"
+    },
+    "action_figure": {
+      "total": 385,
+      "example_id": 103,
+      "example_form": "action_figure"
+    }
+  },
+  "total_products": 6161
+}

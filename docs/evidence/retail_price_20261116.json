@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-16T01:18:37.154797+00:00",
+  "purpose": "public policy audit only",
+  "requests": [
+    {
+      "source": "maniahouse",
+      "url": "https://maniahouse.co.kr/robots.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "sha256": "d5df5587439151bf631844ef953cd94642c28c775d27ce2143eb6de8e5dab2cf",
+      "robots_text": "User-agent: *\nDisallow: /admin\nDisallow: /api\nDisallow: /exec/front/\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\n\nUser-agent: Googlebot\nDisallow: /admin\nDisallow: /exec/front/\nDisallow: /api\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\n\nUser-agent: bingbot\nDisallow: /admin\nDisallow: /exec/front/\nDisallow: /api\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\nCrawl-delay: 10"
+    },
+    {
+      "source": "maniahouse",
+      "url": "https://maniahouse.co.kr/member/agreement.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "59a4194f7b677d525290ac376978f529271f064fe815c1cfc0022333227e4634",
+      "terms_section_22_present": true
+    },
+    {
+      "source": "figurepresso",
+      "url": "https://www.figurepresso.com/robots.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "sha256": "d5df5587439151bf631844ef953cd94642c28c775d27ce2143eb6de8e5dab2cf",
+      "robots_text": "User-agent: *\nDisallow: /admin\nDisallow: /api\nDisallow: /exec/front/\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\n\nUser-agent: Googlebot\nDisallow: /admin\nDisallow: /exec/front/\nDisallow: /api\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\n\nUser-agent: bingbot\nDisallow: /admin\nDisallow: /exec/front/\nDisallow: /api\nDisallow: /member/\nDisallow: /myshop/\nDisallow: /protected/\nDisallow: /skin-*/\nDisallow: /board/*/modify.html\nDisallow: /board/*/reply.html\nDisallow: /board/*/write.html\nDisallow: /amp/board/\nDisallow: /*board*page=\nDisallow: /*article*page=\nDisallow: /*board*category_no=\nDisallow: /*article*category_no=\nDisallow: /*page_4=\nDisallow: /*page_6=\nCrawl-delay: 10"
+    },
+    {
+      "source": "figurepresso",
+      "url": "https://www.figurepresso.com/member/agreement.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "74999692ad3acb4dfbc6509094c5a8e43b9809e6e898e2c58bcb78d371c67d4a",
+      "terms_section_22_present": true
+    },
+    {
+      "source": "maniahouse",
+      "url": "https://maniahouse.co.kr/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "964cb35719c5e690f1f616956f7a88a3c8da830fd143bebc24678e771464ab41"
+    },
+    {
+      "source": "maniahouse",
+      "url": "https://maniahouse.co.kr/product/list.html?cate_no=45",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e6480be776dda3a1769471aaacac3af9db2bcfbc9ba112a3a87cfa6b37220b1f"
+    },
+    {
+      "source": "figurepresso",
+      "url": "https://www.figurepresso.com/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "4e9a8fd74bba7a434e5125dfd2564db67155716bbc9343260e47dedff98d26ff"
+    },
+    {
+      "source": "figurepresso",
+      "url": "https://www.figurepresso.com/product/preorder.html?cate_no=24",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "79ab52393cd6e30c74038a3a045c12f7bbe52d42b3113a5a0be9348135525310"
+    }
+  ]
+}

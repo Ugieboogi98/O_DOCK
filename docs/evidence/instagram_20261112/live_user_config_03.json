@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-11-12T04:32:11.845187+00:00",
+  "phase": "AVAILABILITY_POC",
+  "mode": "LIVE_READ_ONLY",
+  "login_path": "Unified Login (user reported; console not independently verified)",
+  "app_created": "USER_REPORTED",
+  "config_created": "PRESENT_UNVERIFIED",
+  "token_valid": "PASS",
+  "self_account": {
+    "status": "PASS",
+    "http_status": 200,
+    "fields": [
+      "id",
+      "username"
+    ]
+  },
+  "discovery_supported": "PASS",
+  "poc_success": false,
+  "decision": "GO_NEXT_PHASE_ONLY",
+  "db_written": false,
+  "paid_api_called": false,
+  "api_requests": 5,
+  "automatic_collection_started": false,
+  "targets": {
+    "duex.official": {
+      "status": "PASS",
+      "source_status": "DISCOVERY_VERIFIED_NOT_SCHEDULED",
+      "url": "https://www.instagram.com/duex.official/",
+      "http_status": 200,
+      "fields": [
+        "id",
+        "media",
+        "media_count",
+        "username"
+      ],
+      "media_count_in_response": 10,
+      "post_fields": [
+        "caption",
+        "id",
+        "media_type",
+        "permalink",
+        "timestamp"
+      ]
+    },
+    "anique.jp": {
+      "status": "PASS",
+      "source_status": "DISCOVERY_VERIFIED_NOT_SCHEDULED",
+      "url": "https://www.instagram.com/anique.jp/",
+      "http_status": 200,
+      "fields": [
+        "id",
+        "media",
+        "media_count",
+        "username"
+      ],
+      "media_count_in_response": 10,
+      "post_fields": [
+        "caption",
+        "id",
+        "media_type",
+        "permalink",
+        "timestamp"
+      ]
+    },
+    "akplaza_hongdae": {
+      "status": "PASS",
+      "source_status": "DISCOVERY_VERIFIED_NOT_SCHEDULED",
+      "url": "https://www.instagram.com/akplaza_hongdae/",
+      "http_status": 200,
+      "fields": [
+        "id",
+        "media",
+        "media_count",
+        "username"
+      ],
+      "media_count_in_response": 10,
+      "post_fields": [
+        "caption",
+        "id",
+        "media_type",
+        "permalink",
+        "timestamp"
+      ]
+    }
+  },
+  "missing_configuration": [],
+  "token_check": {
+    "is_valid": true,
+    "type": "USER",
+    "expires_at": 1794463200,
+    "data_access_expires_at": 1802233857,
+    "scopes": [
+      "pages_show_list",
+      "business_management",
+      "instagram_basic",
+      "instagram_manage_insights",
+      "pages_read_engagement",
+      "public_profile"
+    ],
+    "http_status": 200,
+    "app_id_matches": true
+  },
+  "next_phase_eligible": true,
+  "reason": "DISCOVERY_PASS_STORAGE_AND_EVENT_REVIEW_NOT_IMPLEMENTED"
+}

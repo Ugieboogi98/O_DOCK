@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "mobile menu",
+    "filter query",
+    "comparison dialog / escape",
+    "pagination",
+    "detail / four retailer rows / source link",
+    "header search / mocked response",
+    "login fields",
+    "keyboard navigation"
+  ],
+  "ratios": {
+    "body": 14.552206551498765,
+    "muted": 5.282034169464499,
+    "accent": 5.809325929018641,
+    "button": 7.808051533141384
+  },
+  "postResponsesMocked": true
+}

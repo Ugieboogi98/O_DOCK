@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-22",
+  "transport": "urllib HTTPS via environment proxy; SafeFetcher direct DNS failed in this host",
+  "catalogs": [
+    {
+      "url": "https://furyu-hm.com/collections/scale-figures",
+      "http_status": 200,
+      "product_links": 24,
+      "next_links": [
+        "https://furyu-hm.com/collections/scale-figures?page=2"
+      ],
+      "sha256": "5e1beebd7841f669b7cb81f389a43e7a0cc54fa4d2d3bcdce43c88d7ebab86fc"
+    },
+    {
+      "url": "https://furyu-hm.com/collections/scale-figures?page=2",
+      "http_status": 200,
+      "product_links": 24,
+      "next_links": [
+        "https://furyu-hm.com/collections/scale-figures?page=3"
+      ],
+      "sha256": "48615d7a4099a1bd8ff07d174503de01cbf22dde2ddc09d127faa2659d5aa40b"
+    }
+  ],
+  "sample_product": {
+    "name_original": "ローレン・イロアス  1/7スケールフィギュア",
+    "manufacturer": "FuRyu",
+    "official_url": "https://furyu-hm.com/products/fnx-8fh7jkku",
+    "quality": "official_metadata",
+    "franchise": "にじさんじ",
+    "sku": "AMU-FNX1162",
+    "product_line": "F:NEX",
+    "scale": "1/7",
+    "height_mm": 260,
+    "material": "プラスチック",
+    "release_date": "2026-06",
+    "release_precision": "month",
+    "price_amount": "24750.0",
+    "currency": "JPY",
+    "price_kind": "official_list"
+  },
+  "robots": {
+    "url": "https://furyu-hm.com/robots.txt",
+    "http_status": 200,
+    "sha256": "ed4c67a130829b422b8efa2250606adb0363f01b420dbfcad75e2d950befe0b2"
+  },
+  "terms_review": {
+    "url": "https://furyu-hm.com/pages/terms",
+    "http_status": 200,
+    "scope": "Read-only public factual metadata; no account, checkout, prose, images or redistribution license. Explicit crawling/metadata ban not identified; this is a scoped technical review, not permission from the manufacturer."
+  }
+}

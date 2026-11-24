@@ -1,0 +1,5 @@
+{
+  "furyu": {"manufacturer": "FuRyu", "directory": "furyu/20261110", "module": "import_furyu_bundle", "root_option": "--root"},
+  "s_fire": {"manufacturer": "SEGA", "directory": "sega/s_fire/20261028", "module": "import_sfire_bundle", "root_option": "--bundle"},
+  "taito": {"manufacturer": "TAITO", "directory": "taito/20261028", "module": "import_taito_bundle", "root_option": "--bundle"}
+}

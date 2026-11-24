@@ -1,0 +1,17 @@
+{
+  "version": "odock-local-aliases-20261111-v2",
+  "non_entity_terms": ["オリジナルキャラクター", "オリジナル", "キャラクター", "フィギュア", "original character"],
+  "translation_status": "curated_conventional_names_not_verified_official_korean",
+  "franchises": [
+    {"aliases": ["NARUTO-ナルト- 疾風伝", "NARUTO-ナルト-疾風伝", "ナルト 疾風伝"], "ko": "나루토 질풍전", "reference_urls": ["https://www.tv-tokyo.co.jp/contents/naruto/chara.html"]},
+    {"aliases": ["NARUTO", "ナルト"], "ko": "나루토", "reference_urls": ["https://naruto-official.com/"]},
+    {"aliases": ["BLEACH", "ブリーチ"], "ko": "블리치", "reference_urls": ["https://bleach-anime.com/"]}
+  ],
+  "characters": [
+    {"aliases": ["うずまきナルト"], "ko": "우즈마키 나루토", "reference_urls": ["https://www.tv-tokyo.co.jp/contents/naruto/chara.html"]},
+    {"aliases": ["うちはサスケ"], "ko": "우치하 사스케", "reference_urls": ["https://www.tv-tokyo.co.jp/contents/naruto/chara.html"]},
+    {"aliases": ["うちはイタチ"], "ko": "우치하 이타치", "reference_urls": ["https://naruto-official.com/"]},
+    {"aliases": ["黒崎一護", "黒崎 一護"], "ko": "쿠로사키 이치고", "reference_urls": ["https://bleach-anime.com/character/"]},
+    {"aliases": ["朽木ルキア", "朽木 ルキア"], "ko": "쿠치키 루키아", "reference_urls": ["https://bleach-anime.com/character/"]}
+  ]
+}

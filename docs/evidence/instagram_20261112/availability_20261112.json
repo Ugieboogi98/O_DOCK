@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-12T01:36:16.830824+00:00",
+  "phase": "AVAILABILITY_POC",
+  "mode": "LIVE_READ_ONLY",
+  "login_path": "Unified Login (user reported; console not independently verified)",
+  "app_created": "USER_REPORTED",
+  "config_created": "UNKNOWN",
+  "token_valid": "UNKNOWN",
+  "self_account": {
+    "status": "NOT_RUN"
+  },
+  "discovery_supported": "UNKNOWN",
+  "poc_success": false,
+  "decision": "NO-GO",
+  "db_written": false,
+  "paid_api_called": false,
+  "api_requests": 0,
+  "automatic_collection_started": false,
+  "targets": {
+    "duex.official": {
+      "status": "UNKNOWN",
+      "source_status": "MANUAL_LINK_ONLY",
+      "url": "https://www.instagram.com/duex.official/"
+    },
+    "anique.jp": {
+      "status": "UNKNOWN",
+      "source_status": "MANUAL_LINK_ONLY",
+      "url": "https://www.instagram.com/anique.jp/"
+    },
+    "akplaza_hongdae": {
+      "status": "UNKNOWN",
+      "source_status": "MANUAL_LINK_ONLY",
+      "url": "https://www.instagram.com/akplaza_hongdae/"
+    }
+  },
+  "missing_configuration": [
+    "META_APP_ID",
+    "META_APP_SECRET",
+    "META_ACCESS_TOKEN",
+    "META_IG_USER_ID",
+    "META_GRAPH_API_VERSION"
+  ],
+  "reason": "CONFIGURATION_INCOMPLETE_NO_REQUEST_SENT"
+}

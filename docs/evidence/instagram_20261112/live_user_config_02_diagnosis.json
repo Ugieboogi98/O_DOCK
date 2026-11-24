@@ -1,0 +1,17 @@
+{
+  "checked_date": "2026-11-12",
+  "initial_report": "live_user_config_02.json",
+  "additional_read_only_requests": 1,
+  "discovery_error": {
+    "target": "duex.official",
+    "http_status": 400,
+    "meta_code": 10,
+    "message_redacted": "(#10) Application does not have permission for this action"
+  },
+  "diagnosis": "Token validation and own Instagram account lookup passed. The current app/token permission combination does not allow the attempted Business Discovery action. The exact missing permission or review requirement was not specified by Meta's response.",
+  "remaining_targets": "Not requested after permission failure",
+  "decision": "NO-GO",
+  "db_written": false,
+  "automatic_collection_started": false,
+  "paid_api_called": false
+}

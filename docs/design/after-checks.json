@@ -1,0 +1,590 @@
+[
+  {
+    "width": 375,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 375,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 430,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 768,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1280,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1440,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/figures",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/figures/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/events",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/search",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/favorites",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/login",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/purchases",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/makers",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/franchises",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/new",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/prices/6820",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/chat",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  },
+  {
+    "width": 1920,
+    "path": "/status",
+    "errors": [],
+    "overflow": false,
+    "background": "rgb(16, 16, 16)"
+  }
+]

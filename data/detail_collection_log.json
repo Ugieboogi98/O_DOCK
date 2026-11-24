@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://www.goodsmile.com/robots.txt",
+    "status": 200,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/8370",
+    "status": 200,
+    "sha256": "9887398b9a20d781a7187a421ecd6d4c52a521cef0bcf286b3fa2e1a1791219c",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/6761",
+    "status": 200,
+    "sha256": "8f6e26bc4481dc99d97d1e2676c02595573e6486ff3bbfaf32943e88e6136890",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/6357",
+    "status": 200,
+    "sha256": "ed2652c007c5cc01efb0c8f8cc169015011e2b21c375e5e4060ee0ca1eb6e3f3",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/11488",
+    "status": 200,
+    "sha256": "9cc7130415075308fbf1f08ab21817ed46dd9a37ca4140bf0c3169788e101bb2",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/60956",
+    "status": 200,
+    "sha256": "536aa1806879df807399675fd1ecfba51532ead75e489c04da58f572a4792506",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/6029",
+    "status": 200,
+    "sha256": "ff7b3e72c0bd595b63d5f5644f74e22b8090d62efd9ae04668670b242a0f6fd0",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/1141000",
+    "status": 200,
+    "sha256": "e03ec691e0381e0fcce39d74b56615699ef471a11e05f059cbc59f8e7fbc4bf1",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.goodsmile.com/en/product/1142378",
+    "status": 200,
+    "sha256": "d056315c89c924724effdc4e02dbbf6fc8b8a79f1c437f9186b5226c333406c8",
+    "checked_at": "2026-10-21"
+  }
+]

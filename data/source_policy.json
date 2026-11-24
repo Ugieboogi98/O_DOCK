@@ -1,0 +1,243 @@
+{
+  "www.goodsmile.com": {
+    "enabled": true,
+    "paths": [
+      "/en/product/",
+      "/ja/product/",
+      "/ja/search"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "furyu-hm.com": {
+    "enabled": true,
+    "paths": [
+      "/products/",
+      "/collections/scale-figures"
+    ],
+    "terms_evidence": "https://furyu-hm.com/pages/terms (reviewed 2026-10-22; local factual metadata only, no redistribution authorization)",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "furyuprize.com": {
+    "enabled": true,
+    "paths": [
+      "/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "tamashiiweb.com": {
+    "enabled": true,
+    "paths": [
+      "/item/",
+      "/api/site-item/search_item.php"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.bandaispirits.co.jp": {
+    "enabled": true,
+    "paths": [
+      "/products/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "bsp-prize.jp": {
+    "enabled": true,
+    "paths": [
+      "/item/",
+      "/search/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "megahobby.jp": {
+    "enabled": true,
+    "paths": [
+      "/products/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.megahobby.jp": {
+    "enabled": true,
+    "paths": [
+      "/products/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "segaplaza.jp": {
+    "enabled": true,
+    "paths": [
+      "/prize/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.kotobukiya.co.jp": {
+    "enabled": true,
+    "paths": [
+      "/en/product/",
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.taito.co.jp": {
+    "enabled": true,
+    "paths": [
+      "/api/PrizeProduct/",
+      "/taito-prize/",
+      "/en/taito-prize/",
+      "/en/taito-prize/",
+      "/taito-prize"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.hottoys.jp": {
+    "enabled": false,
+    "paths": [
+      "/item/view/",
+      "/item/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.hottoys.com.hk": {
+    "enabled": false,
+    "paths": [
+      "/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.maniahouse.co.kr": {
+    "enabled": false,
+    "paths": [
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.herotime.co.kr": {
+    "enabled": false,
+    "paths": [
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.figurefarm.net": {
+    "enabled": false,
+    "paths": [
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.comics-art.co.kr": {
+    "enabled": false,
+    "paths": [
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "jp.mercari.com": {
+    "enabled": false,
+    "paths": [
+      "/item/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "web.joongna.com": {
+    "enabled": false,
+    "paths": [
+      "/product/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "m.bunjang.co.kr": {
+    "enabled": false,
+    "paths": [
+      "/products/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.daangn.com": {
+    "enabled": false,
+    "paths": [
+      "/articles/"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local personal collection; no redistribution authorization asserted."
+  },
+  "www.bnkrmall.co.kr": {
+    "enabled": true,
+    "paths": [
+      "/goods/detail.do"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local official-price lookup"
+  },
+  "bnkrmall.co.kr": {
+    "enabled": true,
+    "paths": [
+      "/goods/detail.do"
+    ],
+    "terms_evidence": "",
+    "delay_seconds": 2,
+    "images_authorized": false,
+    "note": "Local official-price lookup"
+  }
+}

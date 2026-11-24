@@ -1,0 +1,2 @@
+# One explicitly permitted product URL per line
+https://www.goodsmile.com/en/product/6143

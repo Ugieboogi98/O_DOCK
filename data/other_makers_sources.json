@@ -1,0 +1,62 @@
+{
+  "sources": [
+    {
+      "manufacturer": "Bandai Spirits",
+      "enabled": false,
+      "start_urls": [
+        "https://tamashiiweb.com/item/"
+      ],
+      "note": "Official Tamashii product index, source_policy allows /item/. Enable after verifying robots, terms and adapter.discover parsing. Bandai product search is a separate site."
+    },
+    {
+      "manufacturer": "SEGA",
+      "enabled": false,
+      "start_urls": [
+        "https://segaplaza.jp/prize/"
+      ],
+      "note": "Official Sega Plaza. Likely JavaScript-generated catalog; HTML discover() may find zero product links."
+    },
+    {
+      "manufacturer": "TAITO",
+      "enabled": false,
+      "start_urls": [
+        "https://www.taito.co.jp/taito-prize/"
+      ],
+      "note": "Official Taito prizes. Listing appears dynamically rendered; HTML adapter may require a permitted API/feed integration."
+    },
+    {
+      "manufacturer": "Good Smile Company",
+      "enabled": false,
+      "start_urls": [
+        "https://www.goodsmile.com/ja/search/list?filter=%7B%22search_keyword%22%3A%22%22%2C%22search_over18%22%3Afalse%2C%22search_category%22%3A%5B1%2C15%2C59%2C63%2C57%2C51%2C61%2C21%2C64%2C20%5D%2C%22search_maker%22%3A%5B1%5D%2C%22search_title%22%3A%5B%5D%2C%22search_status%22%3A%220%22%2C%22release_date_from%22%3A%22%22%2C%22release_date_to%22%3A%22%22%2C%22search_bonus%22%3Afalse%2C%22search_exclusive%22%3Afalse%2C%22search_sale%22%3Afalse%2C%22search_sales_origin%22%3Afalse%2C%22tag%22%3A%5B%5D%7D&orderBy=1&limit=60&offset=0&couponId=null&searchIndex=-1"
+      ],
+      "note": "Public manufacturer-filtered product list verified 2026-11-16. For the resumable 500-item batch use scripts.collect_goodsmile."
+    },
+    {
+      "manufacturer": "FuRyu",
+      "enabled": true,
+      "start_urls": [
+        "https://furyu-hm.com/collections/scale-figures"
+      ],
+      "note": "Verified public HTML catalog + product + robots on 2026-10-22. Local educational factual metadata only; no images/prose/redistribution license asserted.",
+      "terms_url": "https://furyu-hm.com/pages/terms",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "manufacturer": "Hot Toys",
+      "enabled": false,
+      "start_urls": [
+        "https://www.hottoys.jp/item/"
+      ],
+      "note": "Official product listing. Currently BLOCKED by source_policy.json: only /item/view/ product details allowed. Verify terms and add /item/ listing if authorized."
+    },
+    {
+      "manufacturer": "Kotobukiya",
+      "enabled": false,
+      "start_urls": [
+        "https://www.kotobukiya.co.jp/product/"
+      ],
+      "note": "Official catalog. Entire host currently disabled in source_policy.json; do not turn on until permissions have been checked."
+    }
+  ]
+}

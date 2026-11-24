@@ -1,0 +1,24 @@
+{
+  "checked_date": "2026-11-16",
+  "source": "maniahouse",
+  "purpose": "Phase B public homepage observation",
+  "poc_status": "NOT_RUN_REQUIRES_PERMISSION",
+  "enabled": false,
+  "dry_run": true,
+  "database_written": false,
+  "detail_verified": false,
+  "parser_test_sample": false,
+  "homepage_observation": {
+    "source_url": "https://maniahouse.co.kr/",
+    "product_url": "https://maniahouse.co.kr/product/detail.html?product_no=26604",
+    "external_product_id": "26604",
+    "title_raw": "[예약판매] 샵특전 승리의여신니케 블랑 포츈 익스프레스 굿스마일상하이 [MH특전] 7350",
+    "manufacturer_raw": "Good Smile Arts Shanghai",
+    "displayed_sale_price_krw": 239100,
+    "availability_text": "예약판매",
+    "jan_ean": null,
+    "manufacturer_model_code": null,
+    "catalog_variant_id": null,
+    "match_status": "NOT_EVALUATED"
+  }
+}

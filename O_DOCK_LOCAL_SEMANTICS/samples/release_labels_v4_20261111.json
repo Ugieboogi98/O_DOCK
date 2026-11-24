@@ -1,0 +1,1513 @@
+{
+  "label_origin": "Agent source audit before inspecting candidate outputs; not independent human gold",
+  "source_sha256": "8f9676262ca64012c7d5bbb48fed9488971b02314aed496c52474e0736be3926",
+  "note": "Family titles accepted where source makes installment identity immaterial. Null forms allow uncertainty only when explicit type unavailable. Characters deduplicated by identity.",
+  "cases": [
+    {
+      "id": 277,
+      "work": [
+        "원피스"
+      ],
+      "characters": [
+        [
+          "몽키 D 루피",
+          "몽키 D. 루피"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 648,
+      "work": [
+        "기동전사 건담 UC",
+        "기동전사 건담 유니콘"
+      ],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 146,
+      "work": [
+        "미소녀전사 세일러문",
+        "미소녀 전사 세일러문"
+      ],
+      "characters": [],
+      "forms": [
+        "mini_figure",
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 787,
+      "work": [
+        "신세기 GPX 사이버 포뮬러",
+        "신세기 GPX 사이버 포뮬러 11",
+        "신세기 GPX 사이버 포뮬러 더블 원"
+      ],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 569,
+      "work": [
+        "주술회전"
+      ],
+      "characters": [
+        [
+          "이에이리 쇼코"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 896,
+      "work": [
+        "기동전사 Z 건담",
+        "기동전사 Z건담"
+      ],
+      "characters": [
+        [
+          "카미유 비단"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 5077,
+      "work": [
+        "키즈나 아이",
+        "키즈나아이"
+      ],
+      "characters": [
+        [
+          "키즈나 아이",
+          "키즈나아이"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 5192,
+      "work": [
+        "귀멸의 칼날"
+      ],
+      "characters": [
+        [
+          "토미오카 기유"
+        ]
+      ],
+      "forms": [
+        "prize_figure",
+        null
+      ]
+    },
+    {
+      "id": 673,
+      "work": [
+        "원피스"
+      ],
+      "characters": [
+        [
+          "몽키 D 루피",
+          "몽키 D. 루피"
+        ]
+      ],
+      "forms": [
+        null
+      ]
+    },
+    {
+      "id": 1496,
+      "work": [
+        "2.5차원의 유혹"
+      ],
+      "characters": [
+        [
+          "리리엘",
+          "아마노 리리사"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 892,
+      "work": [
+        "단다단"
+      ],
+      "characters": [
+        [
+          "치키치타"
+        ]
+      ],
+      "forms": [
+        "soft_vinyl"
+      ]
+    },
+    {
+      "id": 5549,
+      "work": [
+        "하츠네 미쿠",
+        "VOCALOID",
+        "보컬로이드"
+      ],
+      "characters": [],
+      "forms": [
+        "noodle_stopper"
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 1140,
+      "work": [
+        "디즈니 트위스티드 원더랜드",
+        "트위스티드 원더랜드"
+      ],
+      "characters": [
+        [
+          "빌 셴하이트",
+          "빌 쉔하이트"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 1422,
+      "work": [
+        "우마무스메 프리티 더비"
+      ],
+      "characters": [
+        [
+          "히시 미라클"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1050,
+      "work": [
+        "귀멸의 칼날"
+      ],
+      "characters": [
+        [
+          "렌고쿠 쿄쥬로"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 1471,
+      "work": [
+        "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+        "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴양"
+      ],
+      "characters": [
+        [
+          "아랴",
+          "알리사 미하일로브나 쿠죠"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 680,
+      "work": [
+        "봇치 더 록!"
+      ],
+      "characters": [
+        [
+          "고토 히토리",
+          "고토 히토리",
+          "고토 히토리"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 5482,
+      "work": [
+        "Re:제로부터 시작하는 이세계 생활"
+      ],
+      "characters": [
+        [
+          "람"
+        ],
+        [
+          "렘"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 6128,
+      "work": [
+        "좀비 랜드 사가",
+        "좀비랜드 사가"
+      ],
+      "characters": [
+        [
+          "미즈노 아이"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4799,
+      "work": [
+        "기동전사 건담 지온의 재흥",
+        "기동전사 건담"
+      ],
+      "characters": [],
+      "forms": [
+        "model_kit"
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 6042,
+      "work": [
+        "Re:제로부터 시작하는 이세계 생활"
+      ],
+      "characters": [
+        [
+          "에밀리아"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1033,
+      "work": [
+        "드래곤볼 Z",
+        "드래곤볼"
+      ],
+      "characters": [
+        [
+          "손오공"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 5980,
+      "work": [
+        "연애 플롭스"
+      ],
+      "characters": [
+        [
+          "아멜리아 어빙",
+          "아멜리아 어빈"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 5757,
+      "work": [
+        "5등분의 신부"
+      ],
+      "characters": [
+        [
+          "나카노 요츠바"
+        ]
+      ],
+      "forms": [
+        "lottery_goods"
+      ]
+    },
+    {
+      "id": 1440,
+      "work": [
+        "Re:제로부터 시작하는 이세계 생활"
+      ],
+      "characters": [
+        [
+          "렘"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 270,
+      "work": [
+        "기동전사 V 건담",
+        "기동전사 V건담"
+      ],
+      "characters": [
+        [
+          "카테지나 루스"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 1426,
+      "work": [
+        "프리즈마☆이리야",
+        "프리즈마 이리야"
+      ],
+      "characters": [
+        [
+          "이리야",
+          "이리야스필 폰 아인츠베른"
+        ],
+        [
+          "미유",
+          "미유 에델펠트"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4950,
+      "work": [
+        "블루 록",
+        "블루록"
+      ],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 4893,
+      "work": [
+        "귀멸의 칼날"
+      ],
+      "characters": [
+        [
+          "토미오카 기유"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 717,
+      "work": [
+        "사카모토 데이즈"
+      ],
+      "characters": [],
+      "forms": [
+        "mini_figure",
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 207,
+      "work": [
+        "디즈니 트위스티드 원더랜드",
+        "트위스티드 원더랜드"
+      ],
+      "characters": [
+        [
+          "말레우스 드라코니아"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 6016,
+      "work": [
+        "오버로드"
+      ],
+      "characters": [
+        [
+          "시즈 델타"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1010,
+      "work": [
+        "하이큐!!"
+      ],
+      "characters": [
+        [
+          "미야 오사무",
+          "사무키츠네"
+        ]
+      ],
+      "forms": [
+        "figure_parts",
+        null
+      ]
+    },
+    {
+      "id": 4985,
+      "work": [],
+      "characters": [],
+      "forms": [
+        "lottery_goods"
+      ],
+      "skip": [
+        "characters",
+        "work"
+      ],
+      "review_note": "No unambiguous work in supplied source, or Korean convention uncertain."
+    },
+    {
+      "id": 531,
+      "work": [
+        "괴수 8호"
+      ],
+      "characters": [
+        [
+          "히비노 카프카"
+        ]
+      ],
+      "forms": [
+        "chibi_figure",
+        null
+      ]
+    },
+    {
+      "id": 5032,
+      "work": [
+        "던전에서 만남을 추구하면 안 되는 걸까",
+        "극장판 던전에서 만남을 추구하면 안 되는 걸까 -오리온의 화살-"
+      ],
+      "characters": [
+        [
+          "헤스티아"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4809,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "미르코",
+          "우사기야마 루미"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1245,
+      "work": [
+        "명탐정 코난"
+      ],
+      "characters": [
+        [
+          "괴도 키드"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 1410,
+      "work": [
+        "우마무스메 프리티 더비"
+      ],
+      "characters": [
+        [
+          "스틸 인 러브"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1051,
+      "work": [
+        "귀멸의 칼날"
+      ],
+      "characters": [
+        [
+          "이구로 오바나이"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 1026,
+      "work": [
+        "위키드"
+      ],
+      "characters": [
+        [
+          "글린다"
+        ]
+      ],
+      "forms": [
+        "chibi_figure",
+        null
+      ]
+    },
+    {
+      "id": 190,
+      "work": [
+        "하이큐!!"
+      ],
+      "characters": [
+        [
+          "카게야마 토비오"
+        ]
+      ],
+      "forms": [
+        "chibi_figure",
+        null
+      ]
+    },
+    {
+      "id": 6002,
+      "work": [
+        "오버로드"
+      ],
+      "characters": [
+        [
+          "알베도"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 5361,
+      "work": [
+        "러브 라이브! 선샤인!!",
+        "러브 라이브!"
+      ],
+      "characters": [
+        [
+          "마츠우라 카난"
+        ]
+      ],
+      "forms": [
+        "prize_figure",
+        null
+      ]
+    },
+    {
+      "id": 709,
+      "work": [
+        "고질라",
+        "고지라-1.0",
+        "고질라 마이너스 원"
+      ],
+      "characters": [
+        [
+          "고질라"
+        ]
+      ],
+      "forms": [
+        "action_figure",
+        null
+      ]
+    },
+    {
+      "id": 5391,
+      "work": [
+        "러브 라이브! 선샤인!!",
+        "러브 라이브!"
+      ],
+      "characters": [
+        [
+          "와타나베 요우"
+        ]
+      ],
+      "forms": [
+        "prize_figure",
+        null
+      ]
+    },
+    {
+      "id": 538,
+      "work": [
+        "나루토 질풍전",
+        "나루토"
+      ],
+      "characters": [],
+      "forms": [
+        "mini_figure",
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 732,
+      "work": [
+        "윈드 브레이커",
+        "WIND BREAKER"
+      ],
+      "characters": [
+        [
+          "토미야마 쵸지"
+        ]
+      ],
+      "forms": [
+        "chibi_figure",
+        null
+      ]
+    },
+    {
+      "id": 5044,
+      "work": [
+        "어떤 과학의 초전자포",
+        "어떤 과학의 초전자포 T"
+      ],
+      "characters": [
+        [
+          "미사카 미코토"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4734,
+      "work": [
+        "체인소 맨",
+        "체인소맨"
+      ],
+      "characters": [
+        [
+          "체인소 맨",
+          "덴지"
+        ],
+        [
+          "사무라이 소드",
+          "사무라이소드"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 5236,
+      "work": [
+        "CLANNAD",
+        "클라나드",
+        "클라나드 (비디오 게임)"
+      ],
+      "characters": [
+        [
+          "이치노세 코토미"
+        ]
+      ],
+      "forms": [
+        "prize_figure",
+        null
+      ]
+    },
+    {
+      "id": 6086,
+      "work": [
+        "소드 아트 온라인"
+      ],
+      "characters": [
+        [
+          "아스나",
+          "유우키 아스나"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 6116,
+      "work": [
+        "소녀전선"
+      ],
+      "characters": [
+        [
+          "에이전트"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 5873,
+      "work": [
+        "명탐정 코난"
+      ],
+      "characters": [
+        [
+          "아무로 토오루",
+          "아무로 토루"
+        ]
+      ],
+      "forms": [
+        "non_scale_figure",
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4945,
+      "work": [],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters",
+        "work"
+      ],
+      "review_note": "No unambiguous work in supplied source, or Korean convention uncertain."
+    },
+    {
+      "id": 4715,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "토도로키 쇼토"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4907,
+      "work": [
+        "5등분의 신부"
+      ],
+      "characters": [
+        [
+          "나카노 미쿠"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 1573,
+      "work": [
+        "가면라이더 V3"
+      ],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 4894,
+      "work": [
+        "우마무스메 프리티 더비"
+      ],
+      "characters": [
+        [
+          "키타산 블랙"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4736,
+      "work": [
+        "하츠네 미쿠"
+      ],
+      "characters": [
+        [
+          "하츠네 미쿠"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 4938,
+      "work": [
+        "블루 록",
+        "블루록"
+      ],
+      "characters": [
+        [
+          "나기 세이시로"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4876,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "토가 히미코"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4892,
+      "work": [
+        "귀멸의 칼날"
+      ],
+      "characters": [
+        [
+          "시나즈가와 사네미"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 1571,
+      "work": [
+        "가면라이더 V3"
+      ],
+      "characters": [],
+      "forms": [
+        null
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 4740,
+      "work": [
+        "하츠네 미쿠"
+      ],
+      "characters": [
+        [
+          "KAITO",
+          "카이토"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 4754,
+      "work": [
+        "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+        "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴양"
+      ],
+      "characters": [
+        [
+          "아랴",
+          "알리사 미하일로브나 쿠죠"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4940,
+      "work": [
+        "블루 록",
+        "블루록"
+      ],
+      "characters": [],
+      "forms": [
+        "rubber_mascot"
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 4814,
+      "work": [
+        "유유백서"
+      ],
+      "characters": [
+        [
+          "우라메시 유스케"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4853,
+      "work": [
+        "마녀의 여행"
+      ],
+      "characters": [
+        [
+          "일레이나"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1551,
+      "work": [
+        "가면라이더 고스트"
+      ],
+      "characters": [],
+      "forms": [
+        "action_figure"
+      ],
+      "skip": [
+        "characters"
+      ],
+      "review_note": "Collection inventory, implicit subject, transformation or non-human taxonomy is not labeled."
+    },
+    {
+      "id": 4788,
+      "work": [
+        "명탐정 코난"
+      ],
+      "characters": [
+        [
+          "하이바라 아이"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 4872,
+      "work": [
+        "데이트 어 라이브"
+      ],
+      "characters": [
+        [
+          "토키사키 쿠루미"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4868,
+      "work": [
+        "길티 기어",
+        "길티기어",
+        "길티 기어 스트라이브"
+      ],
+      "characters": [
+        [
+          "브리짓"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4764,
+      "work": [
+        "그 비스크 돌은 사랑을 한다",
+        "그 비스크돌은 사랑을 한다"
+      ],
+      "characters": [
+        [
+          "키타가와 마린"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4714,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "미도리야 이즈쿠"
+        ],
+        [
+          "스테인"
+        ]
+      ],
+      "forms": [
+        "completed_figure"
+      ]
+    },
+    {
+      "id": 4934,
+      "work": [
+        "블루 록",
+        "블루록"
+      ],
+      "characters": [
+        [
+          "이사기 요이치"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4864,
+      "work": [
+        "하츠네 미쿠"
+      ],
+      "characters": [
+        [
+          "하츠네 미쿠"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4804,
+      "work": [
+        "원펀맨"
+      ],
+      "characters": [
+        [
+          "전율의 타츠마키",
+          "타츠마키"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4813,
+      "work": [
+        "카드캡터 사쿠라",
+        "카드캡터 사쿠라 클리어 카드 편"
+      ],
+      "characters": [
+        [
+          "키노모토 사쿠라"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4811,
+      "work": [
+        "스즈미야 하루히의 우울"
+      ],
+      "characters": [
+        [
+          "아사히나 미쿠루"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4720,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "토가 히미코"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 1548,
+      "work": [
+        "울트라맨 메비우스"
+      ],
+      "characters": [
+        [
+          "울트라맨 히카리"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 4773,
+      "work": [
+        "에반게리온",
+        "에반게리온 신극장판",
+        "신세기 에반게리온"
+      ],
+      "characters": [
+        [
+          "아스카",
+          "아스카 랑그레이",
+          "시키나미 아스카 랑그레이"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 1563,
+      "work": [
+        "울트라맨"
+      ],
+      "characters": [
+        [
+          "앤트라",
+          "앤틀러",
+          "안토라"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 4902,
+      "work": [
+        "빙과"
+      ],
+      "characters": [
+        [
+          "치탄다 에루"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4829,
+      "work": [
+        "데스 스트랜딩 2",
+        "데스 스트랜딩 2: 온 더 비치",
+        "데스 스트랜딩"
+      ],
+      "characters": [
+        [
+          "샘",
+          "샘 포터 브리지스"
+        ]
+      ],
+      "forms": [
+        "scale_figure",
+        "static_figure"
+      ]
+    },
+    {
+      "id": 4713,
+      "work": [
+        "나의 히어로 아카데미아"
+      ],
+      "characters": [
+        [
+          "바쿠고 카츠키"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4887,
+      "work": [
+        "데이트 어 라이브"
+      ],
+      "characters": [
+        [
+          "토키사키 쿠루미"
+        ]
+      ],
+      "forms": [
+        "plush"
+      ]
+    },
+    {
+      "id": 4722,
+      "work": [
+        "Re:제로부터 시작하는 이세계 생활"
+      ],
+      "characters": [
+        [
+          "람"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4723,
+      "work": [
+        "Re:제로부터 시작하는 이세계 생활"
+      ],
+      "characters": [
+        [
+          "에밀리아"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4861,
+      "work": [
+        "옆집 천사님 때문에 어느샌가 인간적으로 타락한 사연"
+      ],
+      "characters": [
+        [
+          "시이나 마히루"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4815,
+      "work": [
+        "유유백서"
+      ],
+      "characters": [
+        [
+          "쿠라마"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 1575,
+      "work": [
+        "가면라이더 V3"
+      ],
+      "characters": [
+        [
+          "라이더맨"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 1546,
+      "work": [
+        "장송의 프리렌"
+      ],
+      "characters": [
+        [
+          "슈타르크"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 4777,
+      "work": [
+        "하츠네 미쿠"
+      ],
+      "characters": [
+        [
+          "사쿠라 미쿠",
+          "하츠네 미쿠"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    },
+    {
+      "id": 4922,
+      "work": [
+        "블루 록",
+        "블루록"
+      ],
+      "characters": [
+        [
+          "치기리 효마"
+        ]
+      ],
+      "forms": [
+        "plush",
+        null
+      ]
+    },
+    {
+      "id": 104,
+      "work": [
+        "장송의 프리렌"
+      ],
+      "characters": [
+        [
+          "페른"
+        ]
+      ],
+      "forms": [
+        "action_figure"
+      ]
+    },
+    {
+      "id": 4785,
+      "work": [
+        "체인소 맨",
+        "체인소맨",
+        "극장판 체인소 맨 레제편"
+      ],
+      "characters": [
+        [
+          "레제"
+        ]
+      ],
+      "forms": [
+        "completed_figure",
+        null
+      ]
+    },
+    {
+      "id": 4732,
+      "work": [
+        "주술회전"
+      ],
+      "characters": [
+        [
+          "후시구로 메구미"
+        ]
+      ],
+      "forms": [
+        "scale_figure"
+      ]
+    },
+    {
+      "id": 4783,
+      "work": [
+        "주술회전"
+      ],
+      "characters": [
+        [
+          "이타도리 유지"
+        ]
+      ],
+      "forms": [
+        "chibi_figure"
+      ]
+    }
+  ]
+}

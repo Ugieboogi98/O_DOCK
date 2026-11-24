@@ -1,0 +1,9 @@
+{
+  "tests_passed": 12,
+  "database": "isolated SQLite",
+  "images": "synthetic fixtures",
+  "user_database_accessed": false,
+  "user_images_accessed": false,
+  "files_permanently_deleted": 0,
+  "shell_syntax": "passed"
+}

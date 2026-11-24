@@ -1,0 +1,9 @@
+{
+  "network_note": "Integration-only fixed-domain guard used because environment cannot resolve public DNS locally; production public-IP checks unchanged",
+  "preserved_figures": 114,
+  "real_image_bytes": 73428,
+  "gallery_urls_found": 5,
+  "detail_api": "passed",
+  "favorites": "passed",
+  "purchase": "passed"
+}

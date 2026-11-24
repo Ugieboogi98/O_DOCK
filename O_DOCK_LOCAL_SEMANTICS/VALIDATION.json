@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-11",
+  "backend_rules": "ja-ko-semantics-v5-fields",
+  "backend_tests_passed": 199,
+  "local_tool_tests_passed": 19,
+  "actual_gpu_inference_run": true,
+  "gpu": "RTX 5060 Ti 16GB",
+  "model": "qwen3:8b",
+  "quantization": "Q4_K_M",
+  "ollama_version": "0.40.16",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "development_regression_matches": 6,
+  "development_regression_cases": 6,
+  "general_accuracy_established": false,
+  "real_product_preview": {
+    "selected": 5,
+    "ready": 2,
+    "partial": 3
+  },
+  "production_database_modified": true,
+  "application_integration_completed": true,
+  "automatic_worker_enabled": false,
+  "finetuning_completed": false,
+  "paid_api_called": false,
+  "training_candidates": 127,
+  "reviewed_gold_labels": 0,
+  "current_dataset": "data/teacher_candidates_20261111_v2",
+  "model_weights_in_package": false,
+  "model_weights_installed_in_docker": true,
+  "web_classification": {
+    "products": 6161,
+    "work_ready": 4781,
+    "character_ready": 3426,
+    "form_ready": 2740,
+    "review_groups": 6356,
+    "local_tests_passed": 19,
+    "report": "../docs/reports/WEB_CLASSIFICATION_REVIEW_20261111.md"
+  },
+  "production_modification_scope": "verified classification fields only; see web_classification report"
+}

@@ -1,0 +1,616 @@
+{
+  "series": [
+    {
+      "ko": "무직전생 ~이세계에 갔으면 최선을 다한다~",
+      "aliases": [
+        "無職転生",
+        "Mushoku Tensei",
+        "무직전생"
+      ],
+      "urls": [
+        "https://mushokutensei.jp/character/",
+        "https://mushokutensei.jp/staff-cast/"
+      ],
+      "characters": [
+        [
+          "ロキシー・ミグルディア|ロキシー",
+          "록시 미굴디아"
+        ],
+        [
+          "シルフィエット|シルフィ",
+          "실피에트"
+        ],
+        [
+          "エリス・ボレアス・グレイラット|エリス",
+          "에리스 보레아스 그레이랫"
+        ],
+        [
+          "ルーデウス・グレイラット|ルーデウス|ルディ",
+          "루데우스 그레이랫"
+        ],
+        [
+          "ギレーヌ・デドルディア|ギレーヌ",
+          "길레느 데돌디어"
+        ]
+      ]
+    },
+    {
+      "ko": "마녀의 여행",
+      "aliases": [
+        "魔女の旅々"
+      ],
+      "urls": [
+        "https://majotabi.jp/"
+      ],
+      "characters": [
+        [
+          "イレイナ",
+          "일레이나"
+        ],
+        [
+          "サヤ",
+          "사야"
+        ],
+        [
+          "フラン",
+          "프랑"
+        ],
+        [
+          "シーラ",
+          "실라"
+        ]
+      ]
+    },
+    {
+      "ko": "5등분의 신부",
+      "aliases": [
+        "五等分の花嫁",
+        "오등분의 신부"
+      ],
+      "urls": [
+        "https://www.tbs.co.jp/anime/5hanayome/tvsp/character/chara01.html",
+        "https://www.tbs.co.jp/anime/5hanayome/tvsp/character/chara02.html",
+        "https://www.tbs.co.jp/anime/5hanayome/tvsp/character/chara03.html",
+        "https://www.tbs.co.jp/anime/5hanayome/tvsp/character/chara04.html",
+        "https://www.tbs.co.jp/anime/5hanayome/tvsp/character/chara05.html"
+      ],
+      "characters": [
+        [
+          "中野一花|一花",
+          "나카노 이치카"
+        ],
+        [
+          "中野二乃|二乃",
+          "나카노 니노"
+        ],
+        [
+          "中野三玖|三玖",
+          "나카노 미쿠"
+        ],
+        [
+          "中野四葉|四葉",
+          "나카노 요츠바"
+        ],
+        [
+          "中野五月|五月",
+          "나카노 이츠키"
+        ]
+      ]
+    },
+    {
+      "ko": "스파이 패밀리",
+      "aliases": [
+        "SPY×FAMILY",
+        "SPY FAMILY",
+        "スパイファミリー"
+      ],
+      "urls": [
+        "https://spy-family.net/tvseries/"
+      ],
+      "characters": [
+        [
+          "アーニャ・フォージャー|アーニャ|Anya",
+          "아냐 포저"
+        ],
+        [
+          "ロイド・フォージャー|ロイド|Loid",
+          "로이드 포저"
+        ],
+        [
+          "ヨル・フォージャー|ヨル|Yor",
+          "요르 포저"
+        ],
+        [
+          "ボンド・フォージャー|ボンド",
+          "본드 포저"
+        ],
+        [
+          "ダミアン・デズモンド",
+          "다미안 데스몬드"
+        ],
+        [
+          "ベッキー・ブラックベル",
+          "베키 블랙벨"
+        ]
+      ]
+    },
+    {
+      "ko": "원펀맨",
+      "aliases": [
+        "ワンパンマン",
+        "One Punch Man"
+      ],
+      "urls": [
+        "https://onepunchman-anime.net/character/"
+      ],
+      "characters": [
+        [
+          "サイタマ|SAITAMA",
+          "사이타마"
+        ],
+        [
+          "ジェノス|GENOS",
+          "제노스"
+        ],
+        [
+          "戦慄のタツマキ|タツマキ",
+          "타츠마키"
+        ],
+        [
+          "地獄のフブキ|フブキ",
+          "후부키"
+        ],
+        [
+          "ガロウ|GAROU",
+          "가로우"
+        ],
+        [
+          "音速のソニック",
+          "음속의 소닉"
+        ]
+      ]
+    },
+    {
+      "ko": "전생했더니 슬라임이었던 건에 대하여",
+      "aliases": [
+        "転生したらスライムだった件",
+        "That Time I Got Reincarnated as a Slime"
+      ],
+      "urls": [
+        "https://www.ten-sura.com/character"
+      ],
+      "characters": [
+        [
+          "リムル|リムル=テンペスト",
+          "리무루 템페스트"
+        ],
+        [
+          "ミリム|ミリム・ナーヴァ",
+          "밀림 나바"
+        ],
+        [
+          "シュナ",
+          "슈나"
+        ],
+        [
+          "シオン",
+          "시온"
+        ],
+        [
+          "ベニマル",
+          "베니마루"
+        ],
+        [
+          "ディアブロ",
+          "디아블로"
+        ]
+      ]
+    },
+    {
+      "ko": "우마무스메 프리티 더비",
+      "aliases": [
+        "ウマ娘 プリティーダービー",
+        "ウマ娘",
+        "Uma Musume"
+      ],
+      "urls": [
+        "https://umamusume.jp/character/"
+      ],
+      "characters": [
+        [
+          "スペシャルウィーク",
+          "스페셜 위크"
+        ],
+        [
+          "サイレンススズカ",
+          "사일런스 스즈카"
+        ],
+        [
+          "トウカイテイオー",
+          "토카이 테이오"
+        ],
+        [
+          "メジロマックイーン",
+          "메지로 맥퀸"
+        ],
+        [
+          "ライスシャワー",
+          "라이스 샤워"
+        ],
+        [
+          "ゴールドシップ",
+          "골드 쉽"
+        ],
+        [
+          "オグリキャップ",
+          "오구리 캡"
+        ],
+        [
+          "ダイワスカーレット",
+          "다이와 스칼렛"
+        ],
+        [
+          "ウオッカ",
+          "보드카"
+        ],
+        [
+          "ナイスネイチャ",
+          "나이스 네이처"
+        ],
+        [
+          "ツインターボ",
+          "트윈 터보"
+        ],
+        [
+          "キタサンブラック",
+          "키타산 블랙"
+        ],
+        [
+          "サトノダイヤモンド",
+          "사토노 다이아몬드"
+        ],
+        [
+          "ミホノブルボン",
+          "미호노 부르봉"
+        ]
+      ]
+    },
+    {
+      "ko": "최애의 아이",
+      "aliases": [
+        "【推しの子】",
+        "推しの子",
+        "Oshi no Ko"
+      ],
+      "urls": [
+        "https://ichigoproduction.com/character/"
+      ],
+      "characters": [
+        [
+          "アイ|星野アイ",
+          "호시노 아이"
+        ],
+        [
+          "アクア|Aqua",
+          "호시노 아쿠아"
+        ],
+        [
+          "ルビー|Ruby",
+          "호시노 루비"
+        ],
+        [
+          "有馬かな",
+          "아리마 카나"
+        ],
+        [
+          "黒川あかね",
+          "쿠로카와 아카네"
+        ],
+        [
+          "MEMちょ",
+          "멤쵸"
+        ]
+      ]
+    },
+    {
+      "ko": "산리오 캐릭터즈",
+      "aliases": [
+        "サンリオキャラクターズ",
+        "サンリオ",
+        "Sanrio Characters",
+        "산리오캐릭터즈"
+      ],
+      "urls": [
+        "https://www.sanrio.co.jp/characters/"
+      ],
+      "characters": [
+        [
+          "ハローキティ",
+          "헬로키티"
+        ],
+        [
+          "マイメロディ",
+          "마이멜로디"
+        ],
+        [
+          "クロミ",
+          "쿠로미"
+        ],
+        [
+          "シナモロール",
+          "시나모롤"
+        ],
+        [
+          "ポムポムプリン",
+          "폼폼푸린"
+        ],
+        [
+          "ポチャッコ",
+          "포차코"
+        ],
+        [
+          "ハンギョドン",
+          "한교동"
+        ],
+        [
+          "リトルツインスターズ",
+          "리틀트윈스타"
+        ]
+      ]
+    },
+    {
+      "ko": "오버로드",
+      "aliases": [
+        "オーバーロード",
+        "Overlord"
+      ],
+      "urls": [
+        "https://overlord-game.com/character/",
+        "https://overlord-anime.com/?ep=1"
+      ],
+      "characters": [
+        [
+          "アルベド",
+          "알베도"
+        ],
+        [
+          "シャルティア|シャルティア・ブラッドフォールン",
+          "샤르티아 블러드폴른"
+        ],
+        [
+          "アインズ・ウール・ゴウン|モモンガ",
+          "아인즈 울 고운"
+        ],
+        [
+          "ナーベラル・ガンマ",
+          "나베랄 감마"
+        ],
+        [
+          "アウラ・ベラ・フィオーラ",
+          "아우라 벨라 피오라"
+        ],
+        [
+          "マーレ・ベロ・フィオーレ",
+          "마레 벨로 피오레"
+        ],
+        [
+          "デミウルゴス",
+          "데미우르고스"
+        ],
+        [
+          "コキュートス",
+          "코퀴토스"
+        ],
+        [
+          "セバス・チャン",
+          "세바스 찬"
+        ]
+      ]
+    },
+    {
+      "ko": "원피스",
+      "aliases": [
+        "ONE PIECE",
+        "ワンピース"
+      ],
+      "urls": [
+        "https://one-piece.com/character/ace/index.html",
+        "https://one-piece.com/character/Shanks/index.html",
+        "https://one-piece.com/character/law/index.html"
+      ],
+      "characters": [
+        [
+          "ポートガス・D・エース|エース",
+          "포트거스 D. 에이스"
+        ],
+        [
+          "シャンクス",
+          "샹크스"
+        ],
+        [
+          "トラファルガー・ロー",
+          "트라팔가 로"
+        ]
+      ]
+    },
+    {
+      "ko": "나의 히어로 아카데미아",
+      "aliases": [
+        "僕のヒーローアカデミア",
+        "My Hero Academia"
+      ],
+      "urls": [
+        "https://www.heroaca.com/character/chara_group01/01-01/",
+        "https://www.heroaca.com/character/chara_group01/01-02/",
+        "https://www.heroaca.com/character/chara_group01/01-03/"
+      ],
+      "characters": [
+        [
+          "緑谷出久|デク",
+          "미도리야 이즈쿠"
+        ],
+        [
+          "爆豪勝己",
+          "바쿠고 카츠키"
+        ],
+        [
+          "麗日お茶子",
+          "우라라카 오챠코"
+        ],
+        [
+          "轟焦凍",
+          "토도로키 쇼토"
+        ]
+      ]
+    },
+    {
+      "ko": "블루 록",
+      "aliases": [
+        "ブルーロック",
+        "Blue Lock"
+      ],
+      "urls": [
+        "https://tv.bluelock-pr.com/tv1st/character/"
+      ],
+      "characters": [
+        [
+          "潔世一|潔 世一",
+          "이사기 요이치"
+        ],
+        [
+          "蜂楽廻|蜂楽 廻",
+          "바치라 메구루"
+        ],
+        [
+          "凪誠士郎|凪 誠士郎",
+          "나기 세이시로"
+        ],
+        [
+          "御影玲王",
+          "미카게 레오"
+        ],
+        [
+          "糸師凛|糸師 凛",
+          "이토시 린"
+        ],
+        [
+          "糸師冴|糸師 冴",
+          "이토시 사에"
+        ],
+        [
+          "千切豹馬|千切 豹馬",
+          "치기리 효마"
+        ],
+        [
+          "馬狼照英|馬狼 照英",
+          "바로 쇼에이"
+        ]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "DXF",
+        "그랜드라인맨",
+        "그랜드라인 레이디"
+      ],
+      "url": "https://bsp-prize.jp/brand/23/",
+      "quote": "DXF"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "ESPRESTO",
+        "에스프레스토"
+      ],
+      "url": "https://bsp-prize.jp/brand/9/",
+      "quote": "フィギュアシリーズ"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "SOLID EDGE WORKS",
+        "솔리드 엣지 웍스"
+      ],
+      "url": "https://bsp-prize.jp/brand/17/",
+      "quote": "SOLID EDGE WORKS"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "BATTLE RECORD COLLECTION",
+        "배틀 레코드 콜렉션"
+      ],
+      "url": "https://bsp-prize.jp/brand/26/",
+      "quote": "BATTLE RECORD COLLECTION"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "MATCH MAKERS",
+        "매치메이커"
+      ],
+      "url": "https://bsp-prize.jp/brand/18/",
+      "quote": "MATCH MAKERS"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "Relax time",
+        "릴랙스 타임"
+      ],
+      "url": "https://bsp-prize.jp/brand/15/",
+      "quote": "フィギュアシリーズ"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "THE AMAZING HEROES",
+        "어메이징 히어로즈"
+      ],
+      "url": "https://bsp-prize.jp/brand/36/",
+      "quote": "THE AMAZING HEROES"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "EFFECTREME",
+        "이펙트림"
+      ],
+      "url": "https://bsp-prize.jp/brand/24/",
+      "quote": "EFFECTREME"
+    },
+    {
+      "code": "prize_figure",
+      "aliases": [
+        "G×materia",
+        "G x materia",
+        "G마테리아"
+      ],
+      "url": "https://bsp-prize.jp/brand/19/",
+      "quote": "G×materia"
+    },
+    {
+      "code": "chibi_figure",
+      "aliases": [
+        "Q posket",
+        "Q포스켓",
+        "큐포스켓",
+        "포스켓"
+      ],
+      "url": "https://bsp-prize.jp/brand/12/",
+      "quote": "Q posket"
+    },
+    {
+      "code": "action_figure",
+      "aliases": [
+        "ROBOT魂",
+        "METAL ROBOT魂"
+      ],
+      "url": "https://geass.jp/akito/figure.html",
+      "quote": "激しいアクションも再現可能"
+    }
+  ]
+}

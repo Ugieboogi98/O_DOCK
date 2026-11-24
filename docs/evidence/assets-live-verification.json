@@ -1,0 +1,20 @@
+{
+  "url": "https://megahobby.jp/products/item/6115/",
+  "http_status": 200,
+  "html_sha256": "0897ee9c69b9ff483f8283607e6f55cd7db91d971de4dd01d222a1582bf567a2",
+  "image_candidates": [
+    "https://www.megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_02.jpg",
+    "https://www.megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_01.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_01.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_03.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_04.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_05.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_06.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_07.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_08.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_09.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_10.jpg",
+    "https://megahobby.jp/images/item/item_0000006115_FF5qpYswd8VJ_11.jpg"
+  ],
+  "scope": "Actual public product HTML parsing; no live image-file download and no paid translation request in this environment"
+}

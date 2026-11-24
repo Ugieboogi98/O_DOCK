@@ -1,0 +1,98 @@
+[
+  {
+    "url": "https://www.kotobukiya.co.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.kotobukiya.co.jp/en/product/",
+    "status": 200,
+    "sha256": "fb3c3a8b0167030e8df0ea0cf726da044ccc9b8555af0c248dc0dfb06e5b46a5",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://megahobby.jp/robots.txt",
+    "status": 200,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://megahobby.jp/products/lookup/",
+    "status": 200,
+    "sha256": "049126128c4fc79dfc27f7183aa34b2dc13f32b1020d1c2c11b6833a6ae8826a",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://megahobby.jp/products/gem/",
+    "status": 200,
+    "sha256": "04607211bdb0f4104da2288dbc0594d8234a93ba8a775dcf786edcf7cb5312dd",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://megahobby.jp/products/portraitofpirates/",
+    "status": 200,
+    "sha256": "9bf3067009efcb4138c159b4b78ceeab929d5d38268809a2918d74694bb6c8e7",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://furyu-hm.com/robots.txt",
+    "status": 200,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://furyu-hm.com/",
+    "status": 200,
+    "sha256": "c4895eafcee7d925ec3a70cb02c134f6ec86747ccfda499cdeafb1620e6a757e",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://segaplaza.jp/prize/",
+    "status": 200,
+    "sha256": "f35d4a9aeedbac297937f6fd046feb2c2749997a51950efa99ab8f9612bedbbc",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/robots.txt",
+    "status": 200,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.taito.co.jp/taito-prize",
+    "status": 200,
+    "sha256": "eaa8ef85058902ef920b8cdef99dd4ae2ec45242ec522c87f1e8739b0baa44dd",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.bandaispirits.co.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.bandaispirits.co.jp/products/search/",
+    "status": 200,
+    "sha256": "69cf617a912f589b26970a92e49dc19bd7e6e3ec46ee90ae5d6f271098e1f1a4",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/robots.txt",
+    "status": 404,
+    "type": "robots",
+    "checked_at": "2026-10-21"
+  },
+  {
+    "url": "https://www.hottoys.jp/item/",
+    "status": 200,
+    "sha256": "0d494ba35bd4c49b655bd13cfa1822397cad9aa2f927de9cf19e05df29daffb0",
+    "checked_at": "2026-10-21"
+  }
+]

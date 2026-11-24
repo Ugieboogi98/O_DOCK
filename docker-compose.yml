@@ -1,0 +1,107 @@
+name: figure-archive-ai
+x-backend: &backend
+  build: ./backend
+  env_file: .env
+  environment: &backend-environment
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-figure}:${POSTGRES_PASSWORD:-figure_local}@postgres:5432/${POSTGRES_DB:-figure_archive}
+    DATA_DIR: /data
+    MEDIA_DIR: /app/media
+    CHROMA_HOST: chroma
+    CHROMA_PORT: 8000
+  volumes:
+    - ./data:/data:ro
+    - media_data:/app/media
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-figure}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-figure_local}
+      POSTGRES_DB: ${POSTGRES_DB:-figure_archive}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  chroma:
+    image: chromadb/chroma:1.5.9
+    environment:
+      IS_PERSISTENT: "TRUE"
+      ANONYMIZED_TELEMETRY: "FALSE"
+      CHROMA_PERSIST_PATH: /data
+    volumes: ["chroma_data:/data"]
+  init:
+    <<: *backend
+    depends_on:
+      postgres: {condition: service_healthy}
+      chroma: {condition: service_started}
+    command: ["sh", "-c", "alembic upgrade head && python -m scripts.seed && python -m scripts.wait_and_index"]
+    restart: "no"
+  backend:
+    <<: *backend
+    depends_on:
+      init: {condition: service_completed_successfully}
+    ports: ["127.0.0.1:8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  catalog-worker:
+    <<: *backend
+    depends_on:
+      backend: {condition: service_healthy}
+    command: ["python", "-m", "scripts.catalog_scheduler", "--interval", "3600"]
+    restart: unless-stopped
+  semantic-worker:
+    <<: *backend
+    profiles: [local-semantics]
+    environment:
+      <<: *backend-environment
+      SEMANTIC_PROVIDER: ollama
+      SEMANTIC_REFERENCE_ENRICHMENT: "true"
+      SEMANTIC_MODEL: ${SEMANTIC_MODEL:-qwen3:8b}
+      SEMANTIC_BASE_URL: http://host.docker.internal:11434
+    depends_on:
+      backend: {condition: service_healthy}
+    command: [python, -m, scripts.split_semantics_worker, --watch, --limit, "20", --report-dir, /app/media/split_semantics]
+    restart: "no"
+  translation-worker:
+    <<: *backend
+    profiles: [local-title-translation]
+    environment:
+      <<: *backend-environment
+      SEMANTIC_PROVIDER: ollama
+      SEMANTIC_MODEL: ${TITLE_TRANSLATION_MODEL:-qwen3:8b}
+      SEMANTIC_BASE_URL: http://host.docker.internal:11434
+    volumes:
+      - ./data:/data:ro
+      - media_data:/app/media
+      - ${TITLE_TRANSLATION_REPORT_DIR:-./data/private/semantics/20261116_remaining}:/batch_reports
+    command: [python, -m, scripts.translate_remaining_titles, --report-dir, /batch_reports, --classify, --commit]
+    healthcheck:
+      disable: true
+    restart: on-failure:3
+  domestic-price-worker:
+    <<: *backend
+    profiles: [domestic-prices]
+    volumes:
+      - ./data:/data:ro
+      - media_data:/app/media
+      - ./data/private/retail_price:/retail-reports
+    command: [python, -m, scripts.collect_domestic_catalog, --commit, --sources, maniahouse, herotime, comics_art, figurefarm, --report-dir, /retail-reports/20261116_full_catalog]
+    healthcheck:
+      disable: true
+    stop_grace_period: 45s
+    restart: on-failure:3
+  frontend:
+    build: ./frontend
+    depends_on:
+      backend: {condition: service_healthy}
+    ports: ["127.0.0.1:8080:80"]
+volumes:
+  postgres_data:
+  chroma_data:
+  media_data:
