@@ -181,3 +181,29 @@ def test_explicit_kana_character_is_named_without_model(tmp_path):
                             'evidence': '『架空の物語』より「ヨツユ」', 'confidence': 1}, 'characters': [], 'figure_form': None}
     p.name_explicit_relations(source, ground, {})
     assert ground['characters'][0]['ko'] == '요츠유' and ground['characters'][0]['method'] == 'explicit_relation_glossary'
+
+
+def test_rate_limiter_window_and_proxy_header_trust():
+    from types import SimpleNamespace
+    from app.core import rate_limit
+    rate_limit.reset()
+    assert all(rate_limit.hit('k', 3, 60, now=t) for t in (0, 1, 2))
+    assert not rate_limit.hit('k', 3, 60, now=3)
+    assert rate_limit.hit('k', 3, 60, now=61.5)  # oldest attempts expired
+    proxied = SimpleNamespace(client=SimpleNamespace(host='172.18.0.5'), headers={'x-real-ip': '203.0.113.7'})
+    direct = SimpleNamespace(client=SimpleNamespace(host='8.8.8.8'), headers={'x-real-ip': '1.2.3.4'})
+    assert rate_limit.client_ip(proxied) == '203.0.113.7'
+    assert rate_limit.client_ip(direct) == '8.8.8.8'  # a public peer cannot spoof its address
+
+
+def test_same_origin_rejects_cross_site_fetch_metadata(monkeypatch):
+    from types import SimpleNamespace
+    from fastapi import HTTPException
+    from app.core import security
+    monkeypatch.setattr(security, 'get_settings', lambda: SimpleNamespace(cors_origins='http://localhost:8080'))
+    req = lambda h: SimpleNamespace(headers=h)
+    security.require_same_origin(req({'origin': 'http://localhost:8080'}))
+    security.require_same_origin(req({}))  # scripts without browser headers
+    for headers in ({'origin': 'https://evil.example'}, {'sec-fetch-site': 'cross-site'}):
+        with pytest.raises(HTTPException):
+            security.require_same_origin(req(headers))

@@ -36,7 +36,7 @@ def setup(tmp_path, monkeypatch):
         with factory() as db:
             yield db
     app.dependency_overrides[get_db] = dependency
-    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin')
+    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin-token-0123456789')
     yield factory, ids
     app.dependency_overrides.clear()
     engine.dispose()
@@ -73,9 +73,11 @@ def test_two_users_cannot_read_or_modify_each_others_records(setup):
         assert b.put('/api/purchases/'+str(record['id']), json=body).status_code == 404
         assert b.delete('/api/purchases/'+str(record['id'])).status_code == 404
         assert a.get('/api/purchases').json()[0]['id'] == record['id']
-        with TestClient(app, headers={'X-Admin-Token':'fixture-admin'}) as admin:
-            assert admin.get('/api/purchases').json() == []
-            assert admin.delete('/api/purchases/'+str(record['id'])).status_code == 404
+        with TestClient(app, headers={'X-Admin-Token':'fixture-admin-token-0123456789'}) as admin:
+            # The operator token is not a personal identity.
+            assert admin.get('/api/purchases').status_code == 401
+            assert admin.delete('/api/purchases/'+str(record['id'])).status_code == 401
+            assert admin.get('/api/auth/me').json() == {'user': None}
         assert a.post('/api/purchases', json={**body, 'user_id':ub['id']}).json()['user_id'] == ua['id']
         assert b.post('/api/catalog/refresh').status_code == 403
 

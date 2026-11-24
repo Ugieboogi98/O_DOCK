@@ -10,7 +10,7 @@ from app.core.security import require_admin
 
 @pytest.fixture
 def client(monkeypatch):
-    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin')
+    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin-token-0123456789')
     app.dependency_overrides[get_db] = lambda: None
     with TestClient(app) as c:
         yield c
@@ -43,7 +43,7 @@ def test_verified_admin_can_refresh_and_public_can_read_progress(client, monkeyp
     assert client.get('/api/catalog/status').status_code == 200
     assert not calls
     assert client.get('/api/admin/session').status_code == 403
-    headers = {'X-Admin-Token': 'fixture-admin'}
+    headers = {'X-Admin-Token': 'fixture-admin-token-0123456789'}
     assert client.get('/api/admin/session', headers=headers).json() == {'admin': True}
     assert not calls  # Authentication alone has no collection side effects.
     assert client.post('/api/catalog/refresh', headers=headers).json() == {'state': 'running'}
@@ -57,7 +57,7 @@ def test_missing_server_key_fails_closed(client, monkeypatch):
 
 
 def test_non_ascii_bad_token_is_rejected_without_server_error(monkeypatch):
-    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin')
+    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin-token-0123456789')
     with pytest.raises(HTTPException) as error:
         require_admin('잘못된 토큰')
     assert error.value.status_code == 403

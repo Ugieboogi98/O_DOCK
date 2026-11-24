@@ -17,7 +17,7 @@ from app.services.event_catalog import period,filtered
 def event_client(tmp_path,monkeypatch):
     from app.core import security
     from app.api import events as event_api
-    monkeypatch.setattr(security,'get_settings',lambda:SimpleNamespace(admin_token='test-admin'))
+    monkeypatch.setattr(security,'get_settings',lambda:SimpleNamespace(admin_token='test-admin-token-0123456789abc'))
     monkeypatch.setattr(event_api,'get_settings',lambda:SimpleNamespace(data_dir=tmp_path))
     e=create_engine('sqlite://',connect_args={'check_same_thread':False},poolclass=StaticPool)
     metadata.create_all(e);sessions=sessionmaker(e)

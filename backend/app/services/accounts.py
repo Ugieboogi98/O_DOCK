@@ -28,10 +28,8 @@ def utc(value):
 
 
 def optional_user(request: Request, db: Session = Depends(get_db)):
-    configured = get_settings().admin_token
-    supplied = request.headers.get('x-admin-token', '')
-    if configured and secrets.compare_digest(configured.encode(), supplied.encode()):
-        return db.get(User, 1)
+    # The admin token authorises shared catalog operations only. It is never a personal identity:
+    # the former "admin token == user 1" mapping let a leaked operator token read one user's records.
     token = request.cookies.get(COOKIE)
     if not token or len(token) > 200:
         return None

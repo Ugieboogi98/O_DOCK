@@ -44,3 +44,10 @@ def client(db):
     with TestClient(app, raise_server_exceptions=False) as c:
         yield c
     app.dependency_overrides.clear()
+
+
+@pytest.fixture(autouse=True)
+def _reset_rate_limits():
+    from app.core import rate_limit
+    rate_limit.reset()
+    yield

@@ -9,6 +9,11 @@ from sqlalchemy.exc import IntegrityError
 from app.core.database import get_db
 from app.core.config import get_settings
 from app.core.security import require_same_origin
+from app.core.rate_limit import limiter
+
+# Per client IP, on top of the per-account lockout below.
+login_limit = limiter('login', 20, 300)
+register_limit = limiter('register', 10, 3600)
 from app.models.entities import User, UserSession, now
 from app.services.accounts import COOKIE, identity, issue_session, optional_user, password_hash, utc, verify_password
 router = APIRouter(prefix='/api/auth', tags=['accounts'])
@@ -20,7 +25,7 @@ class Credentials(BaseModel):
     password: str = Field(min_length=12, max_length=128)
 
 
-@router.post('/register', dependencies=[Depends(require_same_origin)])
+@router.post('/register', dependencies=[Depends(require_same_origin), Depends(register_limit)])
 def register(data: Credentials, request: Request, response: Response, db: Session = Depends(get_db)):
     username = data.username.lower()
     if username == 'admin':
@@ -35,7 +40,7 @@ def register(data: Credentials, request: Request, response: Response, db: Sessio
     return issue_session(db, user, response, request)
 
 
-@router.post('/login', dependencies=[Depends(require_same_origin)])
+@router.post('/login', dependencies=[Depends(require_same_origin), Depends(login_limit)])
 def login(data: Credentials, request: Request, response: Response, db: Session = Depends(get_db)):
     user = db.scalar(select(User).where(User.username == data.username.lower()).with_for_update())
     if user and user.locked_until and utc(user.locked_until) > now():

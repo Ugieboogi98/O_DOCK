@@ -25,7 +25,7 @@ from app.services.enrichment import extract_media, translate_name, enrich_html
 @pytest.fixture
 def context(monkeypatch):
     from app.core.config import get_settings
-    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin')
+    monkeypatch.setattr(get_settings(), 'admin_token', 'fixture-admin-token-0123456789')
     engine = create_engine(
         "sqlite://", poolclass=StaticPool, connect_args={"check_same_thread": False}
     )
@@ -57,7 +57,7 @@ def context(monkeypatch):
     from app.api.accounts import router as accounts_router
     app.include_router(accounts_router)
     app.dependency_overrides[get_db] = lambda: db
-    with TestClient(app, headers={'X-Admin-Token': 'fixture-admin'}) as client:
+    with TestClient(app, headers={'X-Admin-Token': 'fixture-admin-token-0123456789'}) as client:
         yield client, db, f, v
     db.close()
     engine.dispose()
@@ -87,6 +87,8 @@ def test_purchase_crud_and_delivery(context):
 
 def test_favorite_idempotent_persistent(context):
     c, db, f, v = context
+    c.headers.pop('X-Admin-Token', None)  # personal data needs a user session, not the operator token
+    assert c.post('/api/auth/register', json={'username': 'fav-user', 'password': 'test-password-long'}).status_code == 200
     for _ in range(2):
         assert c.put(f"/api/favorites/{f.id}").status_code == 200
     assert len(c.get("/api/favorites").json()) == 1
