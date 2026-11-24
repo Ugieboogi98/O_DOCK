@@ -43,7 +43,7 @@
     },
     {
       "file": "local_semantic_domain_extension.json",
-      "sha256": "ac6370d2b93caca9f8784c5abc1baa7010c45a8a53e911b867427c194a634e22"
+      "sha256": "c252dba751bc83a6e835f71bcf8a283b2bd162c0ac3a9a67c748468537df5443"
     },
     {
       "file": "local_semantic_title_terms.json",
@@ -23337,6 +23337,218 @@
         ]
       ],
       "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "명일방주",
+      "medium": "game",
+      "aliases": [
+        "アークナイツ",
+        "Arknights",
+        "명일방주",
+        "明日方舟"
+      ],
+      "characters": [
+        [
+          "チェン",
+          "첸"
+        ],
+        [
+          "ラップランド",
+          "라플란드"
+        ],
+        [
+          "W",
+          "W"
+        ],
+        [
+          "テキサス",
+          "텍사스"
+        ],
+        [
+          "エクシア",
+          "엑시아"
+        ],
+        [
+          "アーミヤ",
+          "아미야"
+        ],
+        [
+          "スカジ",
+          "스카디"
+        ],
+        [
+          "シルバーアッシュ",
+          "실버애쉬"
+        ],
+        [
+          "ケルシー",
+          "켈시"
+        ],
+        [
+          "スルト",
+          "수르트"
+        ]
+      ],
+      "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "명일방주: 엔드필드",
+      "medium": "game",
+      "aliases": [
+        "アークナイツ：エンドフィールド",
+        "Arknights: Endfield",
+        "명일방주 엔드필드",
+        "엔드필드"
+      ],
+      "characters": [
+        [
+          "ジルベルタ",
+          "질베르타"
+        ],
+        [
+          "ペリカ",
+          "펠리카"
+        ],
+        [
+          "管理人",
+          "관리자"
+        ]
+      ],
+      "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "히카루가 죽은 여름",
+      "medium": "anime",
+      "aliases": [
+        "光が死んだ夏",
+        "The Summer Hikaru Died",
+        "히카루가 죽은 여름"
+      ],
+      "characters": [
+        [
+          "よしき",
+          "요시키"
+        ],
+        [
+          "辻中佳紀",
+          "츠지나카 요시키"
+        ],
+        [
+          "ヒカル",
+          "히카루"
+        ],
+        [
+          "忌堂光",
+          "인도 히카루"
+        ]
+      ],
+      "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "우마무스메 프리티 더비",
+      "medium": "game",
+      "aliases": [
+        "ウマ娘 プリティーダービー",
+        "ウマ娘",
+        "Umamusume",
+        "우마무스메"
+      ],
+      "characters": [
+        [
+          "ライスシャワー",
+          "라이스 샤워"
+        ],
+        [
+          "シンボリルドルフ",
+          "심볼리 루돌프"
+        ],
+        [
+          "ミホノブルボン",
+          "미호노 부르봉"
+        ],
+        [
+          "スペシャルウィーク",
+          "스페셜 위크"
+        ],
+        [
+          "サイレンススズカ",
+          "사일런스 스즈카"
+        ],
+        [
+          "トウカイテイオー",
+          "토카이 테이오"
+        ],
+        [
+          "メジロマックイーン",
+          "메지로 맥퀸"
+        ],
+        [
+          "ゴールドシップ",
+          "골드 쉽"
+        ],
+        [
+          "キタサンブラック",
+          "키타산 블랙"
+        ],
+        [
+          "ダイワスカーレット",
+          "다이와 스칼렛"
+        ],
+        [
+          "ウオッカ",
+          "보드카"
+        ],
+        [
+          "マンハッタンカフェ",
+          "맨해튼 카페"
+        ],
+        [
+          "アグネスタキオン",
+          "아그네스 타키온"
+        ],
+        [
+          "オグリキャップ",
+          "오구리 캡"
+        ]
+      ],
+      "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "사이버펑크: 엣지러너",
+      "medium": "anime",
+      "aliases": [
+        "サイバーパンク エッジランナーズ",
+        "Cyberpunk: Edgerunners",
+        "사이버펑크 엣지러너",
+        "엣지러너"
+      ],
+      "characters": [
+        [
+          "ルーシー",
+          "루시"
+        ],
+        [
+          "デイビッド・マルティネス",
+          "데이비드 마르티네즈"
+        ],
+        [
+          "デイビッド",
+          "데이비드"
+        ],
+        [
+          "レベッカ",
+          "레베카"
+        ],
+        [
+          "メイン",
+          "메인"
+        ],
+        [
+          "キーウィ",
+          "키위"
+        ]
+      ],
+      "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
     },
     {
       "work": "원신",
@@ -87144,5 +87356,5 @@
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "e2ac4a6ed58efa4c782bcdf2f249f938d24fb2275fc4c2c4c264be434564952d"
+  "fingerprint": "010051c0800f326f085d4ebdaca3b5f2d699efb88f74608f3300ade31ee9a29d"
 }

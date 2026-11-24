@@ -4,6 +4,7 @@ import {api,safeUrl} from '../services/api'
 
 const items=ref([]),total=ref(0),page=ref(1),error=ref(''),busy=ref(0),done=ref({})
 const size=20
+const MEDIUM={game:'게임',anime:'애니메이션',manga:'만화',novel:'소설',vtuber:'버튜버'}
 async function load(p=page.value){
  error.value=''
  try{const r=await api(`/admin/retail-matches?page=${p}&size=${size}`);items.value=r.items;total.value=r.total;page.value=r.page}
@@ -30,14 +31,16 @@ defineExpose({load})
    <li v-for="item in items" :key="item.listing_id">
     <p class="match-title"><a :href="safeUrl(item.url)" target="_blank" rel="noopener noreferrer">{{item.title}}</a></p>
     <p class="fine-print">{{item.source}} · 제조사 {{item.manufacturer||'미표기'}} · JAN {{item.jan_ean||'없음'}} · {{item.match_evidence?.reason||item.match_status}}</p>
+    <p v-if="item.recognized" class="fine-print recognized">작품 <strong>{{item.recognized.work}}</strong><span v-if="item.recognized.medium"> ({{MEDIUM[item.recognized.medium]||item.recognized.medium}})</span><span v-if="item.recognized.characters.length"> · 캐릭터 <strong>{{item.recognized.characters.join(', ')}}</strong></span></p>
+    <p v-else class="fine-print">작품을 알아보지 못했습니다 — 사전에 없는 작품일 수 있습니다.</p>
     <p v-if="done[item.listing_id]" class="notice">연결됨: {{done[item.listing_id]}}</p>
     <ul v-else-if="item.candidates.length" class="match-candidates">
      <li v-for="c in item.candidates" :key="c.variant_id">
-      <span><strong v-if="c.jan_match">JAN 일치 · </strong>{{c.name_ko||c.name_original}}<small v-if="c.edition"> ({{c.edition}})</small><small v-if="c.similarity"> · 유사도 {{pct(c.similarity)}}</small></span>
+      <span><strong v-if="c.jan_match">JAN 일치 · </strong><strong v-else-if="c.same_character">같은 캐릭터 · </strong><span v-else-if="c.same_work">같은 작품 · </span>{{c.name_ko||c.name_original}}<small v-if="c.edition"> ({{c.edition}})</small><small v-if="c.similarity"> · 유사도 {{pct(c.similarity)}}</small></span>
       <button class="button ghost" :disabled="busy===item.listing_id" @click="confirm(item,c)">이 상품으로 연결</button>
      </li>
     </ul>
-    <p v-else class="fine-print">후보 없음 — 카탈로그에 없는 상품일 수 있습니다.</p>
+    <p v-else class="fine-print">후보 없음 — 카탈로그에 아직 없는 상품입니다. 해당 제조사가 수집 대상이 아닐 수 있습니다.</p>
    </li>
   </ol>
   <div v-if="total>size" class="match-pages">

@@ -12,6 +12,8 @@ from app.core.database import get_db
 from app.core.security import require_admin, require_same_origin
 from app.models.entities import Figure, FigureVariant, Retailer
 from app.models.retail import RetailListing, RetailOffer, RetailOfferHistory
+from app.models.semantics import ProductSemantics
+from app.services.retail_entities import groups as entity_groups, recognize, with_catalog_works
 from app.services.semantic_neighbors import NgramIndex
 
 
@@ -93,8 +95,20 @@ def _figure_index(db):
     if _candidate_index['key'] != tuple(key):
         examples = [{'figure_id': fid, 'name_original': ' '.join(x for x in (original, ko) if x)}
                     for fid, original, ko in db.execute(select(Figure.id, Figure.name_original, Figure.name_ko))]
-        _candidate_index.update(key=tuple(key), index=NgramIndex(examples))
+        entities = {}
+        for fid, fields in db.execute(select(ProductSemantics.figure_id, ProductSemantics.fields)):
+            fields = fields or {}
+            entities[fid] = (fields.get('franchise_ko'), fields.get('character_ko') or '')
+        _candidate_index.update(key=tuple(key), index=NgramIndex(examples), entities=entities, groups=None)
     return _candidate_index['index']
+
+
+def _same_work_candidates(recognized, limit=8):
+    """Catalog figures classified under the recognised work, the named characters first."""
+    entities = _candidate_index.get('entities') or {}
+    works = [fid for fid, (work, _) in entities.items() if work == recognized['work']]
+    named = [fid for fid in works if any(c in entities[fid][1] for c in recognized['characters'])]
+    return named[:limit] if recognized['characters'] else works[:limit], set(named)
 
 
 def _variant_options(db, figure_ids):
@@ -121,17 +135,32 @@ def unmatched_listings(source: Literal['', 'maniahouse', 'herotime', 'comics_art
         by_jan = []
         if listing.jan_ean:
             by_jan = list(db.scalars(select(FigureVariant.figure_id).where(FigureVariant.jan_code == listing.jan_ean)))
-        ids = list(dict.fromkeys([*by_jan, *(s['figure_id'] for s in similar)]))
+        base = entity_groups()
+        if _candidate_index.get('groups') is None or _candidate_index.get('groups_base') is not base:
+            _candidate_index.update(groups=with_catalog_works(base, (_candidate_index.get('entities') or {}).values()),
+                                    groups_base=base)
+        recognized = recognize(listing.title_raw, _candidate_index['groups'])
+        same_work, same_character = ([], set())
+        if recognized:
+            same_work, same_character = _same_work_candidates(recognized)
+            entities = _candidate_index.get('entities') or {}
+            # A text-similar product from a different work is not the same product; one whose work is
+            # unknown only stays when the titles are close (shared product-line words are not enough).
+            similar = [s for s in similar if entities.get(s['figure_id'], (None,))[0] == recognized['work']
+                       or (entities.get(s['figure_id'], (None,))[0] is None and s['similarity'] >= 0.5)]
+        ids = list(dict.fromkeys([*by_jan, *same_work, *(s['figure_id'] for s in similar)]))
         scores = {s['figure_id']: s['similarity'] for s in similar}
         options = _variant_options(db, ids) if ids else []
         for option in options:
             option['similarity'] = scores.get(option['figure_id'])
             option['jan_match'] = bool(listing.jan_ean and option['jan_code'] == listing.jan_ean)
-        options.sort(key=lambda o: (not o['jan_match'], -(o['similarity'] or 0)))
+            option['same_character'] = option['figure_id'] in same_character
+            option['same_work'] = option['figure_id'] in same_work
+        options.sort(key=lambda o: (not o['jan_match'], not o['same_character'], not o['same_work'], -(o['similarity'] or 0)))
         items.append({'listing_id': listing.id, 'source': listing.source_code, 'title': listing.title_raw,
                       'manufacturer': listing.manufacturer_raw, 'jan_ean': listing.jan_ean,
                       'match_status': listing.match_status, 'match_evidence': listing.match_evidence,
-                      'url': listing.canonical_url, 'candidates': options[:8]})
+                      'url': listing.canonical_url, 'recognized': recognized, 'candidates': options[:8]})
     return {'items': items, 'total': total, 'page': page, 'size': size}
 
 
