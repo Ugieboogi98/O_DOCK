@@ -3,7 +3,7 @@ x-backend: &backend
   build: ./backend
   env_file: .env
   environment: &backend-environment
-    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-figure}:${POSTGRES_PASSWORD:-figure_local}@postgres:5432/${POSTGRES_DB:-figure_archive}
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-figure}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}@postgres:5432/${POSTGRES_DB:-figure_archive}
     DATA_DIR: /data
     MEDIA_DIR: /app/media
     CHROMA_HOST: chroma
@@ -16,7 +16,7 @@ services:
     image: postgres:16-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-figure}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-figure_local}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
       POSTGRES_DB: ${POSTGRES_DB:-figure_archive}
     ports: ["127.0.0.1:5432:5432"]
     volumes: ["postgres_data:/var/lib/postgresql/data"]
@@ -63,10 +63,20 @@ services:
       SEMANTIC_PROVIDER: ollama
       SEMANTIC_REFERENCE_ENRICHMENT: "true"
       SEMANTIC_MODEL: ${SEMANTIC_MODEL:-qwen3:8b}
+      SEMANTIC_TRANSLATION_MODEL: ${SEMANTIC_TRANSLATION_MODEL:-qwen3:8b}
+      SEMANTIC_CLASSIFICATION_MODEL: ${SEMANTIC_CLASSIFICATION_MODEL:-qwen3:1.7b}
       SEMANTIC_BASE_URL: http://host.docker.internal:11434
+    volumes:
+      - ./data:/data:ro
+      - media_data:/app/media
+      # Same report/failure directory as the host consumer, so both see one failure history.
+      - ${SEMANTIC_REPORT_DIR:-./data/private/semantics/split_queue_20261117}:/split_reports
     depends_on:
       backend: {condition: service_healthy}
-    command: [python, -m, scripts.split_semantics_worker, --watch, --limit, "20", --report-dir, /app/media/split_semantics]
+    # Same retry policy as the host command; a DB advisory lock allows only one consumer at a time.
+    command: [python, -m, scripts.split_semantics_worker, --watch, --skip-failed, --retry-stale-failures, --limit, "20", --report-dir, /split_reports]
+    healthcheck:
+      disable: true
     restart: "no"
   translation-worker:
     <<: *backend

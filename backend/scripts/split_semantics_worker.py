@@ -10,10 +10,15 @@ from app.services.product_semantics import source_of,source_hash,save_record,val
 from app.services.semantic_queue import pending_jobs
 from app.services.split_semantics import Pipeline,LocalModel,VERSION
 from app.services.semantic_errors import SemanticError
+from app.services.worker_lock import advisory_lock
 import httpx
 from scripts.product_semantics import atomic_report
 
-def consume(limit,root,ids=None,client=None,translation_model='qwen3:8b',classification_model='qwen3:1.7b',skip_failed=False):
+def stale(failure,dictionary):
+    """A failure recorded by an older pipeline or dictionary may succeed now."""
+    return failure.get('pipeline')!=VERSION or failure.get('dictionary')!=dictionary['fingerprint']
+
+def consume(limit,root,ids=None,client=None,translation_model='qwen3:8b',classification_model='qwen3:1.7b',skip_failed=False,retry_stale=False):
     settings=get_settings();root=Path(root);root.mkdir(parents=True,exist_ok=True)
     dictionary=json.loads((settings.data_dir/'reference/semantic_dictionary/catalog.json').read_text(encoding='utf-8'))
     pipeline=Pipeline(dictionary,client or LocalModel(settings.semantic_base_url,settings.semantic_timeout),root/'stages',translation_model,classification_model)
@@ -24,7 +29,8 @@ def consume(limit,root,ids=None,client=None,translation_model='qwen3:8b',classif
         if ids is None:ids=[json.loads(j.error_summary)['figure_id'] for j in pending_jobs(db,10000)]
     selected=[]
     deferred=0
-    skipped={str(fid):failures[str(fid)] for fid in dict.fromkeys(ids) if str(fid) in failures} if skip_failed and not explicit else {}
+    skipped={str(fid):failures[str(fid)] for fid in dict.fromkeys(ids) if str(fid) in failures
+             and not (retry_stale and stale(failures[str(fid)],dictionary))} if skip_failed and not explicit else {}
     if skip_failed:
         atomic_report(root/'skipped_failures.json',{'policy':'skip_failed','updated_at':datetime.now(timezone.utc).isoformat(),'count':len(skipped),'items':skipped})
     for fid in dict.fromkeys(ids):
@@ -94,16 +100,18 @@ def main():
     p.add_argument('--ids',type=int,nargs='+')
     p.add_argument('--watch',action='store_true')
     p.add_argument('--skip-failed',action='store_true',help='Preserve failed jobs but skip their automatic retries; explicit --ids can retry them.')
+    p.add_argument('--retry-stale-failures',action='store_true',help='With --skip-failed, still retry failures recorded by an older pipeline version or dictionary (each is retried once per version).')
     p.add_argument('--translation-model',default=get_settings().semantic_translation_model)
     p.add_argument('--classification-model',default=get_settings().semantic_classification_model)
     p.add_argument('--report-dir',type=Path,required=True)
     a=p.parse_args()
     if not 1<=a.limit<=100:p.error('limit must be 1..100')
     a.report_dir.mkdir(parents=True,exist_ok=True)
-    with FileLock(str(get_settings().media_dir/'split_semantics_worker.lock'),timeout=0):
+    # The DB lock covers host and Docker consumers together; the file lock stays as a local guard.
+    with advisory_lock('split_semantics_worker'),FileLock(str(get_settings().media_dir/'split_semantics_worker.lock'),timeout=0):
         while True:
             try:
-                print(json.dumps(consume(a.limit,a.report_dir,a.ids,translation_model=a.translation_model,classification_model=a.classification_model,skip_failed=a.skip_failed)),flush=True)
+                print(json.dumps(consume(a.limit,a.report_dir,a.ids,translation_model=a.translation_model,classification_model=a.classification_model,skip_failed=a.skip_failed,retry_stale=a.retry_stale_failures)),flush=True)
             except (httpx.HTTPError,SemanticError) as exc:
                 if not a.watch:raise
                 print(json.dumps({'state':'waiting_for_local_provider','error':getattr(exc,'code',type(exc).__name__)}),flush=True)

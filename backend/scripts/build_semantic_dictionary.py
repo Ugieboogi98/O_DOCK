@@ -10,6 +10,7 @@ from app.models.semantics import ProductSemantics
 from app.services.product_semantics import source_of,source_hash
 from app.services.semantic_rules import glossary,FORMS
 from app.services.local_semantic_lexicon import load
+from app.services.semantic_neighbors import build_learned
 from scripts.product_semantics import atomic_report
 
 def build():
@@ -26,12 +27,14 @@ def build():
         groups+=json.loads((root/name).read_text(encoding='utf-8')).get('groups',[])
     path=get_settings().data_dir/'reference/semantic_dictionary/catalog.json'
     previous_titles=json.loads(path.read_text(encoding='utf-8')).get('titles',{}) if path.exists() else {}
-    titles={};quarantined=0
+    titles={};quarantined=0;learned_rows=[]
     with SessionLocal() as db:
         figures=list(db.scalars(select(Figure)))
         profiles={p.figure_id:p for p in db.scalars(select(ProductSemantics))}
         for f in figures:
             p=profiles.get(f.id)
+            if p and isinstance(p.fields,dict) and p.source_hash==source_hash(source_of(f)):
+                learned_rows.append((f.id,f.name_original,p.fields))
             context={'manufacturer':f.manufacturer.name,'franchise':f.franchise,'product_line':f.product_line.name if f.product_line else None}
             previous_title=previous_titles.get(f.name_original,{})
             retained=p and previous_title.get('ko')==p.fields.get('name_ko') and previous_title.get('context')==context
@@ -49,7 +52,9 @@ def build():
     data={'version':'split-dictionary-v2','sources':sources,'aliases':aliases,'knowledge':knowledge,'domain_groups':groups,'forms':FORMS,
           'manufacturers':list({m['original']:m for m in makers}.values()),'titles':titles,
           'unverified_catalog_titles_excluded':quarantined,
-          'policy':'No automatic promotion of new model guesses. Character scope stays in source rules.'}
+          # Only aliases agreed by >=2 validated products with no disagreement; still need literal source evidence.
+          'learned':build_learned(learned_rows),
+          'policy':'No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.'}
     data['fingerprint']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     path=get_settings().data_dir/'reference/semantic_dictionary/catalog.json'
     atomic_report(path.parent/'versions'/(data['fingerprint']+'.json'),data)

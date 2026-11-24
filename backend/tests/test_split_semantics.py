@@ -51,8 +51,9 @@ def test_failed_simple_translation_uses_covered_parts_and_review(tmp_path):
             return {'name_ko':'謎のフィギュア'},{'seconds':1}
     c=Recovery();p=pipeline(tmp_path,c);r=p.translate(source())
     assert r['method']=='translation_parts_review' and r['seconds']==4
-    assert len(c.calls)==3
-    p.translate(source());assert len(c.calls)==3
+    # initial + glossary (invalid here, so ignored) + parts + review
+    assert len(c.calls)==4
+    p.translate(source());assert len(c.calls)==4
 
 def test_validated_exact_dictionary_skips_model(tmp_path):
     c=Client();p=Pipeline({'fingerprint':'test','titles':{'謎のフィギュア':{'ko':'피규어','context':{'manufacturer':'TAITO','franchise':None,'product_line':None}}}},c,tmp_path)
