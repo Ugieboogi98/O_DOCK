@@ -207,3 +207,54 @@ def test_same_origin_rejects_cross_site_fetch_metadata(monkeypatch):
     for headers in ({'origin': 'https://evil.example'}, {'sec-fetch-site': 'cross-site'}):
         with pytest.raises(HTTPException):
             security.require_same_origin(req(headers))
+
+
+def test_hiragana_long_mark_stays_in_one_span_and_glued_mark_is_residue():
+    from app.services.split_semantics import RESIDUE, translation_valid
+    assert residual_spans('넨도로이드 파워 私服Ver. べーしっく') == ['私服', 'べーしっく']
+    assert RESIDUE.search('누ー도르') and not RESIDUE.search('피규어 ー 하츠네 미쿠 ー')
+    assert not translation_valid({'name_original': 'ぬーどる', 'type': 'figure'}, '누ー도르')
+
+
+def test_term_with_english_fallback_or_long_mark_is_rejected():
+    items = [{'span': 'しっく', 'kind': 'term', 'reading': '', 'ko': '시 chick'},
+             {'span': 'べ', 'kind': 'term', 'reading': '', 'ko': '베ー'},
+             {'span': 'くじ', 'kind': 'term', 'reading': '', 'ko': '쿠지'}]
+    assert resolve_glossary(items, ['しっく', 'べ', 'くじ']) == {'くじ': '쿠지'}
+
+
+def test_span_memory_keeps_one_spelling_across_products(tmp_path):
+    class C(GlossaryClient):
+        answers = iter(['냥코', '고양이'])
+        def infer(self, model, prompt, data, schema):
+            self.calls.append(data)
+            if 'items' in schema['properties']:
+                return {'items': [{'span': s, 'kind': 'term', 'reading': '', 'ko': next(self.answers) if s == 'ニャンコ' else '피규어'}
+                                  for s in data['spans']]}, {'seconds': 0}
+            return {'name_ko': 'ニャンコ 피규어'}, {'seconds': 0}
+    c = C()
+    p = Pipeline({'fingerprint': 'm', 'titles': {}}, c, tmp_path)
+    first = p.translate({'name_original': 'ニャンコ フィギュア A', 'type': 'figure'})
+    second = Pipeline({'fingerprint': 'm', 'titles': {}}, c, tmp_path).translate({'name_original': 'ニャンコ フィギュア B', 'type': 'figure'})
+    assert '냥코' in first['name_ko'] and '냥코' in second['name_ko']
+    glossary_calls = [d for d in c.calls if 'spans' in d]
+    assert len(glossary_calls) == 1  # the second product reuses the remembered spelling
+
+
+def test_short_or_embedded_kana_alias_does_not_match():
+    from app.services.semantic_neighbors import usable_alias, literal_in
+    assert not usable_alias('アイ') and usable_alias('アスナ') and usable_alias('猫猫')
+    assert not literal_in('アスナ', 'アスナロ物語') and literal_in('アスナ', 'POP UP PARADE アスナ L')
+    learned = {'aliases': [{'kind': 'character', 'original': 'アイ', 'ko': '아이', 'work': None, 'support': 9},
+                           {'kind': 'character', 'original': 'アスナ', 'ko': '아스나', 'work': None, 'support': 6}]}
+    assert learned_candidates({'name_original': 'アイドル衣装 アスナロ'}, learned)['characters'] == []
+
+
+@pytest.mark.parametrize('known,span,accepted', [
+    ('베르세르크', 'ベルセルク', True), ('라인하르트 폰 로엔그람', 'ラインハルト・フォン・ローエングラム', True),
+    ('벤티', 'ウェンティ', True), ('포름알데하이드', 'ポムニ', False), ('바니', 'パトラ', False),
+])
+def test_known_katakana_spelling_is_used_only_when_it_sounds_like_the_reading(known, span, accepted):
+    mapping = resolve_glossary([{'span': span, 'kind': 'name', 'reading': '', 'ko': known}], [span])
+    assert (mapping[span] == known) is accepted
+    assert mapping[span] == known or mapping[span] == to_hangul(span)

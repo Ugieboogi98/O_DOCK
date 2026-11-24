@@ -26,6 +26,34 @@ def _norm(value):
     return re.sub(r'\s+', '', unicodedata.normalize('NFKC', value or '')).casefold()
 
 
+_KATA = 'ァ-ヺー'
+_HIRA = 'ぁ-ゖ'
+_LATIN = 'A-Za-z0-9'
+
+
+def usable_alias(original):
+    """Short kana aliases (アイ) occur inside unrelated words (アイドル), so kana-only aliases need 3+ chars."""
+    text = _norm(original)
+    if re.fullmatch(f'[{_KATA}{_HIRA}・]+', text):
+        return len(text) >= 3
+    return len(text) >= MIN_ALIAS_LENGTH
+
+
+def literal_in(alias, text):
+    """True when ``alias`` occurs as a whole token: not continued by the same script on either side."""
+    for match in re.finditer(re.escape(alias), text or ''):
+        before = text[match.start() - 1] if match.start() else ''
+        after = text[match.end()] if match.end() < len(text) else ''
+        glued = False
+        for script in (_KATA, _HIRA, _LATIN):
+            cls = re.compile(f'[{script}]')
+            if (before and cls.match(before) and cls.match(alias[0])) or (after and cls.match(after) and cls.match(alias[-1])):
+                glued = True
+        if not glued:
+            return True
+    return False
+
+
 def observations(name_original, fields):
     """Yield (kind, original, ko, work_ko) facts from one validated profile."""
     if not isinstance(fields, dict) or fields.get('classification_status') != 'ready':
@@ -40,7 +68,7 @@ def observations(name_original, fields):
         if isinstance(item, dict) and isinstance(item.get('original'), str) and item.get('ko'):
             out.append(('character', item['original'], item['ko'], work_ko))
     title = name_original or ''
-    return [o for o in out if len(_norm(o[1])) >= MIN_ALIAS_LENGTH and o[1] in title]
+    return [o for o in out if usable_alias(o[1]) and o[1] in title]
 
 
 def build_learned(rows):
@@ -90,7 +118,9 @@ def learned_candidates(source, learned, work_ko=None, work_original=None):
     works = [a for a in aliases if a['kind'] == 'franchise']
     hits = []
     for alias in sorted(works, key=lambda a: -len(a['original'])):
-        field = next((name for name, value in fields if alias['original'] in value), None)
+        if not usable_alias(alias['original']):
+            continue
+        field = next((name for name, value in fields if literal_in(alias['original'], value)), None)
         if field:
             hits.append((alias, field))
     labels = {a['ko'] for a, _ in hits}
@@ -106,7 +136,7 @@ def learned_candidates(source, learned, work_ko=None, work_original=None):
         title = title.replace(span, ' ')
     found = []
     for alias in sorted((a for a in aliases if a['kind'] == 'character'), key=lambda a: -len(a['original'])):
-        if alias['original'] not in title:
+        if not usable_alias(alias['original']) or not literal_in(alias['original'], title):
             continue
         if alias.get('work') and work_ko and _norm(alias['work']) != _norm(work_ko):
             continue
