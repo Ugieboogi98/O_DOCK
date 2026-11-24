@@ -39,3 +39,6 @@ meta_long_lived_token.txt
 coverage/
 .coverage
 htmlcov/
+
+# Dictionary build snapshots (several MB each); catalog.json is the tracked current version
+data/reference/semantic_dictionary/versions/

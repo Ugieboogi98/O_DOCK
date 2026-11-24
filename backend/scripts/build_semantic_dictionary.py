@@ -25,6 +25,12 @@ def build():
     groups=[]
     for name in ('local_semantic_domain_aliases.json','local_semantic_domain_extension.json','semantic_recovery_dictionary.json'):
         groups+=json.loads((root/name).read_text(encoding='utf-8')).get('groups',[])
+    # Wikidata labels fill gaps only; curated and verified entries always win (see wikidata_groups).
+    wikidata_path=root/'local_semantic_domain_wikidata.json'
+    if wikidata_path.exists():
+        from app.services.wikidata_groups import merge
+        groups+=merge(groups,[*knowledge.get('works',[]),*aliases.get('franchises',[])],
+                      json.loads(wikidata_path.read_text(encoding='utf-8')).get('groups',[]))
     path=get_settings().data_dir/'reference/semantic_dictionary/catalog.json'
     previous_titles=json.loads(path.read_text(encoding='utf-8')).get('titles',{}) if path.exists() else {}
     titles={};quarantined=0;learned_rows=[];work_rows=[]

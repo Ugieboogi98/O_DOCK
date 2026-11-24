@@ -23,6 +23,9 @@ LETTER = r'[\w぀-ヿ一-鿿가-힣]'
 
 def _work_alias(alias):
     n = normalize(alias)
+    # Short Latin abbreviations (SEL, IF, C) collide with model codes and brand words.
+    if _latin(alias) and len(n) < 4:
+        return False
     return len(n) >= 2 and alias.strip() not in NOT_WORKS
 
 
@@ -93,17 +96,38 @@ def with_catalog_works(base, catalog):
     return list(merged.values())
 
 
+_index_cache = {'groups': None, 'index': None, 'longest': 0}
+
+
+def _alias_index(dictionary_groups):
+    """normalized alias -> [(group, alias)]; thousands of works make a per-group scan too slow."""
+    if _index_cache['groups'] is not dictionary_groups:
+        index, longest = {}, 0
+        for g in dictionary_groups:
+            if g['work'] in NOT_WORKS:
+                continue
+            for alias in g['aliases']:
+                if _work_alias(alias):
+                    n = normalize(alias)
+                    index.setdefault(n, []).append((g, alias))
+                    longest = max(longest, len(n))
+        _index_cache.update(groups=dictionary_groups, index=index, longest=longest)
+    return _index_cache['index'], _index_cache['longest']
+
+
 def recognize(title, dictionary_groups=None):
     """{'work', 'medium', 'characters': [ko...]} for the most specific work named, else None."""
     text = title or ''
     norm = normalize(text)
-    found = []
-    for g in dictionary_groups if dictionary_groups is not None else groups():
-        if g['work'] in NOT_WORKS:
-            continue
-        hits = [a for a in g['aliases'] if _work_alias(a) and _contains(text, norm, a)]
-        if hits:
-            found.append((max(len(normalize(a)) for a in hits), g))
+    index, longest = _alias_index(dictionary_groups if dictionary_groups is not None else groups())
+    best_hit = {}
+    for i in range(len(norm)):
+        for j in range(i + 2, min(len(norm), i + longest) + 1):
+            for g, alias in index.get(norm[i:j], ()):
+                # The substring hit is a candidate; boundaries for short and Latin aliases are checked here.
+                if _contains(text, norm, alias):
+                    best_hit[id(g)] = max(best_hit.get(id(g), (0, g))[0], j - i), g
+    found = list(best_hit.values())
     if not found:
         return None
     # "명일방주 엔드필드" names both 명일방주 and 명일방주: 엔드필드; the longer alias is the specific work.

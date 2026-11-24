@@ -45,7 +45,7 @@ def load(items_dir):
 def offline(records, dictionary, scratch):
     committed = [r for r in records if r.get('status') in ('ready', 'partial', 'review') and r.get('fields')]
     before, after, changes = Counter(), Counter(), Counter()
-    examples = []
+    examples, changed = [], []
     for record in committed:
         # Leave-one-out: the item's own label never teaches its own alias.
         others = [(r['figure_id'], r['source']['name_original'], r['fields']) for r in committed if r is not record]
@@ -64,11 +64,14 @@ def offline(records, dictionary, scratch):
                 changes['filled_' + key] += 1
             elif record['fields'].get(key) and fields.get(key) and record['fields'][key] != fields[key]:
                 changes['changed_' + key] += 1
+                if len(changed) < 60:  # label changes are the possible regressions; list them for review
+                    changed.append({'figure_id': record['figure_id'], 'field': key, 'title': source['name_original'],
+                                    'before': record['fields'][key], 'after': fields[key]})
         if old != new and len(examples) < 15:
             examples.append({'figure_id': record['figure_id'], 'title': source['name_original'], 'before': old, 'after': new,
                              'franchise_ko': fields.get('franchise_ko'), 'character_ko': fields.get('character_ko')})
     return {'mode': 'offline', 'items': len(committed), 'status_before': dict(before), 'status_after': dict(after),
-            'field_changes': dict(changes), 'examples': examples}
+            'field_changes': dict(changes), 'changed_labels': changed, 'examples': examples}
 
 
 def live(records, dictionary, scratch, limit, base_url):
