@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     )
     data_dir: Path = PROJECT_ROOT / 'data'
     media_dir: Path = PROJECT_ROOT / 'media'
+    # Writable, never served: pipeline reports, semantic stage caches, raw event snapshots.
+    private_dir: Path = PROJECT_ROOT / 'data' / 'private'
+    semantic_report_dir: Path = PROJECT_ROOT / 'data' / 'private' / 'semantics' / 'split_queue_20261117'
     chroma_host: str = ""
     chroma_port: int = 8000
     chroma_path: str = str(PROJECT_ROOT / 'data/chroma')

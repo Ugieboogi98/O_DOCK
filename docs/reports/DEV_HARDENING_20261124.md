@@ -77,8 +77,22 @@ docker compose -p figure-archive-ai exec -T backend python -m scripts.build_sema
 ## 5. CI
 `.github/workflows/ci.yml`: 백엔드(PostgreSQL 16 서비스, Alembic 적용, pytest, 구조 검사), 프론트(Vitest, 빌드), 비밀값·백업 파일 커밋 차단. PostgreSQL 통합 테스트 18개는 로컬에서 실행하지 못했으므로 첫 CI 실행 결과로 확인한다.
 
-## 6. 남은 과제
-- 실제 Ollama로 실패 103건 재처리 및 `--live` 측정
+## 6. 원클릭 데이터 갱신 (관리자 전용)
+`데이터 현황` 화면에 관리자로 연결하면 **한 번에 실행** 버튼이 보인다. `app/services/master_pipeline.py`가 아래 단계를 순서대로 실행한다.
+
+| 단계 | 내용 | 건너뛰는 경우 |
+|---|---|---|
+| 신상품 수집 | 승인된 제조사 출처(`catalog_sources.json`)에서 신상품 수집. 쿨다운 없이 즉시 실행 | 다른 수집기가 실행 중, 출처 없음 |
+| 번역·분류·검증 | 대기열 상품을 split-semantics로 처리(1회 최대 300건). 검증 규칙을 통과한 필드만 공개 | Ollama 미연결·모델 없음, 번역 워커 실행 중 |
+| 행사 수집·날짜 정리 | Meta Graph API로 공식 인스타그램 게시물 수집, 캡션에서 기간·장소 추출, 수집 전에 끝난 행사 제외 | Meta 설정 없음, 게이트 NO-GO |
+| 결과 점검 | 이번 실행으로 추가된 상품의 분류 상태, 남은 번역 대기열, 행사 후보 수 집계 | — |
+
+- 한 단계가 실패해도 나머지 단계는 계속 진행하고, 단계별 상태와 사유를 `collection_jobs`(collector `master_pipeline`)에 기록한다. 동시에 하나만 실행된다(advisory lock).
+- 관리자 토큰(`X-Admin-Token`)과 같은 출처 요청만 허용한다. 일반 사용자 계정은 이 기능을 쓸 수 없다.
+- 셸에서 실행: `scripts\collect_all.ps1` (`.env`의 ADMIN_TOKEN 사용, 진행 상황 표시) 또는 `docker compose -p figure-archive-ai exec backend python -m scripts.master_pipeline`.
+- 백엔드 컨테이너에 쓰기 가능한 비공개 디렉터리(`PRIVATE_DIR=/private`)와 번역 보고서 디렉터리(`/split_reports`)를 마운트했다. 미디어 경로(`/api/media`)와는 분리되어 웹으로 노출되지 않는다.
+
+## 7. 남은 과제
 - 일반 검색 임베딩 `hash` → 로컬 다국어 임베딩(bge-m3 등) 전환
 - 행사 `events` 테이블 정식 사용(검수 단계), 구 가격 테이블 `retail_price_records` 정리
 - 관심상품 가격 하락·재입고 알림 (가격 이력 기반)

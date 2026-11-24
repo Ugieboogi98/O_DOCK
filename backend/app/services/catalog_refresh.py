@@ -331,6 +331,30 @@ def _execute(job_id):
             _pending = False
 
 
+def run_now():
+    """Administrator run: no cooldown, executed in the caller's thread, still one collector at a time."""
+    global _pending
+    with _gate:
+        if _pending:
+            return {"state": "skipped", "reason": "already_running"}
+        try:
+            config = _config()
+        except (ValueError, OSError, TypeError, KeyError):
+            return {"state": "not_configured", "reason": "invalid_catalog_sources"}
+        if not any(x.get("auto_enabled") for x in config.get("sources", [])):
+            return {"state": "not_configured", "reason": "no_enabled_catalog_sources"}
+        with SessionLocal() as db:
+            job = CollectionJob(collector=COLLECTOR, status="running", count=0,
+                                error_summary=json.dumps({"new_products": 0, "trigger": "master_pipeline"}))
+            db.add(job)
+            db.commit()
+            job_id = job.id
+        _pending = True
+    _execute(job_id)  # resets _pending; skips itself if another worker holds the advisory lock
+    with SessionLocal() as db:
+        return _result(db.get(CollectionJob, job_id))
+
+
 def start_refresh():
     """At most one local pending job, + persisted cooldown across server restarts."""
     global _pending

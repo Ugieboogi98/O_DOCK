@@ -41,6 +41,20 @@ services:
     restart: "no"
   backend:
     <<: *backend
+    environment:
+      <<: *backend-environment
+      # One-click pipeline (admin page): writable private reports, never served as media.
+      PRIVATE_DIR: /private
+      SEMANTIC_REPORT_DIR: /split_reports
+      SEMANTIC_BASE_URL: http://host.docker.internal:11434
+      SEMANTIC_TRANSLATION_MODEL: ${SEMANTIC_TRANSLATION_MODEL:-qwen3:8b}
+      SEMANTIC_CLASSIFICATION_MODEL: ${SEMANTIC_CLASSIFICATION_MODEL:-qwen3:1.7b}
+    volumes:
+      - ./data:/data:ro
+      - media_data:/app/media
+      - ${PRIVATE_DATA_DIR:-./data/private}:/private
+      # Shared with semantic-worker so both see one failure history.
+      - ${SEMANTIC_REPORT_DIR:-./data/private/semantics/split_queue_20261117}:/split_reports
     depends_on:
       init: {condition: service_completed_successfully}
     ports: ["127.0.0.1:8000:8000"]
