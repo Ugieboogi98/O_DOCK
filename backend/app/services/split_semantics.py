@@ -32,6 +32,8 @@ MAX_SPANS=24
 # The shared Japanese pattern does not include the long mark. Sources also use ー as a dash
 # (Figureー初音ミクー), so only a long mark glued between Hangul letters (누ー도르) is untranslated text.
 RESIDUE=re.compile(JAPANESE_TEXT_PATTERN+'|(?<=[가-힣])[ーｰ](?=[가-힣])')
+# A lone honorific left after a name (요르 さん) is a fixed suffix, not a word for the model to guess (사장).
+HONORIFICS={'さん':'씨','ちゃん':'짱','くん':'군','君':'군','様':'님','さま':'님','たん':'땅'}
 
 def residual_spans(text):
     return list(dict.fromkeys(SPAN.findall(text or '')))[:MAX_SPANS]
@@ -230,7 +232,8 @@ class Pipeline:
         tmp=self.memory_path.with_suffix('.tmp');tmp.write_text(json.dumps(self.span_memory,ensure_ascii=False,indent=1,sort_keys=True),encoding='utf-8');tmp.replace(self.memory_path)
     def resolve_spans(self,title,spans,attempts):
         """Memory first, then one glossary call for the spans not seen before."""
-        mapping={s:self.span_memory[s] for s in spans if s in self.span_memory}
+        mapping={s:HONORIFICS[s] for s in spans if s in HONORIFICS}
+        mapping.update({s:self.span_memory[s] for s in spans if s in self.span_memory and s not in mapping})
         unknown=[s for s in spans if s not in mapping]
         metrics={'seconds':0}
         if unknown:

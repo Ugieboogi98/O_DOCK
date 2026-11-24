@@ -319,3 +319,35 @@ def test_repair_removes_unknown_kanji_names_and_recomputes_state():
     only, _ = repaired({**fields, 'characters': fields['characters'][:1]}, set())
     assert only['character_ko'] is None and only['field_status']['character_ko'] == 'missing' and only['classification_status'] == 'partial'
     assert repaired(fields, {'獪岳'})[0] is None
+
+
+def test_normalize_ignores_variation_selectors():
+    from app.services.semantic_rules import normalize
+    assert normalize('鬼舞辻\U000e0100無惨') == normalize('鬼舞辻無惨')
+    assert normalize('葛\ufe00城') == normalize('葛城')
+
+
+def _title_issues(original, title):
+    from app.services.semantic_rules import validate_result
+    return validate_result({'name_original': original}, {'name_ko': title, 'franchise': None, 'characters': [], 'figure_form': None})[1]
+
+
+def test_numeric_guard_accepts_equivalent_forms():
+    assert 'TITLE_NUMERIC_FACT_CHANGED' not in _title_issues('映画「五等分の花嫁」 中野一花', '영화 「5등분의 신부」 나카노 이치카')
+    assert 'TITLE_NUMERIC_FACT_CHANGED' not in _title_issues('TVアニメ「らんま1/2」 らんま', 'TV 애니메이션 「란마 ½」 란마')
+    assert 'TITLE_NUMERIC_FACT_CHANGED' not in _title_issues('TVアニメ『ダンダダン』第二弾', '단다단 두 번째')
+    assert 'TITLE_PRODUCT_CODE_CHANGED' not in _title_issues('ニュージャージー IRF2024ver.', '뉴저지 IRF2024 버전')
+    assert 'TITLE_PRODUCT_CODE_CHANGED' not in _title_issues('MIRAGE C02-URANUS', '미라주 C02-우라노스')
+
+
+def test_numeric_guard_still_rejects_changed_numbers():
+    assert 'TITLE_NUMERIC_FACT_CHANGED' in _title_issues('1/7スケールフィギュア', '1/8 스케일 피규어')
+    assert 'TITLE_NUMERIC_FACT_CHANGED' in _title_issues('TVアニメ『ダンダダン』第二弾', '단다단 세 번째')
+    assert 'TITLE_NUMERIC_FACT_CHANGED' in _title_issues('ダンダダン フィギュア', '단다단 피규어 3')
+    assert 'TITLE_PRODUCT_CODE_CHANGED' in _title_issues('MIRAGE C02-URANUS', '미라주 우라노스')
+    assert 'TITLE_ROMAN_NUMERAL_CHANGED' in _title_issues('デート・ア・ライブⅤ', '데이트 어 라이브')
+
+
+def test_lone_honorific_is_fixed():
+    from app.services.split_semantics import HONORIFICS, assemble_glossary
+    assert assemble_glossary('스파이 패밀리 손바닥 요르 さん', {'さん': HONORIFICS['さん']}) == '스파이 패밀리 손바닥 요르 씨'

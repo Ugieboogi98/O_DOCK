@@ -1084,6 +1084,19 @@
         ]
       ],
       "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+    },
+    {
+      "work": "프리파라",
+      "aliases": [
+        "プリパラ"
+      ],
+      "characters": [
+        [
+          "真中らぁら",
+          "마나카 라라"
+        ]
+      ],
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
     }
   ]
 }

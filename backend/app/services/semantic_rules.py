@@ -40,8 +40,12 @@ FORM_ALIASES = {
 }
 
 
+# Variation selectors (e.g. an IVS after a kanji in 鬼舞辻無惨) only pick a glyph; they never change the name.
+VARIATION_SELECTORS = re.compile('[\ufe00-\ufe0f\U000e0100-\U000e01ef]')
+
+
 def normalize(s):
-    return re.sub(r'\s+', '', unicodedata.normalize('NFKC', s or '')).casefold()
+    return re.sub(r'\s+', '', unicodedata.normalize('NFKC', VARIATION_SELECTORS.sub('', s or ''))).casefold()
 
 
 def same_subject(first, second):
@@ -195,23 +199,36 @@ def validate_result(source, result):
     elif len(title) > max(200, len(source['name_original']) * 6):
         reject('TITLE_TOO_LONG', 'name_ko')
     else:
+        digits = dict(zip('〇零一二三四五六七八九', (0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)))
+        def kanji_value(run):
+            total, current = 0, 0
+            for char in run:
+                if char in digits:
+                    current = digits[char]
+                else:
+                    total += (current or 1) * {'十': 10, '百': 100, '千': 1000}[char]
+                    current = 0
+            return total + current
+        def plain(s):
+            # NFKC turns ½ into 1⁄2 (fraction slash); compare it as 1/2.
+            return unicodedata.normalize('NFKC', html.unescape(s)).replace('⁄', '/')
         def numbers(s):
-            s = unicodedata.normalize('NFKC', html.unescape(s))
-            digits = dict(zip('〇零一二三四五六七八九', (0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)))
-            def ordinal(match):
-                total, current = 0, 0
-                for char in match[1]:
-                    if char in digits:
-                        current = digits[char]
-                    else:
-                        total += (current or 1) * {'十': 10, '百': 100, '千': 1000}[char]
-                        current = 0
-                return '第' + str(total + current)
-            s = re.sub(r'第([〇零一二三四五六七八九十百千]+)(?=[弾段期章話巻回版形])', ordinal, s)
+            s = re.sub(r'第([〇零一二三四五六七八九十百千]+)(?=[弾段期章話巻回版形])',
+                       lambda m: '第' + str(kanji_value(m[1])), plain(s))
             return set(re.findall(r'\d+(?:[.,]\d+)*', s))
         def scales(s):
-            return set(re.findall(r'\d+/\d+', re.sub(r'\s+', '', unicodedata.normalize('NFKC', s))))
-        if numbers(source['name_original']) != numbers(title) or scales(source['name_original']) != scales(title):
+            return set(re.findall(r'\d+/\d+', re.sub(r'\s+', '', plain(s))))
+        # A kanji numeral may be written as a digit (五等分 -> 5등분), and an ordinal may be written
+        # in Korean words (第二弾 -> 두 번째); neither may add or drop a number otherwise.
+        native = {1: '첫', 2: '두', 3: '세', 4: '네', 5: '다섯', 6: '여섯', 7: '일곱', 8: '여덟', 9: '아홉', 10: '열'}
+        source_numbers, title_numbers = numbers(source['name_original']), numbers(title)
+        kanji_numbers = {str(kanji_value(r)) for r in re.findall(r'[〇零一二三四五六七八九十百千]+', plain(source['name_original']))}
+        ordinals = {str(kanji_value(r)) for r in re.findall(r'第([〇零一二三四五六七八九十百千]+)', plain(source['name_original']))}
+        dropped = {n for n in source_numbers - title_numbers
+                   if not (n in ordinals and n.isdigit() and int(n) in native
+                           and re.search(native[int(n)] + r'\s*번째', title))}
+        if dropped or not title_numbers - source_numbers <= kanji_numbers \
+                or scales(source['name_original']) != scales(title):
             reject('TITLE_NUMERIC_FACT_CHANGED', 'name_ko')
         # NFKC turns Ⅴ into V, so the decimal guard alone cannot detect a lost season.
         normalized_title = unicodedata.normalize('NFKC', title)
@@ -220,7 +237,12 @@ def validate_result(source, result):
             reject('TITLE_ROMAN_NUMERAL_CHANGED', 'name_ko')
         # Protect explicit Latin product/model codes; avoid treating ordinary brand words as codes.
         codes = re.findall(r'\b[A-Za-z]+[A-Za-z0-9-]*\d[A-Za-z0-9-]*\b', source['name_original'])
-        if any(normalize(c) not in normalize(title) for c in codes):
+        def code_kept(code):
+            # IRF2024ver. -> IRF2024 버전, C02-URANUS -> C02-우라노스: the digit-bearing part must survive.
+            core = re.sub(r'(?i)ver$', '', code)
+            parts = [p for p in core.split('-') if re.search(r'\d', p)]
+            return normalize(code) in normalize(title) or all(normalize(p) in normalize(title) for p in parts)
+        if not all(code_kept(c) for c in codes):
             reject('TITLE_PRODUCT_CODE_CHANGED', 'name_ko')
     g = glossary()
     fields = {'name_ko': title.strip() if isinstance(title, str) else None,

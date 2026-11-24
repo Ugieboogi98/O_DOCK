@@ -47,6 +47,13 @@ docker compose -p figure-archive-ai exec -T backend python -m scripts.build_sema
 .\.venv\Scripts\python.exe -u tools/run_split_semantics.py --watch --skip-failed --retry-stale-failures --limit 20 --report-dir data/private/semantics/split_queue_20261117
 ```
 
+### 실 Ollama 재처리 결과 (`split-semantics-v8`, 2026-11-24)
+- partial 5,392건 전체 재처리(약 1시간 50분, 분당 약 50건): **ready 전환 407건**, 하향 0건, 실패 84건.
+- 실패 84건은 모두 `TRANSLATION_VALIDATION_FAILED`였다. 원인의 상당수는 숫자 검증 오탐(五等分→5등분, 1/2→½, 第二弾→두 번째, `IRF2024ver.`→`IRF2024 버전`)과 남은 경칭(요르 さん)이었다. 검증 규칙을 보완하고 경칭을 고정 매핑한 뒤 재시도해 24건을 복구했다. 남은 50건은 정상적인 거부다(일본어 잔존, 키릴/아랍 문자 혼입, 영문 전용 제목).
+- 이름 보정: 이체자 선택자(IVS)가 섞인 이름(鬼舞辻󠄀無惨)이 사전과 대조되지 않던 문제를 `normalize`에서 고쳤다. 적용 결과는 수정 8건, 제거 2건(와노국편, 투명 괴수는 캐릭터가 아님).
+- 최종 DB 상태: ready 1,781 · partial 4,981 · review 107.
+- 실패분만 다시 처리: `tools/run_split_semantics.py --reprocess --retry-failed --status partial --report-dir …` (현재 버전이 아닌 행만 대상).
+
 ## 2. 운영 위험
 - **소비자 중복 실행 방지**: PostgreSQL advisory lock(`worker_lock.py`)을 사용한다. 호스트와 Docker 소비자가 같은 DB를 쓰면 하나만 실행된다.
 - **Compose `semantic-worker`**: 호스트와 같은 보고서 경로(`SEMANTIC_REPORT_DIR`)를 쓰고, `--skip-failed --retry-stale-failures`를 적용하며, 역할별 모델 환경변수를 받는다.
