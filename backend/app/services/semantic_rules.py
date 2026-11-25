@@ -75,6 +75,12 @@ def add_documents(source, documents):
     return source
 
 
+def version_name(name, title):
+    """初音ミク ヴァンパイア Ver.: a name right before a bare Ver. is the version (a song, an outfit),
+    not a character; Ver.A / ver.2 only number variants of a named character."""
+    return re.search(re.escape(name) + r'\s*[-－ー～〜]?\s*ver(?:sion)?\b\.?(?![ \.]*[A-Za-z0-9])', title or '', re.I) is not None
+
+
 def context_candidates(source):
     found = []
     for field in ('document_0', 'document_1', 'document_2'):
@@ -92,6 +98,8 @@ def context_candidates(source):
                 continue
             subjects = re.findall(r'[「『]([^」』]{1,100})[」』]', clause)
             subjects = [s for s in subjects if title_subject(s, source['name_original']) or s in (source.get('character') or '')]
+            # 「チアリーディング」初音ミク … 初音ミク チアリーディングVer.: the quoted theme is the version, not a character.
+            subjects = [s for s in subjects if not version_name(s, source['name_original'])]
             if not subjects:
                 continue
             found.append({'kind': 'franchise', 'original': work, 'evidence_field': field, 'evidence': proof})

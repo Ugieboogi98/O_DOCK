@@ -43,7 +43,7 @@
     },
     {
       "file": "local_semantic_domain_extension.json",
-      "sha256": "c252dba751bc83a6e835f71bcf8a283b2bd162c0ac3a9a67c748468537df5443"
+      "sha256": "209e8afef07493425341ed77068ead73cdeb2088ad14f21ff3b041863effd75e"
     },
     {
       "file": "local_semantic_domain_wikidata.json",
@@ -75,7 +75,7 @@
     },
     {
       "file": "semantic_rules.py",
-      "sha256": "2fefd7ae590884ec2ab6d9bb22b5791d914a510fb6d3eb146a39a39becabf309"
+      "sha256": "cecb7aa470f259f47b4861f90b0c33f8aeb36019c6fb6eccd0f4b1a054522616"
     },
     {
       "file": "semantic_recovery_dictionary.json",
@@ -23553,6 +23553,44 @@
         ]
       ],
       "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "다크스토커즈",
+      "medium": "game",
+      "provenance": "agent_curated; verified that レイレイ (Hsien-Ko) belongs to ヴァンパイア",
+      "aliases": [
+        "ヴァンパイア",
+        "ヴァンパイアセイヴァー",
+        "ヴァンパイアハンター",
+        "ダークストーカーズ",
+        "Darkstalkers"
+      ],
+      "characters": [
+        [
+          "レイレイ|Hsien-Ko",
+          "레이레이"
+        ],
+        [
+          "モリガン|モリガン・アーンスランド|Morrigan",
+          "모리건"
+        ],
+        [
+          "リリス|Lilith",
+          "릴리스"
+        ],
+        [
+          "フェリシア|Felicia",
+          "펠리시아"
+        ],
+        [
+          "デミトリ|デミトリ・マキシモフ|Demitri",
+          "디미트리"
+        ],
+        [
+          "バレッタ|B.B.Hood",
+          "바레타"
+        ]
+      ]
     },
     {
       "work": "원신",
@@ -50800,27 +50838,6 @@
       "provenance": "wikidata"
     },
     {
-      "work": "나이트 워리어즈: 다크스토커즈 리벤지",
-      "medium": "game",
-      "aliases": [
-        "Night Warriors: Darkstalkers' Revenge",
-        "ヴァンパイア ハンター"
-      ],
-      "characters": [
-        [
-          [
-            "モリガン・アーンスランド",
-            "모리건 앤슬랜드"
-          ],
-          "모리건 앤슬랜드"
-        ]
-      ],
-      "wikidata": [
-        "Q3341398"
-      ],
-      "provenance": "wikidata"
-    },
-    {
       "work": "나이트 인 더 우드",
       "medium": "game",
       "aliases": [
@@ -55744,37 +55761,6 @@
       "characters": [],
       "wikidata": [
         "Q1166313"
-      ],
-      "provenance": "wikidata"
-    },
-    {
-      "work": "다크스토커즈",
-      "medium": "game",
-      "aliases": [
-        "Darkstalkers",
-        "VAMPIRE HUNTER",
-        "ダークストーカーズ",
-        "ヴァンパイア",
-        "ヴァンパイアハンター The Animated Series"
-      ],
-      "characters": [
-        [
-          [
-            "バレッタ",
-            "베이비 보니 후드"
-          ],
-          "베이비 보니 후드"
-        ],
-        [
-          [
-            "フェリシア",
-            "펠리시아"
-          ],
-          "펠리시아"
-        ]
-      ],
-      "wikidata": [
-        "Q2633506"
       ],
       "provenance": "wikidata"
     },
@@ -278602,7 +278588,7 @@
       "provenance": "source_current_validated_profile"
     }
   },
-  "unverified_catalog_titles_excluded": 2173,
+  "unverified_catalog_titles_excluded": 2174,
   "learned": {
     "version": "learned-aliases-v1",
     "min_support": 2,
@@ -279064,6 +279050,13 @@
       },
       {
         "kind": "character",
+        "original": "ブラック・ジャック",
+        "ko": "블랙 잭",
+        "work": "블랙 잭",
+        "support": 2
+      },
+      {
+        "kind": "character",
         "original": "ブラック・マジシャン・ガール",
         "ko": "부랏쿠 마지샨 가루",
         "work": "유희왕 듀얼몬스터즈",
@@ -279200,7 +279193,7 @@
         "original": "リヴァイ",
         "ko": "리바이",
         "work": "진격의 거인",
-        "support": 3
+        "support": 5
       },
       {
         "kind": "character",
@@ -279362,6 +279355,13 @@
         "ko": "후시구로 토우지",
         "work": "주술회전",
         "support": 4
+      },
+      {
+        "kind": "character",
+        "original": "佐倉双葉",
+        "ko": "사쿠라 후타바",
+        "work": "페르소나 5",
+        "support": 2
       },
       {
         "kind": "character",
@@ -279547,9 +279547,23 @@
       },
       {
         "kind": "character",
+        "original": "山田浅ェ門 佐切",
+        "ko": "야마다 아사에몬 사기리",
+        "work": "지옥락",
+        "support": 2
+      },
+      {
+        "kind": "character",
         "original": "市川レノ",
         "ko": "이치카와 레노",
         "work": "괴수 8호",
+        "support": 2
+      },
+      {
+        "kind": "character",
+        "original": "平沢唯",
+        "ko": "히라사와 유이",
+        "work": "케이온!",
         "support": 2
       },
       {
@@ -279666,6 +279680,13 @@
       },
       {
         "kind": "character",
+        "original": "木之本桜",
+        "ko": "키노모토 사쿠라",
+        "work": "카드캡터 사쿠라",
+        "support": 8
+      },
+      {
+        "kind": "character",
         "original": "朽木白哉",
         "ko": "쿠치키 뱌쿠야",
         "work": "블리치",
@@ -279677,13 +279698,6 @@
         "ko": "무라노 사야카",
         "work": "러브 라이브!",
         "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "桜ミク",
-        "ko": "사쿠라 미쿠",
-        "work": "하츠네 미쿠",
-        "support": 5
       },
       {
         "kind": "character",
@@ -279858,6 +279872,13 @@
         "original": "釘崎野薔薇",
         "ko": "쿠기사키 노바라",
         "work": "주술회전",
+        "support": 2
+      },
+      {
+        "kind": "character",
+        "original": "錦木千束",
+        "ko": "니시키기 치사토",
+        "work": "리코리스 리코일",
         "support": 2
       },
       {
@@ -280373,6 +280394,13 @@
       },
       {
         "kind": "franchise",
+        "original": "ブラック・ジャック",
+        "ko": "블랙 잭",
+        "work": null,
+        "support": 2
+      },
+      {
+        "kind": "franchise",
         "original": "ライダーマン",
         "ko": "가면라이더 V3",
         "work": null,
@@ -280383,7 +280411,7 @@
         "original": "初音ミク",
         "ko": "하츠네 미쿠",
         "work": null,
-        "support": 35
+        "support": 32
       },
       {
         "kind": "franchise",
@@ -280398,6 +280426,13 @@
         "ko": "붕괴: 스타레일",
         "work": null,
         "support": 4
+      },
+      {
+        "kind": "franchise",
+        "original": "桜ミク",
+        "ko": "사쿠라 미쿠",
+        "work": null,
+        "support": 2
       },
       {
         "kind": "franchise",
@@ -280417,6 +280452,13 @@
         "kind": "franchise",
         "original": "미소녀만화경이문",
         "ko": "미소녀만화경이문",
+        "work": null,
+        "support": 2
+      },
+      {
+        "kind": "franchise",
+        "original": "벽람항로",
+        "ko": "벽람항로",
         "work": null,
         "support": 2
       }
@@ -281191,6 +281233,15 @@
         "figure_form": "chibi_figure"
       },
       {
+        "figure_id": 285,
+        "name_original": "遊☆戯☆王デュエルモンスターズ 闇遊戯",
+        "franchise_ko": "유희왕 듀얼몬스터즈",
+        "characters_ko": [
+          "어둠의 유희"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
         "figure_id": 286,
         "name_original": "SPY×FAMILY ヨル・フォージャー",
         "franchise_ko": "스파이 패밀리",
@@ -281205,6 +281256,33 @@
         "franchise_ko": "스파이 패밀리",
         "characters_ko": [
           "로이드 포저"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 288,
+        "name_original": "地獄楽 山田浅ェ門 佐切",
+        "franchise_ko": "지옥락",
+        "characters_ko": [
+          "야마다 아사에몬 사기리"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 289,
+        "name_original": "地獄楽 画眉丸",
+        "franchise_ko": "지옥락",
+        "characters_ko": [
+          "가비마루"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 298,
+        "name_original": "地獄楽 亜左 弔兵衛",
+        "franchise_ko": "지옥락",
+        "characters_ko": [
+          "아자 초베"
         ],
         "figure_form": "chibi_figure"
       },
@@ -281286,6 +281364,15 @@
         "franchise_ko": "리코리스 리코일",
         "characters_ko": [
           "이노우에 타키나"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 319,
+        "name_original": "リコリス・リコイル 錦木千束",
+        "franchise_ko": "리코리스 리코일",
+        "characters_ko": [
+          "니시키기 치사토"
         ],
         "figure_form": "chibi_figure"
       },
@@ -281750,6 +281837,15 @@
         "franchise_ko": "나의 히어로 아카데미아",
         "characters_ko": [
           "우라라카 오챠코"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 470,
+        "name_original": "カードキャプターさくら 木之本桜",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
         ],
         "figure_form": "chibi_figure"
       },
@@ -283175,6 +283271,15 @@
         "figure_form": "chibi_figure"
       },
       {
+        "figure_id": 1081,
+        "name_original": "進撃の巨人",
+        "franchise_ko": "진격의 거인",
+        "characters_ko": [
+          "진격의 거인"
+        ],
+        "figure_form": "acrylic_stand"
+      },
+      {
         "figure_id": 1085,
         "name_original": "進撃の巨人 ミカサ・アッカーマン",
         "franchise_ko": "진격의 거인",
@@ -283189,6 +283294,15 @@
         "franchise_ko": "장송의 프리렌",
         "characters_ko": [
           "힘멜"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 1087,
+        "name_original": "進撃の巨人 リヴァイ お掃除Ver.",
+        "franchise_ko": "진격의 거인",
+        "characters_ko": [
+          "리바이"
         ],
         "figure_form": "chibi_figure"
       },
@@ -283752,6 +283866,15 @@
         "figure_form": "chibi_figure"
       },
       {
+        "figure_id": 1306,
+        "name_original": "TVアニメ『BLEACH 千年血戦篇』 平子真子",
+        "franchise_ko": "블리치",
+        "characters_ko": [
+          "히라코 신지"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
         "figure_id": 1307,
         "name_original": "銀河特急 ミルキー☆サブウェイ カナタ",
         "franchise_ko": "은하특급 밀키 서브웨이",
@@ -283793,6 +283916,15 @@
         "franchise_ko": "나루토 질풍전",
         "characters_ko": [
           "록 리"
+        ],
+        "figure_form": "chibi_figure"
+      },
+      {
+        "figure_id": 1342,
+        "name_original": "TVアニメ『BLEACH』 市丸ギン",
+        "franchise_ko": "블리치",
+        "characters_ko": [
+          "이치마루 긴"
         ],
         "figure_form": "chibi_figure"
       },
@@ -290181,6 +290313,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 4823,
+        "name_original": "GUILTY GEAR XX ΛCORE PLUS R ブリジット 1/7スケールフィギュア【完全受注生産】",
+        "franchise_ko": "길티 기어",
+        "characters_ko": [
+          "몽키 D. 루피"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 4825,
         "name_original": "どきゅーとぷち　デート・ア・ライブⅤ　特大ぬいぐるみ　夜刀神十香",
         "franchise_ko": "데이트 어 라이브",
@@ -290352,6 +290493,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 4859,
+        "name_original": "GUILTY GEAR -STRIVE- ブリジット～Purple ver.～ 1/7スケールフィギュア【完全受注生産】",
+        "franchise_ko": "길티 기어",
+        "characters_ko": [
+          "몽키 D. 루피"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 4860,
         "name_original": "ソフィーのアトリエ ～不思議な本の錬金術士～ ソフィー ーネグリジェver.ー 1/6スケールフィギュア【完全受注生産】",
         "franchise_ko": "소피의 아틀리에 ~신비한 꿈의 연금술사~",
@@ -290402,6 +290552,15 @@
         "franchise_ko": "청춘 돼지",
         "characters_ko": [
           "사쿠라지마 마이"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 4868,
+        "name_original": "GUILTY GEAR -STRIVE- ブリジット 1/7スケールフィギュア【完全受注生産】",
+        "franchise_ko": "길티 기어",
+        "characters_ko": [
+          "몽키 D. 루피"
         ],
         "figure_form": "scale_figure"
       },
@@ -290583,6 +290742,15 @@
         "franchise_ko": "우마무스메 프리티 더비",
         "characters_ko": [
           "사토노 다이아몬드"
+        ],
+        "figure_form": "plush"
+      },
+      {
+        "figure_id": 4896,
+        "name_original": "どきゅーと 桜ミク 超特大ぬいぐるみ",
+        "franchise_ko": "사쿠라 미쿠",
+        "characters_ko": [
+          "사쿠라 미쿠"
         ],
         "figure_form": "plush"
       },
@@ -291019,6 +291187,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 5051,
+        "name_original": "ぬーどるストッパーフィギュア-アーミヤ",
+        "franchise_ko": "명일방주",
+        "characters_ko": [
+          "아미야"
+        ],
+        "figure_form": "noodle_stopper"
+      },
+      {
         "figure_id": 5052,
         "name_original": "爆豪勝己 1/1スケール 胸像フィギュア 全高:約100cm",
         "franchise_ko": "나의 히어로 아카데미아",
@@ -291060,6 +291237,15 @@
         "franchise_ko": "명일방주",
         "characters_ko": [
           "노드롤 스토퍼 피규어 - 실버 어시"
+        ],
+        "figure_form": "noodle_stopper"
+      },
+      {
+        "figure_id": 5071,
+        "name_original": "ぬーどるストッパーフィギュア -チェン 歳紅霞Ver.",
+        "franchise_ko": "명일방주",
+        "characters_ko": [
+          "첸"
         ],
         "figure_form": "noodle_stopper"
       },
@@ -291354,6 +291540,15 @@
         "figure_form": "noodle_stopper"
       },
       {
+        "figure_id": 5350,
+        "name_original": "ダンガンロンパ3－The End of 希望ヶ峰学園－ ぬーどるストッパーぷち モノミ",
+        "franchise_ko": "단간론파 3 -The End of 키보가미네 학원-",
+        "characters_ko": [
+          "모노미"
+        ],
+        "figure_form": "noodle_stopper"
+      },
+      {
         "figure_id": 5372,
         "name_original": "ソードアート・オンライン オーディナル・スケール ぬーどるストッパーフィギュア-アスナ-",
         "franchise_ko": "소드 아트 온라인",
@@ -291368,6 +291563,15 @@
         "franchise_ko": "페이트/그랜드 오더",
         "characters_ko": [
           "네로 클라우디우스"
+        ],
+        "figure_form": "noodle_stopper"
+      },
+      {
+        "figure_id": 5390,
+        "name_original": "ヴァンパイア ぬーどるストッパーフィギュア-レイレイ-",
+        "franchise_ko": "다크스토커즈",
+        "characters_ko": [
+          "레이레이"
         ],
         "figure_form": "noodle_stopper"
       },
@@ -292221,6 +292425,15 @@
         "figure_form": "non_scale_figure"
       },
       {
+        "figure_id": 5868,
+        "name_original": "TENITOL 日暮かごめ",
+        "franchise_ko": "이누야샤",
+        "characters_ko": [
+          "유가영"
+        ],
+        "figure_form": "non_scale_figure"
+      },
+      {
         "figure_id": 5869,
         "name_original": "TENITOL 後藤ひとり カフェスタイルver.",
         "franchise_ko": "봇치 더 록!",
@@ -292379,6 +292592,15 @@
         "franchise_ko": "5등분의 신부",
         "characters_ko": [
           "나카노 이치카"
+        ],
+        "figure_form": "non_scale_figure"
+      },
+      {
+        "figure_id": 5931,
+        "name_original": "TENITOL ベータ",
+        "franchise_ko": "어둠의 실력자가 되고 싶어서!",
+        "characters_ko": [
+          "텐이토루"
         ],
         "figure_form": "non_scale_figure"
       },
@@ -292596,6 +292818,15 @@
         "franchise_ko": "버츄얼 유튜버",
         "characters_ko": [
           "키즈나 아이"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 5968,
+        "name_original": "山田浅ェ門 佐切 1/7スケールフィギュア",
+        "franchise_ko": "지옥락",
+        "characters_ko": [
+          "야마다 아사에몬 사기리"
         ],
         "figure_form": "scale_figure"
       },
@@ -292835,6 +293066,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6028,
+        "name_original": "コッコロ★6 1/7スケールフィギュア",
+        "franchise_ko": "프린세스 커넥트!",
+        "characters_ko": [
+          "몽키 D. 루피"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6029,
         "name_original": "中野二乃 -白無垢- 1/7スケールフィギュア",
         "franchise_ko": "5등분의 신부",
@@ -292934,11 +293174,29 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6051,
+        "name_original": "ペコリーヌ★6 1/7スケールフィギュア",
+        "franchise_ko": "프린세스 커넥트!",
+        "characters_ko": [
+          "몽키 D. 루피"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6052,
         "name_original": "ニニム・ラーレイ 1/7スケールフィギュア",
         "franchise_ko": "천재 왕자의 적자국가 재생술 ~그래, 매국하자~",
         "characters_ko": [
           "니니무 라레이"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6053,
+        "name_original": "リヴァイ Birthday 1/7スケールフィギュア",
+        "franchise_ko": "진격의 거인",
+        "characters_ko": [
+          "리바이"
         ],
         "figure_form": "scale_figure"
       },
@@ -292966,6 +293224,15 @@
         "franchise_ko": "여성향 게임의 파멸 플래그밖에 없는 악역 영애로 환생해버렸다…",
         "characters_ko": [
           "카타리나 클레스"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6064,
+        "name_original": "キャル(ニューイヤー) 1/7スケールフィギュア",
+        "franchise_ko": "프린세스 커넥트!",
+        "characters_ko": [
+          "몽키 D. 루피"
         ],
         "figure_form": "scale_figure"
       },
@@ -293177,6 +293444,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6106,
+        "name_original": "コッコロ 1/7スケールフィギュア",
+        "franchise_ko": "프린세스 커넥트!",
+        "characters_ko": [
+          "몽키 D. 루피"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6112,
         "name_original": "アルベド -浴衣- 1/8スケールフィギュア",
         "franchise_ko": "오버로드",
@@ -293370,6 +293646,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6274,
+        "name_original": "루미너스박스 벽람항로 앵커리지 함선과의 한 잔 1/6 완성품 피규어",
+        "franchise_ko": "벽람항로",
+        "characters_ko": [
+          "앵커리지"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6279,
         "name_original": "반다이 로봇혼 SIDE MF 기동무투전 G건담 볼트건담 마셜액션",
         "franchise_ko": "기동무투전 G 건담",
@@ -293377,6 +293662,15 @@
           "볼트건담"
         ],
         "figure_form": "action_figure"
+      },
+      {
+        "figure_id": 6280,
+        "name_original": "에이펙스 명일방주 미즈키 1/7 완성품 피규어",
+        "franchise_ko": "명일방주",
+        "characters_ko": [
+          "미즈키"
+        ],
+        "figure_form": "scale_figure"
       },
       {
         "figure_id": 6281,
@@ -293559,12 +293853,11 @@
         "figure_form": "nendoroid"
       },
       {
-        "figure_id": 6350,
-        "name_original": "G.S.Collection 初音ミク チアリーディングVer.",
-        "franchise_ko": "하츠네 미쿠",
+        "figure_id": 6355,
+        "name_original": "G.S.Collection [SC] 木之本桜 My First Sparkle",
+        "franchise_ko": "카드캡터 사쿠라",
         "characters_ko": [
-          "하츠네 미쿠",
-          "치아리딘구"
+          "키노모토 사쿠라"
         ],
         "figure_form": "scale_figure"
       },
@@ -293643,6 +293936,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6372,
+        "name_original": "ねんどろいどどーる モニカ",
+        "franchise_ko": "두근두근 문예부!",
+        "characters_ko": [
+          "모니카"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6373,
         "name_original": "ねんどろいどどーる ユーベル",
         "franchise_ko": "장송의 프리렌",
@@ -293693,6 +293995,15 @@
         "franchise_ko": "우마무스메 프리티 더비",
         "characters_ko": [
           "메지로 맥퀸"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6381,
+        "name_original": "ねんどろいど 秋山澪 2.0",
+        "franchise_ko": "케이온!",
+        "characters_ko": [
+          "아키야마 미오"
         ],
         "figure_form": "nendoroid"
       },
@@ -293778,6 +294089,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6394,
+        "name_original": "ねんどろいど 月宮あゆ",
+        "franchise_ko": "카논",
+        "characters_ko": [
+          "츠키미야 아유"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6396,
         "name_original": "ねんどろいど パワー 私服Ver. べーしっく",
         "franchise_ko": "체인소 맨",
@@ -293807,6 +294127,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6399,
+        "name_original": "ねんどろいど 木之本桜 Always Together ～ Pinky Promise ～",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6400,
         "name_original": "ねんどろいどどーる マキマ",
         "franchise_ko": "체인소 맨 레제편",
@@ -293830,16 +294159,6 @@
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6403,
-        "name_original": "ねんどろいど 初音ミク マジカルミライ 2025Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠",
-          "마직컬 미라이 2025"
         ],
         "figure_form": "nendoroid"
       },
@@ -293925,6 +294244,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6415,
+        "name_original": "ねんどろいどどーる 明智吾郎 制服Ver.",
+        "franchise_ko": "페르소나 5",
+        "characters_ko": [
+          "아케치 고로"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6417,
         "name_original": "ねんどろいど ダイワスカーレット",
         "franchise_ko": "우마무스메 프리티 더비",
@@ -293939,6 +294267,15 @@
         "franchise_ko": "우마무스메 프리티 더비",
         "characters_ko": [
           "골드 쉽"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6419,
+        "name_original": "ねんどろいどどーる 平沢唯",
+        "franchise_ko": "케이온!",
+        "characters_ko": [
+          "히라사와 유이"
         ],
         "figure_form": "nendoroid"
       },
@@ -293975,6 +294312,25 @@
         "franchise_ko": "붕괴: 스타레일",
         "characters_ko": [
           "반디"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6427,
+        "name_original": "ねんどろいど バジル",
+        "franchise_ko": "오모리",
+        "characters_ko": [
+          "바지루"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6428,
+        "name_original": "ねんどろいど ラムレザル=ヴァレンタイン",
+        "franchise_ko": "길티 기어 스트라이브",
+        "characters_ko": [
+          "바렌타인",
+          "라무레자루 바렌타인"
         ],
         "figure_form": "nendoroid"
       },
@@ -294070,6 +294426,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6454,
+        "name_original": "ねんどろいどどーる 木之本桜 コスチュームVer.",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6457,
         "name_original": "ねんどろいど 初音ミク Happy 16th Birthday Ver.",
         "franchise_ko": "하츠네 미쿠",
@@ -294152,6 +294517,24 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6474,
+        "name_original": "ねんどろいど マリオ",
+        "franchise_ko": "슈퍼 마리오브라더스",
+        "characters_ko": [
+          "마리오"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6475,
+        "name_original": "ねんどろいど ルイージ",
+        "franchise_ko": "슈퍼 마리오브라더스",
+        "characters_ko": [
+          "루이지"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6476,
         "name_original": "ねんどろいど 緑谷出久 雄英制服Ver.",
         "franchise_ko": "나의 히어로 아카데미아",
@@ -294229,6 +294612,15 @@
         "franchise_ko": "홀로라이브",
         "characters_ko": [
           "모코코 아비스가도"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6492,
+        "name_original": "ねんどろいど レッドピラミッドシング",
+        "franchise_ko": "사일런트 힐 2",
+        "characters_ko": [
+          "렛도피라밋도신구"
         ],
         "figure_form": "nendoroid"
       },
@@ -294377,6 +294769,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6519,
+        "name_original": "ねんどろいど 木之本桜 My First Sparkle",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6522,
         "name_original": "ねんどろいど ヤ・シュトラ",
         "franchise_ko": "파이널판타지14",
@@ -294409,16 +294810,6 @@
         "franchise_ko": "에반게리온 신극장판",
         "characters_ko": [
           "시키나미 아스카 랑그레이"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6530,
-        "name_original": "ねんどろいど 初音ミク ワールドイズマイン 2024Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠",
-          "월드 아이즈 마인 2024"
         ],
         "figure_form": "nendoroid"
       },
@@ -294552,6 +294943,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6548,
+        "name_original": "ねんどろいど イシュメール",
+        "franchise_ko": "림버스 컴퍼니",
+        "characters_ko": [
+          "이슈메르"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6549,
         "name_original": "ねんどろいど パンティ New Ver.",
         "franchise_ko": "뉴 팬티 & 스타킹 with 가터벨트",
@@ -294633,6 +295033,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6559,
+        "name_original": "ねんどろいど 二階堂ヒロ",
+        "franchise_ko": "마법소녀의 마녀재판",
+        "characters_ko": [
+          "니카이도 히로"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6560,
         "name_original": "ねんどろいど さくらみこ 私服衣装Ver.",
         "franchise_ko": "홀로라이브",
@@ -294642,21 +295051,29 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6561,
+        "name_original": "ねんどろいど サヨリ",
+        "franchise_ko": "두근두근 문예부!",
+        "characters_ko": [
+          "사요리"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6562,
+        "name_original": "ねんどろいど ナツキ",
+        "franchise_ko": "두근두근 문예부!",
+        "characters_ko": [
+          "나츠키"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6564,
         "name_original": "ねんどろいど フリーレン",
         "franchise_ko": "장송의 프리렌",
         "characters_ko": [
           "프리렌"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6567,
-        "name_original": "ねんどろいど 初音ミク ピエレッタVer.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠",
-          "피에렛타"
         ],
         "figure_form": "nendoroid"
       },
@@ -294877,11 +295294,29 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6613,
+        "name_original": "ねんどろいど 佐倉双葉 怪盗服Ver.",
+        "franchise_ko": "페르소나 5",
+        "characters_ko": [
+          "사쿠라 후타바"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6615,
         "name_original": "ねんどろいど 初音ミク ヴァンパイア Ver.",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6616,
+        "name_original": "ねんどろいど 木之本桜 友枝中学校制服Ver.",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
         ],
         "figure_form": "nendoroid"
       },
@@ -294914,11 +295349,29 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6627,
+        "name_original": "ねんどろいど 聖園ミカ",
+        "franchise_ko": "블루 아카이브",
+        "characters_ko": [
+          "미소노 미카"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6628,
         "name_original": "ねんどろいど メタナイト",
         "franchise_ko": "별의 커비",
         "characters_ko": [
           "메타나이토"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6629,
+        "name_original": "ねんどろいど ロイ・マスタング",
+        "franchise_ko": "강철의 연금술사",
+        "characters_ko": [
+          "로이 머스탱"
         ],
         "figure_form": "nendoroid"
       },
@@ -294946,6 +295399,24 @@
         "franchise_ko": "봇치 더 록!",
         "characters_ko": [
           "고토 히토리"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
+        "figure_id": 6635,
+        "name_original": "ねんどろいど オッチン",
+        "franchise_ko": "피크민 4",
+        "characters_ko": [
+          "와치"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6638,
+        "name_original": "アンジェラ バルザック 10th Anniversary Ver.",
+        "franchise_ko": "낙원추방",
+        "characters_ko": [
+          "안제라 바루잣쿠"
         ],
         "figure_form": "scale_figure"
       },
@@ -294986,11 +295457,29 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6646,
+        "name_original": "ねんどろいど ネイキッド・スネーク",
+        "franchise_ko": "메탈 기어 솔리드 델타: 스네이크 이터",
+        "characters_ko": [
+          "네이킷도 스네쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6651,
         "name_original": "ねんどろいど チハル",
         "franchise_ko": "은하특급 밀키 서브웨이",
         "characters_ko": [
           "치하루"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6654,
+        "name_original": "ねんどろいど ペルソナ3主人公",
+        "franchise_ko": "여신전생 페르소나 3",
+        "characters_ko": [
+          "주인공"
         ],
         "figure_form": "nendoroid"
       },
@@ -295018,6 +295507,24 @@
         "franchise_ko": "주술회전",
         "characters_ko": [
           "이타도리 유지"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6662,
+        "name_original": "ねんどろいど ブラック・ジャック コミックカラーVer.",
+        "franchise_ko": "블랙 잭",
+        "characters_ko": [
+          "블랙 잭"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6663,
+        "name_original": "ねんどろいど ブラック・ジャック アニメカラーVer.",
+        "franchise_ko": "블랙 잭",
+        "characters_ko": [
+          "블랙 잭"
         ],
         "figure_form": "nendoroid"
       },
@@ -295103,6 +295610,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6679,
+        "name_original": "ねんどろいどどーる 錦木千束 喫茶リコリコ制服Ver.",
+        "franchise_ko": "리코리스 리코일",
+        "characters_ko": [
+          "니시키기 치사토"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6680,
         "name_original": "ねんどろいどどーる 井ノ上たきな 喫茶リコリコ制服Ver.",
         "franchise_ko": "리코리스 리코일",
@@ -295130,6 +295646,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6687,
+        "name_original": "ねんどろいどどーる 佐倉双葉",
+        "franchise_ko": "페르소나 5",
+        "characters_ko": [
+          "사쿠라 후타바"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6688,
         "name_original": "ライスシャワー～あこがれの景色～",
         "franchise_ko": "우마무스메 프리티 더비",
@@ -295153,6 +295678,24 @@
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6691,
+        "name_original": "ねんどろいどどーる 大道寺知世 友枝中学校制服Ver.",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "다이도우지 토모요"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6692,
+        "name_original": "ねんどろいどどーる 木之本桜 友枝中学校制服Ver.",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
         ],
         "figure_form": "nendoroid"
       },
@@ -295220,6 +295763,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6714,
+        "name_original": "ねんどろいど ユミア・リースフェルト",
+        "franchise_ko": "유미아의 아틀리에 ~추억의 연금술사와 창환의 땅~",
+        "characters_ko": [
+          "유미아 리스페루토"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6716,
         "name_original": "トガヒミコ",
         "franchise_ko": "나의 히어로 아카데미아",
@@ -295262,6 +295814,15 @@
         "franchise_ko": "헌터×헌터",
         "characters_ko": [
           "머레움"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6726,
+        "name_original": "ねんどろいど リリィ",
+        "franchise_ko": "엔더 릴리즈: 콰이터스 오브 더 나이츠",
+        "characters_ko": [
+          "리리"
         ],
         "figure_form": "nendoroid"
       },
@@ -295316,6 +295877,15 @@
         "franchise_ko": "승리의 여신: 니케",
         "characters_ko": [
           "소다"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6740,
+        "name_original": "ねんどろいど ジュリちゃん",
+        "franchise_ko": "스트리트 파이터 6",
+        "characters_ko": [
+          "쥬리찬"
         ],
         "figure_form": "nendoroid"
       },
@@ -295492,6 +296062,15 @@
         "figure_form": "scale_figure"
       },
       {
+        "figure_id": 6772,
+        "name_original": "ねんどろいど アイギス2.0",
+        "franchise_ko": "페르소나 3 리로드",
+        "characters_ko": [
+          "아이기스"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6773,
         "name_original": "ねんどろいど 星街すいせい セーラー衣装Ver.",
         "franchise_ko": "홀로라이브",
@@ -295551,6 +296130,15 @@
         "franchise_ko": "나의 히어로 아카데미아",
         "characters_ko": [
           "토가 히미코"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6793,
+        "name_original": "ねんどろいど 平沢唯 2.0",
+        "franchise_ko": "케이온!",
+        "characters_ko": [
+          "히라사와 유이"
         ],
         "figure_form": "nendoroid"
       },
@@ -295627,6 +296215,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6815,
+        "name_original": "ねんどろいどどーる 廣井きくり",
+        "franchise_ko": "봇치 더 록!",
+        "characters_ko": [
+          "히로이 기쿠리"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6816,
         "name_original": "ねんどろいど  角楯カリン",
         "franchise_ko": "블루 아카이브",
@@ -295686,6 +296283,24 @@
         "franchise_ko": "장송의 프리렌",
         "characters_ko": [
           "힘멜"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6983,
+        "name_original": "ねんどろいど 木之本桜 友枝小学校夏制服Ver. べーしっく",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6984,
+        "name_original": "ねんどろいど 李小狼 友枝小学校夏制服Ver. べーしっく",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "리 샤오랑"
         ],
         "figure_form": "nendoroid"
       },
@@ -295772,5 +296387,5 @@
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "45700c044544aec45399689a18c270187f9e34f2a397823eeb1c9e5b872291d1"
+  "fingerprint": "213615069e2dfd336259ae2a77b3758510534fd0e3237f4b0321ebc983b38a78"
 }

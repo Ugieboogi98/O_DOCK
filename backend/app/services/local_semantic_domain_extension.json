@@ -1309,6 +1309,44 @@
         ]
       ],
       "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
+    },
+    {
+      "work": "다크스토커즈",
+      "medium": "game",
+      "provenance": "agent_curated; verified that レイレイ (Hsien-Ko) belongs to ヴァンパイア",
+      "aliases": [
+        "ヴァンパイア",
+        "ヴァンパイアセイヴァー",
+        "ヴァンパイアハンター",
+        "ダークストーカーズ",
+        "Darkstalkers"
+      ],
+      "characters": [
+        [
+          "レイレイ|Hsien-Ko",
+          "레이레이"
+        ],
+        [
+          "モリガン|モリガン・アーンスランド|Morrigan",
+          "모리건"
+        ],
+        [
+          "リリス|Lilith",
+          "릴리스"
+        ],
+        [
+          "フェリシア|Felicia",
+          "펠리시아"
+        ],
+        [
+          "デミトリ|デミトリ・マキシモフ|Demitri",
+          "디미트리"
+        ],
+        [
+          "バレッタ|B.B.Hood",
+          "바레타"
+        ]
+      ]
     }
   ]
 }

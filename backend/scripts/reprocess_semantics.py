@@ -45,6 +45,7 @@ def main():
     p.add_argument('--classification-model', default=get_settings().semantic_classification_model)
     p.add_argument('--retry-failed', action='store_true',
                    help='Re-run only rows still on an older pipeline (failed earlier), even if marked done.')
+    p.add_argument('--ids-file', type=Path, help='JSON list of figure ids to re-run, whatever their status.')
     a = p.parse_args()
     if not 1 <= a.batch <= 100:
         p.error('batch must be 1..100')
@@ -56,7 +57,8 @@ def main():
         state = {'pipeline': VERSION, 'done': [], 'transitions': {}, 'failed': 0}
     with advisory_lock('split_semantics_worker'):
         done = set(state['done'])
-        todo = [fid for fid in targets(a.status, a.retry_failed) if fid not in done]
+        wanted = json.loads(a.ids_file.read_text(encoding='utf-8')) if a.ids_file else targets(a.status, a.retry_failed)
+        todo = [fid for fid in sorted(set(wanted)) if fid not in done]
         if a.max:
             todo = todo[:a.max]
         state.update(statuses=a.status, total=len(done) + len(todo), started_at=state.get('started_at') or datetime.now(timezone.utc).isoformat())

@@ -7,7 +7,7 @@ from app.services.semantic_errors import SemanticError
 from app.services.local_semantic_grounding import candidates
 from app.services.local_semantic_lexicon import title_hints,translation_input
 from app.services.ollama_semantics import schema
-from app.services.semantic_rules import validate_result,context_candidates,normalize,JAPANESE_TEXT_PATTERN
+from app.services.semantic_rules import validate_result,context_candidates,normalize,version_name,JAPANESE_TEXT_PATTERN
 from app.services.kana_hangul import to_hangul,is_kana
 from app.services.semantic_neighbors import learned_candidates,NgramIndex
 
@@ -179,7 +179,7 @@ def title_relations(source,known_work=None,stop=()):
     names=[t for t in tokens if t and re.search(JAPANESE_TEXT_PATTERN,t) and t not in stop]
     # The description must use it as a name: 「獪岳」, 山姥切国広が登場, 鹿野千夏と … (not コレクション第2弾).
     used_as_name=lambda n:re.search('[「『]'+re.escape(n)+'[」』]|'+re.escape(n)+'(?:が|を|と|ちゃん|くん|さん)',intro)
-    if len(names)==1 and 2<=len(names[0])<=12 and names[0] in title and used_as_name(names[0]):
+    if len(names)==1 and 2<=len(names[0])<=12 and names[0] in title and used_as_name(names[0]) and not version_name(names[0],title):
         found.append({'kind':'character','original':names[0],'evidence_field':'name_original','evidence':names[0]})
     return found
 
@@ -289,13 +289,20 @@ class Pipeline:
         if not ground['franchise'] and len(works)==1:missing.append(next(iter(works.values())))
         for r in relations:
             if r['kind']=='character' and not any(same_subject(r['original'],c['original']) for c in ground['characters']) \
-               and not any(m['original']==r['original'] for m in missing):
+               and not any(m['original']==r['original'] for m in missing) \
+               and not version_name(r['original'],source.get('name_original') or ''):
                 missing.append(r)
         if not missing:return
         mapping={k:v for k,v in (translation.get('glossary') or {}).items() if korean(v)}
         for m in missing:
             if m['original'] not in mapping and korean(self.span_memory.get(m['original'])):
                 mapping[m['original']]=self.span_memory[m['original']]
+        # A title character (ブラック・ジャック in 『ブラック・ジャック』) keeps the work's Korean title;
+        # kana transliteration would read the loanword literally (부랏쿠 쟛쿠).
+        work=ground['franchise'] or {}
+        for m in missing:
+            if m['kind']=='character' and m['original'] not in mapping and work.get('ko') and normalize(m['original'])==normalize(work.get('original') or ''):
+                mapping[m['original']]=work['ko']
         for m in missing:
             if m['kind']=='character' and m['original'] not in mapping and is_kana(m['original']):
                 ko=to_hangul(m['original'])

@@ -351,3 +351,42 @@ def test_numeric_guard_still_rejects_changed_numbers():
 def test_lone_honorific_is_fixed():
     from app.services.split_semantics import HONORIFICS, assemble_glossary
     assert assemble_glossary('스파이 패밀리 손바닥 요르 さん', {'さん': HONORIFICS['さん']}) == '스파이 패밀리 손바닥 요르 씨'
+
+
+def test_title_character_keeps_work_korean_title(tmp_path):
+    class NoModel:
+        def model_digest(self, m): return m
+        def infer(self, *a): raise AssertionError('model must not be called')
+    p = Pipeline({'fingerprint': 'k', 'titles': {}}, NoModel(), tmp_path)
+    source = {'name_original': 'ねんどろいど ブラック・ジャック',
+              'document_0': '『ブラック・ジャック』より、主人公「ブラック・ジャック」がねんどろいどに登場です'}
+    ground = {'franchise': {'original': 'ブラック・ジャック', 'ko': '블랙 잭', 'evidence_field': 'document_0',
+                            'evidence': '『ブラック・ジャック』', 'confidence': 1}, 'characters': [], 'figure_form': None}
+    p.name_explicit_relations(source, ground, {})
+    assert [c['ko'] for c in ground['characters']] == ['블랙 잭']
+
+
+def test_version_name_in_title_is_not_a_character():
+    from app.services.split_semantics import title_relations
+    source = {'name_original': 'ねんどろいど 初音ミク ヴァンパイア Ver.',
+              'document_0': 'DECO*27氏による楽曲『ヴァンパイア』MV内に登場する「初音ミク」がねんどろいどで再登場！'}
+    assert title_relations(source, '初音ミク') == []
+    named = {'name_original': '地獄楽 画眉丸', 'document_0': 'TVアニメ「地獄楽」より「画眉丸」が登場。'}
+    assert [r['original'] for r in title_relations(named, '地獄楽') if r['kind'] == 'character'] == ['画眉丸']
+    numbered = {'name_original': '呪術廻戦 虎杖悠仁 ver.2', 'document_0': 'TVアニメ『呪術廻戦』より「虎杖悠仁」が登場。'}
+    assert [r['original'] for r in title_relations(numbered, '呪術廻戦') if r['kind'] == 'character'] == ['虎杖悠仁']
+
+
+def test_described_outfit_version_is_not_named_as_character(tmp_path):
+    class NoModel:
+        def model_digest(self, m): return m
+        def infer(self, *a): raise AssertionError('model must not be called')
+    p = Pipeline({'fingerprint': 'k', 'titles': {}}, NoModel(), tmp_path)
+    source = {'name_original': 'ねんどろいど 木之本桜 CLEAR Ver.',
+              'document_0': 'TVアニメ『カードキャプターさくら クリアカード編』より、主人公「木之本桜」がオープニング「CLEAR」の衣装で登場！'}
+    sakura = {'original': '木之本桜', 'ko': '키노모토 사쿠라', 'evidence_field': 'name_original', 'evidence': '木之本桜', 'confidence': 1}
+    ground = {'franchise': {'original': 'カードキャプターさくら クリアカード編', 'ko': '카드캡터 사쿠라 클리어 카드 편',
+                            'evidence_field': 'document_0', 'evidence': '『カードキャプターさくら クリアカード編』', 'confidence': 1},
+              'characters': [sakura], 'figure_form': None}
+    p.name_explicit_relations(source, ground, {})
+    assert [c['ko'] for c in ground['characters']] == ['키노모토 사쿠라']
