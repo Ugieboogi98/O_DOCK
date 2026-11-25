@@ -97,7 +97,8 @@ def title_hints(source, grounded, groups=None):
                              if (found := match(a, group_subject))), None)
             if not original:
                 continue
-            if original == '初音ミク' and original + 'シリーズ' in title:
+            # 初音ミクシリーズ, 울트라맨 시리즈: the series name, not the character.
+            if re.search(re.escape(original) + r'\s*(?:シリーズ|시리즈)', title):
                 continue
             if group.get('provenance') == 'wikidata' and any(
                     original in c['original'] or c['original'] in original or _loose(c['ko']) == _loose(ko)
@@ -115,6 +116,15 @@ def title_hints(source, grounded, groups=None):
             grounded['characters'] = [c for c in grounded['characters'] if c['original'] != original]
             grounded['characters'].append({'original': original, 'ko': ko, 'evidence_field': 'name_original',
                                            'evidence': original, 'confidence': 1})
+        if self_title and group['work'] not in ('하츠네 미쿠', '슈퍼 소니코'):
+            # 怪獣8号 古橋伊春: a work named after its hero opens the title as the work; once another of its
+            # characters is named, the opening title is not a second character.
+            aliases = {norm(a) for a in group['aliases']}
+            opening = [c for c in grounded['characters'] if norm(c['original']) in aliases and title.lstrip().startswith(c['original'])]
+            if opening and len(grounded['characters']) > len(opening):
+                drop = {c['original'] for c in opening}
+                grounded['characters'] = [c for c in grounded['characters'] if c['original'] not in drop]
+                rows = [r for r in rows if not (r['kind'] == 'characters' and r['original'] in drop)]
     return list({(r['kind'], r['original'], r['ko']): r for r in rows}.values())
 
 

@@ -440,3 +440,20 @@ def test_dictionary_groups_ground_wikidata_characters_inside_confirmed_work():
               'characters': [], 'figure_form': None}
     title_hints({'name_original': 'ねんどろいど ウェンティ', 'franchise': '原神'}, ground, groups)
     assert [c['ko'] for c in ground['characters']] == ['벤티']
+
+
+def test_series_name_and_opening_hero_title_are_not_extra_characters():
+    from app.services.local_semantic_lexicon import title_hints
+    groups = [{'work': '울트라맨', 'aliases': ['울트라맨'], 'title_is_character': True,
+               'characters': [['ウルトラマン|울트라맨', '울트라맨'], ['ゴモラ|고모라', '고모라']]},
+              {'work': '괴수 8호', 'aliases': ['怪獣8号', '괴수 8호'], 'title_is_character': True,
+               'characters': [['怪獣8号|괴수 8호', '괴수 8호'], ['古橋伊春', '후루하시 이하루']]}]
+    def chars(title, work):
+        ground = {'franchise': {'original': work, 'ko': work, 'evidence_field': 'name_original', 'evidence': work},
+                  'characters': [], 'figure_form': None}
+        title_hints({'name_original': title}, ground, groups)
+        return [c['ko'] for c in ground['characters']]
+    assert chars('울트라맨 시리즈 진좌수 고대괴수 고모라(ver.A)', '울트라맨') == ['고모라']
+    assert chars('S.H.피규아트 (진골조제법) 울트라맨', '울트라맨') == ['울트라맨']
+    assert chars('怪獣8号 古橋伊春【再販】', '괴수 8호') == ['후루하시 이하루']
+    assert chars('괴수 8호 그란디스타 괴수 8호', '괴수 8호') == ['괴수 8호']
