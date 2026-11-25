@@ -7,6 +7,9 @@ from pathlib import Path
 import re
 import unicodedata
 
+# フィギュアー名前ー / フィギュア―名前― (noodle stoppers, prize lines): dashes around the character name.
+BRACKETED_NAME = re.compile(r'(フィギュア)[ー―－](.+?)[ー―－](?=\s|$|[（(【\[])')
+
 
 def load():
     data = json.loads(Path(__file__).with_name('local_semantic_aliases.json').read_text(encoding='utf-8'))
@@ -38,7 +41,12 @@ def tuning_lexicon():
     return json.loads(Path(__file__).with_name('local_semantic_tuning_lexicon.json').read_text(encoding='utf-8'))
 
 
-def title_hints(source, grounded):
+def _loose(label):
+    return re.sub(r'[\s.·・･]', '', label or '')
+
+
+def title_hints(source, grounded, groups=None):
+    """groups: the dictionary's domain groups, which add verified Wikidata characters to the curated files."""
     from app.services.reference_classifier import match, norm
     rows = hints(source)
     title = source.get('name_original') or ''
@@ -55,8 +63,11 @@ def title_hints(source, grounded):
                 break
     for kind, values in [('franchises', [grounded['franchise']]), ('characters', grounded['characters'])]:
         rows.extend({'kind': kind, 'original': row['original'], 'ko': row['ko']} for row in values if row)
-    domains = json.loads(Path(__file__).with_name('local_semantic_domain_aliases.json').read_text(encoding='utf-8'))
-    domains['groups'] += json.loads(Path(__file__).with_name('local_semantic_domain_extension.json').read_text(encoding='utf-8'))['groups']
+    if groups is None:
+        domains = json.loads(Path(__file__).with_name('local_semantic_domain_aliases.json').read_text(encoding='utf-8'))
+        domains['groups'] += json.loads(Path(__file__).with_name('local_semantic_domain_extension.json').read_text(encoding='utf-8'))['groups']
+    else:
+        domains = {'groups': groups}
     context = ' '.join([title, source.get('franchise') or '', (grounded['franchise'] or {}).get('ko', '')])
     subject = title
     work = grounded['franchise']
@@ -64,19 +75,41 @@ def title_hints(source, grounded):
         singer = work['ko'] in ('하츠네 미쿠', '슈퍼 소니코')
         if not singer or work['original'] + 'シリーズ' in title:
             subject = subject.replace(work['original'], ' ', 1)
+    # ぬーどるストッパーフィギュアーブランー: the long-vowel marks bracket the name, they do not lengthen it.
+    subject = BRACKETED_NAME.sub(r'\1 \2 ', subject)
+    korean_title = re.search('[가-힣]', title) is not None
     for group in domains['groups']:
-        if not (any(norm(alias) in norm(context) for alias in group['aliases']) or group['work'] in context):
+        if group.get('provenance') == 'wikidata':
+            # Wikidata characters only inside the work already confirmed for this product.
+            if not (work and norm(group['work']) == norm(work.get('ko') or '')):
+                continue
+        elif not (any(norm(alias) in norm(context) for alias in group['aliases']) or group['work'] in context):
             continue
         self_title = group.get('title_is_character') and (not work or
             any(norm(a) == norm(work['original']) for a in group['aliases']))
-        group_subject = title if self_title else subject
+        group_subject = BRACKETED_NAME.sub(r'\1 \2 ', title) if self_title else subject
         for aliases, ko in group['characters']:
-            original = next((found for a in sorted(aliases.split('|'), key=len, reverse=True)
+            names = aliases.split('|') if isinstance(aliases, str) else list(aliases)
+            if korean_title:
+                # Korean retail-style titles (승리의 여신 NIKKE 아니스) name the character by its Korean label.
+                names.append(ko)
+            original = next((found for a in sorted(names, key=len, reverse=True)
                              if (found := match(a, group_subject))), None)
             if not original:
                 continue
             if original == '初音ミク' and original + 'シリーズ' in title:
                 continue
+            if group.get('provenance') == 'wikidata' and any(
+                    original in c['original'] or c['original'] in original or _loose(c['ko']) == _loose(ko)
+                    for c in grounded['characters']):
+                # Wikidata only fills a gap; it never relabels a name a curated source already read.
+                continue
+            if any(_loose(ko) in _loose(c['ko']) and c['original'] != original for c in grounded['characters']):
+                continue  # 몽키 D 루피 and 몽키 D. 루피, or 호시노 next to 타카나시 호시노, are one character
+            # The full name replaces a given name read earlier (타카나시 호시노 over 호시노).
+            shorter = {c['original'] for c in grounded['characters'] if _loose(c['ko']) in _loose(ko)}
+            grounded['characters'] = [c for c in grounded['characters'] if c['original'] not in shorter]
+            rows = [r for r in rows if not (r['kind'] == 'characters' and r['original'] in shorter)]
             rows = [r for r in rows if not (r['kind'] == 'characters' and r['original'] == original)]
             rows.append({'kind': 'characters', 'original': original, 'ko': ko})
             grounded['characters'] = [c for c in grounded['characters'] if c['original'] != original]

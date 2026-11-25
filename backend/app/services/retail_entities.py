@@ -19,6 +19,21 @@ _cache = {'key': None, 'groups': []}
 NOT_WORKS = {'반프레스토', '반다이', '반다이 스피리츠', '굿스마일', '굿스마일 컴퍼니', '메가하우스', '후류', '세가', '타이토', '코토부키야',
              '알터', '맥스팩토리', '프라이즈', '마스코트', '컬렉션', '넨도로이드', '피그마', '봉제인형', '아크릴 스탠드', '피규어'}
 LETTER = r'[\w぀-ヿ一-鿿가-힣]'
+# Artist originals name no work: "1/6 키키 illustrated by RST", "오리지널 캐릭터: 히타미", "버텍스 오리지널즈".
+# Only consulted when no known work is named, so "원피스 … THE ORIGINAL" stays One Piece.
+ORIGINAL = re.compile(r'(?i)illustrat(?:ed|ion)\s+by|오리지널|(?<![a-z])originals?(?![a-z])|オリジナル')
+ORIGINAL_WORK = '오리지널'
+
+
+# Catalog labels that name the same product family under different works. Miku figures are filed under
+# 보컬로이드 or 하츠네 미쿠 depending on the maker's own franchise field; for matching they are one work.
+EQUIVALENT_WORKS = [{'하츠네 미쿠', '보컬로이드', '하츠네 미쿠 GT 프로젝트', '캐릭터 보컬 시리즈'}]
+
+
+def same_work(a, b):
+    if not a or not b:
+        return False
+    return a == b or any(a in s and b in s for s in EQUIVALENT_WORKS)
 
 
 def _work_alias(alias):
@@ -129,17 +144,28 @@ def recognize(title, dictionary_groups=None):
                     best_hit[id(g)] = max(best_hit.get(id(g), (0, g))[0], j - i), g
     found = list(best_hit.values())
     if not found:
+        if ORIGINAL.search(text):
+            return {'work': ORIGINAL_WORK, 'medium': 'original', 'characters': []}
         return None
-    # "명일방주 엔드필드" names both 명일방주 and 명일방주: 엔드필드; the longer alias is the specific work.
-    best_len, best = max(found, key=lambda x: x[0])
-    # The work's own title is not a character mention (히카루 in 히카루가 죽은 여름).
+    # A work whose characters are named wins (보컬로이드 하츠네미쿠 -> 하츠네 미쿠); among equals the longer
+    # alias is the specific work ("명일방주 엔드필드" names both 명일방주 and 명일방주: 엔드필드).
+    scored = [(bool(chars), length, g, chars) for length, g in found for chars in [_characters(text, g)]]
+    _, _, best, characters = max(scored, key=lambda x: (x[0], x[1]))
+    return {'work': best['work'], 'medium': best.get('medium'), 'characters': characters}
+
+
+def _characters(text, group):
+    # The work's own title is not a character mention (히카루 in 히카루가 죽은 여름), unless the work is
+    # named after its character (하츠네 미쿠).
+    names = {normalize(n) for n in group['characters']} | {normalize(k) for k in group['characters'].values()}
     rest = text
-    for alias in sorted(best['aliases'], key=len, reverse=True):
-        if _work_alias(alias):
+    for alias in sorted(group['aliases'], key=len, reverse=True):
+        # 미쿠 is a work alias but also part of 하츠네미쿠; removing it would erase the character.
+        if _work_alias(alias) and not any(normalize(alias) in n for n in names):
             rest = re.sub(re.escape(alias), ' ', rest, flags=re.I)
     rest_norm = normalize(rest)
     characters = []
-    for original, ko in best['characters'].items():
+    for original, ko in group['characters'].items():
         if ko not in characters and (_contains(rest, rest_norm, ko) or _contains(rest, rest_norm, original)):
             characters.append(ko)
-    return {'work': best['work'], 'medium': best.get('medium'), 'characters': characters}
+    return characters

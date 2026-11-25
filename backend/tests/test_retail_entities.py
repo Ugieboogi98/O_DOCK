@@ -35,3 +35,29 @@ def test_work_title_is_not_a_character_mention():
                'characters': {'よしき': '요시키', 'ヒカル': '히카루'}}]
     assert recognize('넨도로이드 No.3156 히카루가 죽은 여름 요시키', groups)['characters'] == ['요시키']
     assert recognize('넨도로이드 히카루가 죽은 여름 히카루', groups)['characters'] == ['히카루']
+
+
+def test_set_listing_names_both_characters_and_miku_variants_link_to_miku():
+    groups = [
+        {'work': '헌터×헌터', 'medium': 'anime', 'aliases': ['헌터×헌터', '헌터x헌터'],
+         'characters': {'ヒソカ': '히소카', '히소카': '히소카', 'クロロ': '클로로 루실후르', '클로로': '클로로 루실후르'}},
+        {'work': '보컬로이드', 'medium': None, 'aliases': ['보컬로이드'], 'characters': {}},
+        {'work': '하츠네 미쿠', 'medium': 'music', 'aliases': ['하츠네 미쿠', '하츠네미쿠', '미쿠', '사쿠라미쿠'],
+         'characters': {'하츠네미쿠': '하츠네 미쿠', '사쿠라미쿠': '하츠네 미쿠', '하츠네 미쿠': '하츠네 미쿠'}},
+    ]
+    hit = recognize('메가하우스 룩업 헌터x헌터 히소카 & 클로로 세트', groups)
+    assert hit['work'] == '헌터×헌터' and hit['characters'] == ['히소카', '클로로 루실후르']
+    hit = recognize('후류 누들스토퍼 보컬로이드 하츠네미쿠 사쿠라미쿠 2027', groups)
+    assert hit['work'] == '하츠네 미쿠' and hit['characters'] == ['하츠네 미쿠']
+
+
+def test_artist_original_is_recognised_only_without_a_known_work():
+    groups = [{'work': '원피스', 'medium': None, 'aliases': ['원피스'], 'characters': {}}]
+    assert recognize('1/6 키키 illustrated by RST(디럭스판)', groups)['work'] == '오리지널'
+    assert recognize('원피스 BWFC 롤로노아 조로 THE ORIGINAL', groups)['work'] == '원피스'
+
+
+def test_equivalent_miku_works():
+    from app.services.retail_entities import same_work
+    assert same_work('보컬로이드', '하츠네 미쿠') and same_work('원신', '원신')
+    assert not same_work('원신', '하츠네 미쿠') and not same_work(None, '원신')

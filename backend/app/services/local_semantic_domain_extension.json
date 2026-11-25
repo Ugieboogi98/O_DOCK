@@ -59,14 +59,206 @@
       "aliases": [
         "勝利の女神:NIKKE",
         "勝利の女神：NIKKE",
-        "승리의 여신: 니케"
+        "승리의 여신: 니케",
+        "GODDESS OF VICTORY: NIKKE",
+        "승리의 여신 니케",
+        "승리의여신니케",
+        "승리의여신 니케",
+        "승리의 여신 NIKKE",
+        "승리의 여신NIKKE"
       ],
       "characters": [
         [
           "エマ|엠마",
           "엠마"
+        ],
+        [
+          "ラピ|Rapi",
+          "라피"
+        ],
+        [
+          "ラピ：レッドフード|ラピ:レッドフード|라피 : 레드 후드|라피: 레드 후드",
+          "라피: 레드 후드"
+        ],
+        [
+          "アニス|Anis",
+          "아니스"
+        ],
+        [
+          "ネオン",
+          "네온"
+        ],
+        [
+          "マリアン",
+          "마리안"
+        ],
+        [
+          "紅蓮",
+          "홍련"
+        ],
+        [
+          "ラプンツェル",
+          "라푼젤"
+        ],
+        [
+          "スノーホワイト|스노우화이트",
+          "스노우 화이트"
+        ],
+        [
+          "モダニア",
+          "모더니아"
+        ],
+        [
+          "ドロシー",
+          "도로시"
+        ],
+        [
+          "レッドフード|레드후드",
+          "레드 후드"
+        ],
+        [
+          "シンデレラ",
+          "신데렐라"
+        ],
+        [
+          "ブラン",
+          "블랑"
+        ],
+        [
+          "ノワール",
+          "누아르"
+        ],
+        [
+          "ソーダ",
+          "소다"
+        ],
+        [
+          "ヘルム",
+          "헬름"
+        ],
+        [
+          "アリス",
+          "앨리스"
+        ],
+        [
+          "ノイズ",
+          "노이즈"
+        ],
+        [
+          "ミルク",
+          "밀크"
+        ],
+        [
+          "クエンシー",
+          "퀀시"
+        ],
+        [
+          "ベイ",
+          "베이"
+        ],
+        [
+          "クレイ",
+          "클레이"
+        ],
+        [
+          "ロザンナ",
+          "로산나"
+        ],
+        [
+          "マスト",
+          "마스트"
+        ],
+        [
+          "ラプラス",
+          "라플라스"
+        ],
+        [
+          "ヴァイパー",
+          "바이퍼"
+        ],
+        [
+          "ティア",
+          "티아"
+        ],
+        [
+          "クラウン",
+          "크라운"
+        ],
+        [
+          "エレグ",
+          "일레그"
+        ],
+        [
+          "D:キラーワイフ|D：キラーワイフ|D: 킬러 와이프",
+          "D: 킬러 와이프"
+        ],
+        [
+          "ディーゼル",
+          "디젤"
+        ],
+        [
+          "ウンファ",
+          "은화"
+        ],
+        [
+          "ギロチン",
+          "길로틴"
+        ],
+        [
+          "プリバティ",
+          "프리바티"
+        ],
+        [
+          "ユニ",
+          "유니"
+        ],
+        [
+          "ミハラ",
+          "미하라"
+        ],
+        [
+          "ルドミラ",
+          "루드밀라"
+        ],
+        [
+          "ドレイク",
+          "드레이크"
+        ],
+        [
+          "マクスウェル",
+          "맥스웰"
+        ],
+        [
+          "ブリッド",
+          "브리드"
+        ],
+        [
+          "スカーレット",
+          "스카렛"
+        ],
+        [
+          "ルピー",
+          "루피"
+        ],
+        [
+          "ギルティ",
+          "길티"
+        ],
+        [
+          "ソリン",
+          "솔린"
+        ],
+        [
+          "トーブ",
+          "토브"
+        ],
+        [
+          "ネロ",
+          "네로"
         ]
-      ]
+      ],
+      "medium": "game",
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
     },
     {
       "work": "디즈니 트위스티드 원더랜드",
@@ -1075,15 +1267,31 @@
     {
       "work": "하츠네 미쿠",
       "aliases": [
-        "初音ミク"
+        "初音ミク",
+        "하츠네 미쿠",
+        "하츠네미쿠",
+        "Hatsune Miku",
+        "桜ミク",
+        "사쿠라 미쿠",
+        "사쿠라미쿠",
+        "雪ミク",
+        "유키 미쿠",
+        "유키미쿠",
+        "レーシングミク",
+        "레이싱 미쿠",
+        "레이싱미쿠",
+        "キャラクター・ボーカル・シリーズ01 初音ミク",
+        "캐릭터 보컬 시리즈 01 하츠네 미쿠"
       ],
       "characters": [
         [
-          "桜ミク",
-          "사쿠라 미쿠"
+          "初音ミク|하츠네 미쿠|하츠네미쿠|Hatsune Miku|桜ミク|사쿠라 미쿠|사쿠라미쿠|雪ミク|유키 미쿠|유키미쿠|レーシングミク|레이싱 미쿠|레이싱미쿠",
+          "하츠네 미쿠"
         ]
       ],
-      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it.",
+      "medium": "music",
+      "title_is_character": true
     },
     {
       "work": "프리파라",
@@ -1347,6 +1555,229 @@
           "바레타"
         ]
       ]
+    },
+    {
+      "work": "명조: 워더링 웨이브",
+      "medium": "game",
+      "aliases": [
+        "鳴潮",
+        "명조",
+        "Wuthering Waves",
+        "명조: 워더링 웨이브",
+        "명조 워더링 웨이브"
+      ],
+      "characters": [
+        [
+          "린네",
+          "린네"
+        ],
+        [
+          "ユーノ|유노",
+          "유노"
+        ],
+        [
+          "長離|장리",
+          "장리"
+        ],
+        [
+          "今汐|금희",
+          "금희"
+        ],
+        [
+          "カルテジア|카르티시아",
+          "카르티시아"
+        ],
+        [
+          "フィービー|페비",
+          "페비"
+        ],
+        [
+          "ショアキーパー|파수인",
+          "파수인"
+        ],
+        [
+          "カルロッタ|카를로타",
+          "카를로타"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
+    },
+    {
+      "work": "원신",
+      "medium": "game",
+      "aliases": [
+        "原神",
+        "Genshin Impact",
+        "원신"
+      ],
+      "characters": [
+        [
+          "魈",
+          "소"
+        ],
+        [
+          "サンドローネ|산드로네",
+          "산드로네"
+        ],
+        [
+          "申鶴|신학",
+          "신학"
+        ],
+        [
+          "夢見月瑞希|유메미즈키 미즈키|유메미즈키미즈키",
+          "유메미즈키 미즈키"
+        ],
+        [
+          "ナヒーダ|Nahida|나히다",
+          "나히다"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
+    },
+    {
+      "work": "헌터×헌터",
+      "medium": "anime",
+      "aliases": [
+        "HUNTER×HUNTER",
+        "HUNTER x HUNTER",
+        "HUNTERxHUNTER",
+        "ハンター×ハンター",
+        "헌터×헌터",
+        "헌터x헌터",
+        "헌터X헌터",
+        "헌터 X 헌터"
+      ],
+      "characters": [
+        [
+          "ヒソカ|ヒソカ＝モロウ|히소카 모로|히소카",
+          "히소카"
+        ],
+        [
+          "クロロ|クロロ＝ルシルフル|클로로 루실후르|클로로",
+          "클로로 루실후르"
+        ],
+        [
+          "ゴン|ゴン＝フリークス|곤 프릭스",
+          "곤 프릭스"
+        ],
+        [
+          "キルア|キルア＝ゾルディック|키르아",
+          "키르아 조르딕"
+        ],
+        [
+          "クラピカ",
+          "크라피카"
+        ],
+        [
+          "レオリオ",
+          "레오리오"
+        ],
+        [
+          "ネフェルピトー|네페르피토",
+          "네페르피토"
+        ],
+        [
+          "ネオン＝ノストラード|ネオン=ノストラード|네온 노스트라드",
+          "네온 노스트라드"
+        ],
+        [
+          "シャルナーク|샤르나크",
+          "샤르나크"
+        ],
+        [
+          "コルトピ|콜트피",
+          "콜트피"
+        ],
+        [
+          "ナックル|낙클 바인|낙클",
+          "낙클 바인"
+        ],
+        [
+          "フェイタン",
+          "페이탄"
+        ],
+        [
+          "フィンクス",
+          "핑크스"
+        ],
+        [
+          "マチ",
+          "마치"
+        ],
+        [
+          "パクノダ",
+          "파크노다"
+        ],
+        [
+          "ノブナガ",
+          "노부나가"
+        ],
+        [
+          "イルミ",
+          "일루미"
+        ],
+        [
+          "メルエム",
+          "메르엠"
+        ],
+        [
+          "ネテロ",
+          "네테로"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
+    },
+    {
+      "work": "던전밥",
+      "medium": "anime",
+      "aliases": [
+        "ダンジョン飯",
+        "던전밥",
+        "Delicious in Dungeon"
+      ],
+      "characters": [
+        [
+          "ファリン",
+          "팔린"
+        ],
+        [
+          "イヅツミ",
+          "이즈츠미"
+        ],
+        [
+          "マルシル",
+          "마르실"
+        ],
+        [
+          "ライオス",
+          "라이오스"
+        ],
+        [
+          "センシ",
+          "센시"
+        ],
+        [
+          "チルチャック",
+          "칠착"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
+    },
+    {
+      "work": "테일즈 오브 베르세리아",
+      "medium": "game",
+      "aliases": [
+        "テイルズ オブ ベルセリア",
+        "テイルズオブベルセリア",
+        "Tales of Berseria"
+      ],
+      "characters": [
+        [
+          "ベルベット|ベルベット・クラウ",
+          "벨벳 크라우"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25; Korean spellings follow official Korean releases and the spellings used in domestic retail listings; review before relying on them."
     }
   ]
 }

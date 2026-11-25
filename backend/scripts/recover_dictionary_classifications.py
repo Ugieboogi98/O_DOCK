@@ -23,7 +23,7 @@ def main():
             source=source_of(f);h=source_hash(source)
             if h!=old['source_hash'] or profile.source_hash!=h:continue
             summary['examined']+=1
-            ground=grounded_dictionary(source,dictionary);title_hints(source,ground)
+            ground=grounded_dictionary(source,dictionary);title_hints(source,ground,dictionary.get('domain_groups'))
             proposed=copy.deepcopy(old['result'])
             for key in ('franchise','figure_form'):
                 if ground[key]:proposed[key]=ground[key]

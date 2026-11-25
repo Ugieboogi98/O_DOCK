@@ -19,6 +19,8 @@ if '--repair-names' in sys.argv:
     sys.argv.remove('--repair-names');module='scripts.repair_unverified_names'
 if '--reprocess' in sys.argv:
     sys.argv.remove('--reprocess');module='scripts.reprocess_semantics'
+if '--repair-web-proofs' in sys.argv:
+    sys.argv.remove('--repair-web-proofs');module='scripts.repair_web_proofs'
 if '--recover-classifications' in sys.argv:
     sys.argv.remove('--recover-classifications');module='scripts.recover_dictionary_classifications'
 runpy.run_module(module,run_name='__main__')

@@ -44,6 +44,43 @@ def label(value):
     return isinstance(value, str) and 0 < len(value.strip()) <= 240 and not re.search('[ぁ-ゟ゠-ヿ一-龯]', value)
 
 
+NAME_SUFFIXES = ('シリーズ', 'ちゃん', 'さん', 'くん', 'さま', 'たん', 'ver', 'Ver', 'VER', '시리즈')
+# Form keywords are compound by nature (ぬーどるストッパーフィギュア); only names need word boundaries.
+NAME_FIELDS = ('franchise_ko', 'character_ko')
+
+
+def _script(ch):
+    # ー is left out: titles use it as a bracket (フィギュアーエミリアー) as often as a long vowel.
+    for name, pattern in (('kana', '[ァ-ヺｦ-ﾟ]'), ('hiragana', '[ぁ-ゖ]'), ('hangul', '[가-힣]'), ('latin', '[A-Za-z0-9]')):
+        if re.fullmatch(pattern, ch):
+            return name
+    return None
+
+
+def standalone(match, text, prefix=False):
+    """The proof term must be a word of the title, not a piece of a longer one:
+    ルフィ inside スケールフィギュア, 루피 inside 네페루피토, Black inside Blackjack.
+
+    Katakana and Latin terms may not touch a letter of the same script on either side. Korean
+    titles often run words together (승리의여신니케), so a Hangul term is only rejected when it
+    sits inside a word with Hangul on both sides. Kanji have no such boundary and are not checked.
+    prefix=True also accepts a work name that starts a longer title (ウルトラマン in ウルトラマンメビウス).
+    """
+    if not isinstance(text, str) or not match:
+        return False
+    first, last = _script(match[0]), _script(match[-1])
+    for m in re.finditer(re.escape(match), text):
+        before = _script(text[m.start() - 1]) if m.start() else None
+        after = _script(text[m.end()]) if m.end() < len(text) else None
+        left = first is not None and before == first
+        # 初音ミクシリーズ, リンちゃん: a series word or honorific does not make a longer name.
+        right = last is not None and after == last and not text.startswith(NAME_SUFFIXES, m.end())
+        inside = (left and right) if 'hangul' in (first, last) else (left or (right and not prefix))
+        if not inside:
+            return True
+    return False
+
+
 def validate_patch(source, record):
     if record.get('method') not in ('web_verified', 'manual_verified') or record.get('approved') is not True:
         raise SemanticError('CLASSIFICATION_APPROVAL_REQUIRED', False)
@@ -70,6 +107,7 @@ def validate_patch(source, record):
                 text = source.get(proof.get('field'))
                 parsed = urlsplit(proof.get('reference_url', ''))
                 if (not isinstance(text, str) or not proof.get('match') or proof['match'] not in text or
+                        (key in NAME_FIELDS and not standalone(proof['match'], text, prefix=key == 'franchise_ko')) or
                         parsed.scheme not in ('http', 'https') or not parsed.hostname or
                         not proof.get('reference_evidence') or not proof.get('checked_at')):
                     raise SemanticError('INVALID_WEB_PROOF', False)

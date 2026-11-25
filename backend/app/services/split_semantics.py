@@ -126,7 +126,8 @@ def composition_complete(text):
     return all(any(c.isdigit() for c in t) or len(t)<=2 or t.upper() in ('ABS','PVC','PET','LED','USB','JAN') or re.fullmatch(r'[IVXLCDM]+',t) for t in tokens)
 
 def grounded_dictionary(source,dictionary):
-    ground=candidates(source)
+    # Title-literal work detection stays on curated groups; thousands of short Wikidata aliases would misfire.
+    ground=candidates(source,[g for g in dictionary.get('domain_groups',[]) if g.get('provenance')!='wikidata'])
     groups=dictionary.get('domain_groups',[])
     works=[*dictionary.get('knowledge',{}).get('works',[]),*dictionary.get('aliases',{}).get('franchises',[]),
            *[{'ko':g['work'],'aliases':g['aliases']} for g in groups]]
@@ -345,7 +346,7 @@ class Pipeline:
             if exact and exact.get('context')==context and translation_valid(source,exact['ko']):return {'name_ko':exact['ko'],'method':'validated_dictionary','seconds':0}
             if translation_valid(source,original):
                 return {'name_ko':original,'method':'already_korean' if korean(original) else 'source_latin','seconds':0}
-            ground=grounded_dictionary(source,self.dictionary);hints=title_hints(source,ground)
+            ground=grounded_dictionary(source,self.dictionary);hints=title_hints(source,ground,self.dictionary.get('domain_groups'))
             composed=translation_input(source,hints)
             if composed!=original and composition_complete(composed) and translation_valid(source,composed):
                 return {'name_ko':composed,'method':'dictionary_composition','seconds':0}
@@ -381,7 +382,7 @@ class Pipeline:
         return self.stage('translation',source,run)
     def classify(self,source,translation):
         def run():
-            ground=grounded_dictionary(source,self.dictionary);title_hints(source,ground)
+            ground=grounded_dictionary(source,self.dictionary);title_hints(source,ground,self.dictionary.get('domain_groups'))
             self.name_explicit_relations(source,ground,translation)
             if ground['franchise'] and ground['characters'] and ground['figure_form']:
                 return {'result':ground,'method':'dictionary','seconds':0}

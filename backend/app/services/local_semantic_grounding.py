@@ -5,7 +5,8 @@ from pathlib import Path
 from app.services.reference_classifier import cached_record
 
 
-def candidates(source):
+def candidates(source, groups=None):
+    """groups: the dictionary's domain groups (curated, recovery and Wikidata); the extension file alone otherwise."""
     complete = {'official_url': '', 'type': 'figure', **source}
     record = cached_record(complete, '', 0) or {'patch': {}, 'proofs': {}}
     patch = record['patch']
@@ -18,7 +19,8 @@ def candidates(source):
                   for row in patch.get('character_ko', [])]
     if work is None:
         from app.services.reference_classifier import work_match
-        groups = json.loads(Path(__file__).with_name('local_semantic_domain_extension.json').read_text(encoding='utf-8'))['groups']
+        if groups is None:
+            groups = json.loads(Path(__file__).with_name('local_semantic_domain_extension.json').read_text(encoding='utf-8'))['groups']
         hits = []
         for group in groups:
             for field in ('franchise', 'name_original'):

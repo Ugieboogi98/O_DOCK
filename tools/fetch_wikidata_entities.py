@@ -69,13 +69,24 @@ def works_of_type(client, qid):
 
 def characters_of(client, work_ids):
     values = ' '.join('wd:' + w for w in work_ids)
-    q = f"""SELECT ?work ?char ?ko ?ja WHERE {{
+    q = f"""SELECT ?work ?char ?ko ?ja (GROUP_CONCAT(DISTINCT ?type; separator='|') AS ?types) WHERE {{
       VALUES ?work {{ {values} }}
       ?char wdt:P1441 ?work .
       ?char rdfs:label ?ko . FILTER(LANG(?ko)='ko')
       ?char rdfs:label ?ja . FILTER(LANG(?ja)='ja')
-    }}"""
+      OPTIONAL {{ ?char wdt:P31 ?t . ?t rdfs:label ?type . FILTER(LANG(?type)='en') }}
+    }} GROUP BY ?work ?char ?ko ?ja"""
     return sparql(client, q)
+
+
+# "Present in work" also links organisations, nations and places (地球連邦軍, ジオン公国, 王下七武海).
+NOT_A_CHARACTER = re.compile(r'(?i)organi[sz]ation|countr|nation|state|military|army|navy|group|team|location|place|'
+                             r'city|town|planet|region|world|universe|clan|family|school|company|faction|alliance|'
+                             r'government|empire|kingdom|rank|position|occupation|item|weapon|event')
+
+
+def is_character(types):
+    return not types or not NOT_A_CHARACTER.search(types)
 
 
 def usable(name, needs_hangul=False):
@@ -122,7 +133,7 @@ def main():
             for row in rows:
                 wid = value(row, 'work').rsplit('/', 1)[-1]
                 ko, ja = value(row, 'ko'), value(row, 'ja')
-                if usable(ko, True) and usable(ja):
+                if usable(ko, True) and usable(ja) and is_character(value(row, 'types')):
                     chars.setdefault(wid, {})[ja] = ko
             print(f'characters {i + len(batch)}/{len(ids)}: {sum(map(len, chars.values()))} so far', flush=True)
     # Works that share a Korean title (anime + manga + game of one franchise) become one group.

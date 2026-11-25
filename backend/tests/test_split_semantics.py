@@ -70,8 +70,8 @@ def test_classification_dictionary_skips_model_and_has_evidence(tmp_path,monkeyp
     entity={'original':'フェルン','ko':'페른','evidence_field':'name_original','evidence':'フェルン','confidence':1}
     work={**entity,'original':'葬送のフリーレン','ko':'장송의 프리렌','evidence':'葬送のフリーレン'}
     form={'code':'scale_figure','evidence_field':'scale','evidence':'1/7','confidence':1}
-    monkeypatch.setattr(service,'candidates',lambda s:{'franchise':work,'characters':[entity],'figure_form':form})
-    monkeypatch.setattr(service,'title_hints',lambda s,g:[])
+    monkeypatch.setattr(service,'candidates',lambda s,groups=None:{'franchise':work,'characters':[entity],'figure_form':form})
+    monkeypatch.setattr(service,'title_hints',lambda s,g,groups=None:[])
     c=Client();p=pipeline(tmp_path,c)
     assert p.classify(source(),{'name_ko':'페른 피규어'})['method']=='dictionary'
     assert c.calls==[]

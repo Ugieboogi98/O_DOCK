@@ -402,3 +402,41 @@ def test_latin_only_title_is_kept_but_changed_latin_is_not():
     assert fields['translation_status'] != 'ready'
     fields, _ = validate_result({'name_original': 'ねんどろいど KAITO'}, {'name_ko': 'ねんどろいど KAITO', **empty})
     assert fields['translation_status'] != 'ready'
+
+
+def test_web_proof_must_be_a_word_of_the_title():
+    from app.services.verified_classification import standalone
+    assert not standalone('ルフィ', '七海千秋 1/7スケールフィギュア')
+    assert standalone('ルフィ', 'ONE PIECE モンキー・D・ルフィ')
+    assert not standalone('루피', '넨도로이드 네페루피토')
+    assert standalone('니케', '넨도로이드 승리의여신니케')
+    assert standalone('エミリア', 'フィギュアーエミリア陣営ー')
+    assert standalone('初音ミク', '初音ミクシリーズ ふわぷち')
+    assert not standalone('ワンピース', 'フリーレン クラシカルワンピースver.')
+    assert standalone('ウルトラマン', 'ウルトラマンメビウス', prefix=True)
+    assert not standalone('rem', 'Alien Premium Figure')
+
+
+def test_repair_drops_only_the_unproven_character():
+    from scripts.repair_web_proofs import repair
+    src = {'name_original': 'ラム&レム 1/7スケールフィギュアセット'}
+    proof = lambda m: {'field': 'name_original', 'match': m}
+    fields = {'name_ko': '람&렘', 'franchise_ko': None, 'character_ko': '몽키 D. 루피 · 렘 · 람', 'figure_form': None,
+              'characters': [], 'evidence': {}, 'field_issues': {},
+              'classification_overrides': {'character_ko': {
+                  'source_hash': 'h', 'method': 'web_verified', 'value': '몽키 D. 루피 · 렘 · 람',
+                  'characters': [{'original': 'ルフィ', 'ko': '몽키 D. 루피'}, {'original': 'レム', 'ko': '렘'}, {'original': 'ラム', 'ko': '람'}],
+                  'evidence': {'method': 'web_verified', 'references': [proof('ルフィ'), proof('レム'), proof('ラム')]}}}}
+    out, changes = repair(fields, src)
+    assert changes[0]['action'] == 'narrowed' and out['character_ko'] == '렘 · 람'
+
+
+def test_dictionary_groups_ground_wikidata_characters_inside_confirmed_work():
+    from app.services.local_semantic_lexicon import title_hints
+    groups = [{'work': '원신', 'aliases': ['原神'], 'characters': [['ナヒーダ', '나히다']]},
+              {'work': '원신', 'aliases': [], 'provenance': 'wikidata', 'characters': [[['ウェンティ'], '벤티']]},
+              {'work': '다른 작품', 'aliases': [], 'provenance': 'wikidata', 'characters': [[['ウェンティ'], '다른 이름']]}]
+    ground = {'franchise': {'original': '原神', 'ko': '원신', 'evidence_field': 'franchise', 'evidence': '原神'},
+              'characters': [], 'figure_form': None}
+    title_hints({'name_original': 'ねんどろいど ウェンティ', 'franchise': '原神'}, ground, groups)
+    assert [c['ko'] for c in ground['characters']] == ['벤티']

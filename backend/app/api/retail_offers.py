@@ -13,7 +13,7 @@ from app.core.security import require_admin, require_same_origin
 from app.models.entities import Figure, FigureVariant, Retailer
 from app.models.retail import RetailListing, RetailOffer, RetailOfferHistory
 from app.models.semantics import ProductSemantics
-from app.services.retail_entities import groups as entity_groups, recognize, with_catalog_works
+from app.services.retail_entities import groups as entity_groups, recognize, same_work, with_catalog_works
 from app.services.semantic_neighbors import NgramIndex
 
 
@@ -106,7 +106,7 @@ def _figure_index(db):
 def _same_work_candidates(recognized, limit=8):
     """Catalog figures classified under the recognised work, the named characters first."""
     entities = _candidate_index.get('entities') or {}
-    works = [fid for fid, (work, _) in entities.items() if work == recognized['work']]
+    works = [fid for fid, (work, _) in entities.items() if same_work(work, recognized['work'])]
     named = [fid for fid in works if any(c in entities[fid][1] for c in recognized['characters'])]
     return named[:limit] if recognized['characters'] else works[:limit], set(named)
 

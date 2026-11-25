@@ -53,7 +53,7 @@ def offline(records, dictionary, scratch):
         source, name_ko = record['source'], record['fields'].get('name_ko') or record.get('translation', {}).get('name_ko')
         pipe = Pipeline(d, Offline(), scratch)
         ground = grounded_dictionary(source, d)
-        title_hints(source, ground)
+        title_hints(source, ground, d.get('domain_groups'))
         pipe.name_explicit_relations(source, ground, record.get('translation') or {})
         fields, _ = validate_result(source, {'name_ko': name_ko, **ground})
         old, new = record['fields'].get('classification_status'), fields.get('classification_status')
