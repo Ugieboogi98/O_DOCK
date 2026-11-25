@@ -457,3 +457,59 @@ def test_series_name_and_opening_hero_title_are_not_extra_characters():
     assert chars('S.H.피규아트 (진골조제법) 울트라맨', '울트라맨') == ['울트라맨']
     assert chars('怪獣8号 古橋伊春【再販】', '괴수 8호') == ['후루하시 이하루']
     assert chars('괴수 8호 그란디스타 괴수 8호', '괴수 8호') == ['괴수 8호']
+
+
+def test_box_with_work_needs_no_character_but_single_pick_does():
+    from app.services.semantic_rules import assortment_without_character
+    def fields():
+        return {'franchise_ko': '원피스', 'character_ko': None, 'figure_form': 'prize_figure', 'missing_fields': ['character_ko'],
+                'field_status': {'name_ko': 'ready', 'franchise_ko': 'ready', 'character_ko': 'missing', 'figure_form': 'ready'},
+                'classification_status': 'partial'}
+    box = assortment_without_character({'name_original': 'バディコレ 呪術廻戦【再販】'}, fields())
+    assert box['field_status']['character_ko'] == 'not_applicable' and box['classification_status'] == 'ready'
+    numbered = assortment_without_character({'name_original': '원피스 DXF 더 그랜드라인 레이디 와노쿠니 VOL.11'}, fields())
+    assert numbered['field_status']['character_ko'] == 'missing'  # one figure per number; its character is unknown
+    only_work = {**fields(), 'evidence': {'franchise': {'original': 'ONE PIECE'}}}
+    assert assortment_without_character({'name_original': 'ONE PIECE【再販】'}, only_work)['classification_status'] == 'ready'
+    assert assortment_without_character({'name_original': 'ワンピース 缶バッジコレクション'}, fields())['classification_status'] == 'ready'
+    pick = assortment_without_character({'name_original': '귀멸의 칼날 피규어 VOL.27 (B:무라타)'}, fields())
+    assert pick['field_status']['character_ko'] == 'missing'
+    single = assortment_without_character({'name_original': 'ワンピース ねんどろいど'}, fields())
+    assert single['classification_status'] == 'partial'
+    no_work = {**fields(), 'franchise_ko': None}
+    assert assortment_without_character({'name_original': '缶バッジコレクション'}, no_work)['field_status']['character_ko'] == 'missing'
+
+
+def test_collection_line_is_not_a_hero_character():
+    from app.services.local_semantic_lexicon import title_hints
+    groups = [{'work': '체인소 맨', 'aliases': ['체인소 맨'], 'title_is_character': True,
+               'characters': [['チェンソーマン|체인소 맨', '체인소 맨']]}]
+    ground = {'franchise': {'original': '체인소 맨', 'ko': '체인소 맨', 'evidence_field': 'name_original', 'evidence': '체인소 맨'},
+              'characters': [], 'figure_form': None}
+    title_hints({'name_original': '체인소 맨 CHAIN SPIRITS VOL.4'}, ground, groups)
+    assert ground['characters'] == []
+
+
+def test_verified_override_survives_source_refresh_only_while_proven():
+    from app.services.verified_classification import merge_overrides
+    override = {'franchise_ko': {'source_hash': 'old', 'value': '사카모토 데이즈', 'method': 'web_verified',
+                                 'evidence': {'method': 'web_verified', 'references': [{'field': 'name_original', 'match': 'SAKAMOTO DAYS'}]}}}
+    base = {'name_ko': '사카모토 데이즈 고양이', 'franchise_ko': None, 'character_ko': None, 'characters': [], 'figure_form': None,
+            'evidence': {}, 'field_issues': {'franchise_ko': ['DOCUMENT_FRANCHISE_RELATION_NOT_CONFIRMED']}}
+    kept = merge_overrides(base, {'classification_overrides': override}, 'new', {'name_original': 'SAKAMOTO DAYS CATS'})
+    assert kept['franchise_ko'] == '사카모토 데이즈' and kept['classification_overrides']['franchise_ko']['source_hash'] == 'new'
+    gone = merge_overrides(base, {'classification_overrides': override}, 'new', {'name_original': '別の商品'})
+    assert gone['franchise_ko'] is None
+
+
+def test_miku_work_is_its_own_character_unless_another_vocaloid_is_named():
+    from app.services.semantic_rules import assortment_without_character
+    def fields():
+        return {'franchise_ko': '하츠네 미쿠', 'character_ko': None, 'characters': [], 'figure_form': 'scale_figure',
+                'missing_fields': ['character_ko'], 'classification_status': 'partial',
+                'evidence': {'franchise': {'original': '初音ミク', 'evidence_field': 'franchise', 'evidence': '初音ミク'}},
+                'field_status': {'name_ko': 'ready', 'franchise_ko': 'ready', 'character_ko': 'missing', 'figure_form': 'ready'}}
+    miku = assortment_without_character({'name_original': '2021春節Ver. 1/7スケールフィギュア'}, fields())
+    assert miku['character_ko'] == '하츠네 미쿠' and miku['classification_status'] == 'ready'
+    luka = assortment_without_character({'name_original': 'ねんどろいど 巡音ルカ V4X'}, fields())
+    assert luka['character_ko'] is None

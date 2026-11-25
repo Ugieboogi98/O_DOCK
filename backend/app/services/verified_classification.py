@@ -9,10 +9,31 @@ from app.services.semantic_policy import finalize, publication_status
 CLASS_FIELDS = ('franchise_ko', 'character_ko', 'figure_form')
 
 
-def merge_overrides(fields, previous, digest):
+def still_proven(key, item, source):
+    """A verified decision survives a source refresh (a new checked_at, a reworded description) when
+    every literal proof it rests on is still in the new source; manual decisions need the same."""
+    refs = (item.get('evidence') or {}).get('references') or []
+    if not source or not refs:
+        return False
+    for proof in refs:
+        text = source.get(proof.get('field'))
+        if not isinstance(text, str) or not proof.get('match') or proof['match'] not in text:
+            return False
+        if key in NAME_FIELDS and not standalone(proof['match'], text, prefix=key == 'franchise_ko'):
+            return False
+    return True
+
+
+def merge_overrides(fields, previous, digest, source=None):
     fields = copy.deepcopy(fields)
-    overrides = {k: v for k, v in previous.get('classification_overrides', {}).items()
-                 if k in CLASS_FIELDS and v.get('source_hash') == digest}
+    overrides = {}
+    for k, v in previous.get('classification_overrides', {}).items():
+        if k not in CLASS_FIELDS:
+            continue
+        if v.get('source_hash') == digest:
+            overrides[k] = v
+        elif still_proven(k, v, source):
+            overrides[k] = {**v, 'source_hash': digest}
     if not overrides:
         return fields
     fields.setdefault('evidence', {})

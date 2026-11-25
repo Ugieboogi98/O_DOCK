@@ -516,6 +516,123 @@
         "original": "文豪ストレイドッグス",
         "reference_urls": []
       }
+    },
+    {
+      "aliases": [
+        "シズ・デルタ"
+      ],
+      "ko": "시즈 델타",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "오버로드",
+        "original": "オーバーロード",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "ソリュシャン・イプシロン"
+      ],
+      "ko": "솔류션 엡실론",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "오버로드",
+        "original": "オーバーロード",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "ユリ・アルファ"
+      ],
+      "ko": "유리 알파",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "오버로드",
+        "original": "オーバーロード",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "加藤うみ"
+      ],
+      "ko": "카토 우미",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "서머 포켓츠",
+        "original": "Summer Pockets",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "空門蒼"
+      ],
+      "ko": "소라카도 아오",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "서머 포켓츠",
+        "original": "Summer Pockets",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "鳴瀬しろは"
+      ],
+      "ko": "나루세 시로하",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "서머 포켓츠",
+        "original": "Summer Pockets",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "國見タマ"
+      ],
+      "ko": "쿠니미 타마",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "헤븐 번즈 레드",
+        "original": "ヘブンバーンズレッド",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "逢川めぐみ"
+      ],
+      "ko": "아이카와 메구미",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "헤븐 번즈 레드",
+        "original": "ヘブンバーンズレッド",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "星川サラ"
+      ],
+      "ko": "호시카와 사라",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
     }
   ]
 }

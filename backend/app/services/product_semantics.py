@@ -105,6 +105,58 @@ _FIELD_PARTS = {
 }
 
 
+_groups_cache = {'key': None, 'groups': []}
+
+
+def _dictionary_groups():
+    import json
+    from app.core.config import get_settings
+    path = get_settings().data_dir / 'reference/semantic_dictionary/catalog.json'
+    try:
+        key = path.stat().st_mtime_ns
+    except OSError:
+        return []
+    if _groups_cache['key'] != key:
+        _groups_cache.update(key=key, groups=json.loads(path.read_text(encoding='utf-8')).get('domain_groups', []))
+    return _groups_cache['groups']
+
+
+def characters_of_verified_work(source, fields, groups=None):
+    """Fill a missing character from the title once the work is known, also when that work came from a
+    verified override applied after the pipeline (FuRyu titles name no work: カンナ -日本人形-)."""
+    import copy
+    states = fields.get('field_status') or {}
+    work = fields.get('franchise_ko')
+    if not work or fields.get('character_ko') or states.get('character_ko') not in ('missing', 'review'):
+        return fields
+    from app.services.local_semantic_lexicon import title_hints
+    # The work's own title text (機動戦士ガンダム, 進撃の巨人) is not a character mention; title_hints strips
+    # the grounded work original from the title, so pass the literal text the work was proven by.
+    proof = (fields.get('evidence') or {}).get('franchise') or {}
+    title = (source or {}).get('name_original') or ''
+    spans = [s for s in [proof.get('original'), proof.get('evidence'), *(r.get('match') for r in proof.get('references') or [])]
+             if isinstance(s, str) and s and s in title]
+    original = max(spans, key=len) if spans else work
+    ground = {'franchise': {'original': original, 'ko': work, 'evidence_field': 'name_original', 'evidence': original},
+              'characters': [], 'figure_form': None}
+    title_hints(source, ground, groups if groups is not None else _dictionary_groups())
+    if not ground['characters']:
+        return fields
+    checked, _ = validate_result(source, {'name_ko': fields.get('name_ko'), 'franchise': None,
+                                          'characters': ground['characters'], 'figure_form': None})
+    if not checked.get('character_ko') or (checked.get('field_status') or {}).get('character_ko') != 'ready':
+        return fields
+    out = copy.deepcopy(fields)
+    out['characters'], out['character_ko'] = checked['characters'], checked['character_ko']
+    out['field_status']['character_ko'] = 'ready'
+    out.setdefault('field_issues', {})['character_ko'] = []
+    out['missing_fields'] = [k for k in out.get('missing_fields', []) if k != 'character_ko']
+    classification = [out['field_status'].get(k) for k in ('franchise_ko', 'character_ko', 'figure_form')]
+    out['classification_status'] = ('review' if 'review' in classification else
+                                    'partial' if 'missing' in classification else 'ready')
+    return out
+
+
 def keep_ready_fields(new, old):
     """A re-run never downgrades a field that was already verified for the same source.
 
@@ -153,10 +205,17 @@ def save_record(db, record):
         raise SemanticError('SOURCE_CHANGED_RETRY', False)
     fields, issues = validate_result(record['source'], record['result'])
     p = db.get(ProductSemantics, f.id)
-    if p and p.source_hash == record['source_hash']:
+    if p and isinstance(p.fields, dict):
         from app.services.verified_classification import merge_overrides
-        fields = merge_overrides(fields, p.fields, record['source_hash'])
-        fields = keep_ready_fields(fields, p.fields)
+        # Verified decisions follow the product across source refreshes while their proofs still hold.
+        fields = merge_overrides(fields, p.fields, record['source_hash'], record['source'])
+        if p.source_hash == record['source_hash']:
+            fields = keep_ready_fields(fields, p.fields)
+        # A verified work override arrives after validation: read that work's characters from the title now,
+        # and a box needs no character once it has one.
+        from app.services.semantic_rules import assortment_without_character
+        fields = characters_of_verified_work(record['source'], fields)
+        fields = assortment_without_character(record['source'], fields)
         issues = [error for errors in fields.get('field_issues', {}).values() for error in errors]
     if p is None:
         p = ProductSemantics(figure_id=f.id)

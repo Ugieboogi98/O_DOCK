@@ -10,7 +10,7 @@ import unicodedata
 # フィギュアー名前ー / フィギュア―名前― (noodle stoppers, prize lines): dashes around the character name.
 # Assortments and boxed lines: the work title there is not a single hero figure.
 COLLECTION = re.compile(r'(?i)vol\.?\s*\d|\bbox\b|コレクション|collection|セット|세트|全\d+種|\d+종')
-BRACKETED_NAME = re.compile(r'(フィギュア)[ー―－](.+?)[ー―－](?=\s|$|[（(【\[])')
+BRACKETED_NAME = re.compile(r'(フィギュア|Figure)[ー―－](.+?)[ー―－](?=\s|$|[（(【\[])')
 
 
 def load():

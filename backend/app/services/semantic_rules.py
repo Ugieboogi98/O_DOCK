@@ -94,12 +94,18 @@ def context_candidates(source):
         pattern = r'(?=([『「]([^』」\n]{1,100})[』」](?:より|から|の)([^\n。！]{1,300})))'
         for match in re.finditer(pattern, intro):
             proof, work, clause = match.groups()
-            if normalize(work) in {normalize(source.get('manufacturer')), normalize(source.get('product_line')), 'tenitol', 'fnex', 'るかっぷ'}:
+            if normalize(work) in {normalize(source.get('manufacturer')), normalize(source.get('product_line')), 'tenitol', 'fnex',
+                                   normalize('F:NEX'), 'るかっぷ'}:
                 continue
             subjects = re.findall(r'[「『]([^」』]{1,100})[」』]', clause)
             subjects = [s for s in subjects if title_subject(s, source['name_original']) or s in (source.get('character') or '')]
             # 「チアリーディング」初音ミク … 初音ミク チアリーディングVer.: the quoted theme is the version, not a character.
             subjects = [s for s in subjects if not version_name(s, source['name_original'])]
+            # 「吉徳×F:NEX カンナ -日本人形- 1/4スケールフィギュア」 quotes the whole product name, not a character.
+            subjects = [s for s in subjects if normalize(s) != normalize(source['name_original'])]
+            # Brands and lines quoted as subjects (「F:NEX」) are not characters either.
+            brands = {normalize(source.get('manufacturer')), normalize(source.get('product_line')), 'tenitol', 'fnex', normalize('F:NEX')}
+            subjects = [s for s in subjects if normalize(s) not in brands]
             if not subjects:
                 continue
             found.append({'kind': 'franchise', 'original': work, 'evidence_field': field, 'evidence': proof})
@@ -368,8 +374,82 @@ def validate_result(source, result):
                     'source_url': source.get('_' + proof['evidence_field'] + '_url')}
     expected = {c['original'] for c in candidates if c['kind'] == 'character'}
     omitted = {original for original in expected if not any(same_subject(original, c['original']) for c in fields['characters'])}
+    # 『春夏秋冬代行者 春の舞』 quoted in the description is the work, not a character left out.
+    work_names = {normalize(c['original']) for c in candidates if c['kind'] == 'franchise'}
+    proof = (fields['evidence'].get('franchise') or {})
+    work_names |= {normalize(x) for x in [proof.get('original'), source.get('franchise'),
+                                           *(r.get('match') for r in proof.get('references') or [])] if x}
+    work_names = {w for w in work_names if len(w) >= 3}
+    omitted = {o for o in omitted if not any(normalize(o) in w or w in normalize(o) for w in work_names)}
+    # 「ルピー：ウィンターショッパー」, 「小鳥遊ホシノ（臨戦）」: the named character plus its outfit or form.
+    omitted = {o for o in omitted if not any(o.startswith(c['original']) and o[len(c['original']):len(c['original']) + 1] in '：:・･ -‐（(〈〔［[～~'
+                                             for c in fields['characters'] if c.get('original'))}
     if omitted:
         reject('EXPLICIT_MAIN_CHARACTER_OMITTED:' + ','.join(sorted(omitted)), 'character_ko')
     if work_candidates and not fields['franchise_ko']:
         reject('EXPLICIT_DOCUMENT_FRANCHISE_OMITTED', 'franchise_ko')
-    return finalize(fields, field_issues), issues
+    return assortment_without_character(source, finalize(fields, field_issues)), issues
+
+
+# Boxes, blind assortments, sets and numbered lines hold several characters (or none in the title);
+# for them the work is the classification and a missing character is not a gap.
+ASSORTMENT = re.compile(r'(?i)(?<![a-z])box(?![a-z])|ボックス|박스|全\s*\d+\s*種|\d+\s*종|アソート|아소트|assort|コレクション|컬렉션|'
+                        r'トレーディング|트레이딩|ブラインド|블라인드|ガチャ|가챠|(?<![a-z])set(?![a-z])|セット|세트|'
+                        # VOL.n and "Collection Figure #2" number single figures; they are not boxes.
+                        r'第\S{1,3}弾|\d+\s*個入|くじ|쿠지|'
+                        # Blind-box lines and mascot assortments sold by the box.
+                        r'バディコレ|マスコット|とびマス|ぬいっぽ|ニャンコ|ニャルト|にゃんこ|ニャン[！!]|ニャンダム|にゃん魂|CATS|'
+                        r'さぷらいず|ぴたきゅーと|プチラマ|LOGBOX|MEGA ?CAT|カラころ|もぐもぐ|ちびコレ|'
+                        # Unnamed rank-and-file figures (ジオン公国軍一般兵士01).
+                        r'一般兵士|専用バイク|専用バギー')
+
+
+def _title_is_only_the_work(title, fields):
+    """ONE PIECE, 呪術廻戦【再販】, TVアニメ『ダンダダン』: the title names the work and nothing else."""
+    evidence = (fields.get('evidence') or {}).get('franchise') or {}
+    # Verified overrides keep the matched title text in their references instead of "original".
+    names = {evidence.get('original') or '', fields.get('franchise_ko') or '',
+             *(r.get('match') or '' for r in evidence.get('references') or [])} - {''}
+    core = re.sub(r'【[^】]*】|\[[^\]]*\]|^(?:TV)?アニメ|^劇場版|^映画|[『』「」]', '', title).strip(' 　')
+    return bool(core) and normalize(core) in {normalize(n) for n in names}
+# "(B:무라타)" picks one figure of the line; that one names a character the dictionary should know.
+SINGLE_PICK = re.compile(r'[(（]\s*[A-Z]\s*[:：.]')
+
+
+# Works that are their own character: a Miku product with no other character named is a Miku figure.
+WORK_IS_CHARACTER = {'하츠네 미쿠': '하츠네 미쿠', '하츠네 미쿠 GT 프로젝트': '하츠네 미쿠'}
+OTHER_VOCALOIDS = re.compile(r'鏡音|巡音|KAITO|MEIKO|重音|カイト|메이코|카가미네|메구리네')
+
+
+def _work_as_character(source, fields):
+    ko = WORK_IS_CHARACTER.get(fields.get('franchise_ko'))
+    title = (source or {}).get('name_original') or ''
+    evidence = (fields.get('evidence') or {}).get('franchise') or {}
+    field = evidence.get('evidence_field') or ('name_original' if '初音ミク' in title or '미쿠' in title else None)
+    if not ko or fields.get('character_ko') or OTHER_VOCALOIDS.search(title):
+        return False
+    original = evidence.get('original') or next((r.get('match') for r in evidence.get('references') or [] if r.get('match')), None)
+    fields['characters'] = [{'original': original or fields['franchise_ko'], 'ko': ko, 'evidence_field': field or 'franchise',
+                             'evidence': evidence.get('evidence') or original or fields['franchise_ko'], 'method': 'work_is_character'}]
+    fields['character_ko'] = ko
+    return True
+
+
+def assortment_without_character(source, fields):
+    title = (source or {}).get('name_original') or ''
+    states = fields.get('field_status') or {}
+    if fields.get('franchise_ko') and states.get('character_ko') == 'missing' and _work_as_character(source, fields):
+        states['character_ko'] = 'ready'
+        fields['missing_fields'] = [k for k in fields.get('missing_fields', []) if k != 'character_ko']
+        classification = [states[k] for k in ('franchise_ko', 'character_ko', 'figure_form')]
+        fields['classification_status'] = ('review' if 'review' in classification else
+                                           'partial' if 'missing' in classification else 'ready')
+        return fields
+    if (fields.get('franchise_ko') and states.get('character_ko') == 'missing' and not fields.get('character_ko')
+            and (ASSORTMENT.search(title) or _title_is_only_the_work(title, fields)) and not SINGLE_PICK.search(title)):
+        states['character_ko'] = 'not_applicable'
+        fields['missing_fields'] = [k for k in fields.get('missing_fields', []) if k != 'character_ko']
+        classification = [states[k] for k in ('franchise_ko', 'character_ko', 'figure_form')]
+        fields['classification_status'] = ('review' if 'review' in classification else
+                                           'partial' if 'missing' in classification else 'ready')
+    return fields
