@@ -43,7 +43,7 @@
     },
     {
       "file": "local_semantic_domain_extension.json",
-      "sha256": "5d3e0ab75ea4ea54322b2c616dfcad1f18a236e62e2bf0dc57651872cef30358"
+      "sha256": "145bb6c34dc7e715d63887f0d74fefb942e56c3585e57925cbc692797c60cbbc"
     },
     {
       "file": "local_semantic_domain_wikidata.json",
@@ -59,7 +59,7 @@
     },
     {
       "file": "product_semantics_glossary.json",
-      "sha256": "2fa25c04674543bf0fac0113267538d3139606a145718749d0c4b591758f4771"
+      "sha256": "46c2adde8ffcb0b6a526970e808f1b4a40e805df8a748411811eea2208f9014a"
     },
     {
       "file": "local_semantic_lexicon.py",
@@ -548,6 +548,123 @@
         "franchise": {
           "ko": "헌터×헌터",
           "original": "HUNTER×HUNTER",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "椎名唯華"
+        ],
+        "ko": "시이나 유이카",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "フレン・E・ルスタリオ"
+        ],
+        "ko": "프렌 E 루스타리오",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "三枝明那"
+        ],
+        "ko": "사에구사 아키나",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "天宮こころ"
+        ],
+        "ko": "아마미야 코코로",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "小柳ロウ"
+        ],
+        "ko": "코야나기 로우",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "小清水透"
+        ],
+        "ko": "코시미즈 토루",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "栞葉るり"
+        ],
+        "ko": "시오리하 루리",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "魔使マオ"
+        ],
+        "ko": "마츠카이 마오",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "니지산지",
+          "original": "にじさんじ",
+          "reference_urls": []
+        }
+      },
+      {
+        "aliases": [
+          "太宰治"
+        ],
+        "ko": "다자이 오사무",
+        "incorrect_ko": [],
+        "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+        "franchise": {
+          "ko": "문호 스트레이 독스",
+          "original": "文豪ストレイドッグス",
           "reference_urls": []
         }
       }
@@ -23104,7 +23221,8 @@
     {
       "work": "닌자보이 란타로",
       "aliases": [
-        "忍たま乱太郎"
+        "忍たま乱太郎",
+        "닌자보이 란타로"
       ],
       "characters": [
         [
@@ -23122,8 +23240,26 @@
         [
           "福富しんべヱ",
           "후쿠토미 신베"
+        ],
+        [
+          "山田利吉|利吉",
+          "야마다 리키치"
+        ],
+        [
+          "天鬼",
+          "텐키"
+        ],
+        [
+          "土井先生",
+          "도이 한스케"
+        ],
+        [
+          "雑渡昆奈門|雑渡",
+          "잣토 콘나몬"
         ]
-      ]
+      ],
+      "medium": "anime",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "현실주의 용사의 왕국 재건기",
@@ -23616,7 +23752,8 @@
     {
       "work": "학원 아이돌마스터",
       "aliases": [
-        "学園アイドルマスター"
+        "学園アイドルマスター",
+        "학원 아이돌마스터"
       ],
       "characters": [
         [
@@ -23642,8 +23779,34 @@
         [
           "有村麻央",
           "아리무라 마오"
+        ],
+        [
+          "花海佑芽|하나미 우메",
+          "하나미 우메"
+        ],
+        [
+          "十王星南|주오 세나",
+          "주오 세나"
+        ],
+        [
+          "紫雲清夏|시운 스미카",
+          "시운 스미카"
+        ],
+        [
+          "秦谷美鈴|하타야 미스즈",
+          "하타야 미스즈"
+        ],
+        [
+          "倉本千奈|쿠라모토 치나",
+          "쿠라모토 치나"
+        ],
+        [
+          "葛城リーリヤ|카츠라기 릴리야",
+          "카츠라기 릴리야"
         ]
-      ]
+      ],
+      "medium": "game",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "괴수 8호",
@@ -23933,7 +24096,8 @@
     {
       "work": "체인소 맨",
       "aliases": [
-        "チェンソーマン"
+        "チェンソーマン",
+        "체인소 맨"
       ],
       "characters": [
         [
@@ -23955,9 +24119,19 @@
         [
           "早川アキ",
           "하야카와 아키"
+        ],
+        [
+          "체인소 맨",
+          "체인소 맨"
+        ],
+        [
+          "サムライソード|사무라이 소드",
+          "사무라이 소드"
         ]
       ],
-      "title_is_character": true
+      "title_is_character": true,
+      "medium": "anime",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "나츠메 우인장",
@@ -24139,7 +24313,9 @@
       "work": "도검난무",
       "aliases": [
         "刀剣乱舞ONLINE",
-        "刀剣乱舞"
+        "刀剣乱舞",
+        "刀剣乱舞-ONLINE-",
+        "도검난무"
       ],
       "characters": [
         [
@@ -24149,9 +24325,42 @@
         [
           "山姥切長義",
           "야만바기리 쵸우기"
+        ],
+        [
+          "三日月宗近",
+          "미카즈키 무네치카"
+        ],
+        [
+          "五虎退",
+          "고코타이"
+        ],
+        [
+          "獅子王",
+          "시시오"
+        ],
+        [
+          "石切丸",
+          "이시키리마루"
+        ],
+        [
+          "加州清光",
+          "카슈 키요미츠"
+        ],
+        [
+          "燭台切光忠",
+          "쇼쿠다이키리 미츠타다"
+        ],
+        [
+          "鶴丸国永",
+          "츠루마루 쿠니나가"
+        ],
+        [
+          "大倶利伽羅",
+          "오오쿠리카라"
         ]
       ],
-      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it.",
+      "medium": "game"
     },
     {
       "work": "옆집 천사님 때문에 어느샌가 인간적으로 타락한 사연",
@@ -24257,6 +24466,26 @@
         [
           "スルト",
           "수르트"
+        ],
+        [
+          "ホシグマ",
+          "호시구마"
+        ],
+        [
+          "ミヅキ",
+          "미즈키"
+        ],
+        [
+          "エンテレケイア",
+          "엔텔레키아"
+        ],
+        [
+          "バグパイプ",
+          "백파이프"
+        ],
+        [
+          "マドロック",
+          "마드록"
         ]
       ],
       "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
@@ -26061,6 +26290,705 @@
         [
           "メタリカ|메탈리카",
           "메탈리카"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "사카모토 데이즈",
+      "aliases": [
+        "SAKAMOTO DAYS",
+        "사카모토 데이즈"
+      ],
+      "characters": [
+        [
+          "坂本太郎|坂本さん|사카모토 타로",
+          "사카모토 타로"
+        ],
+        [
+          "大佛|오사라기",
+          "오사라기"
+        ],
+        [
+          "神々廻|시시바",
+          "시시바"
+        ],
+        [
+          "楽|가쿠",
+          "가쿠"
+        ],
+        [
+          "陸少糖|루 샤오탕",
+          "루 샤오탕"
+        ],
+        [
+          "勢羽夏生|세바 나츠키",
+          "세바 나츠키"
+        ],
+        [
+          "勢羽真冬|세바 마후유",
+          "세바 마후유"
+        ],
+        [
+          "赤尾晶|아카오 아키라",
+          "아카오 아키라"
+        ],
+        [
+          "篁|타카무라",
+          "타카무라"
+        ],
+        [
+          "虎丸尚|토라마루 나오",
+          "토라마루 나오"
+        ],
+        [
+          "南雲|나구모",
+          "나구모"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "소드 아트 온라인",
+      "aliases": [
+        "ソードアート・オンライン",
+        "Sword Art Online",
+        "소드 아트 온라인"
+      ],
+      "characters": [
+        [
+          "キリト|Kirito",
+          "키리토"
+        ],
+        [
+          "アスナ|Asuna",
+          "아스나"
+        ],
+        [
+          "アリス|Alice",
+          "앨리스"
+        ],
+        [
+          "ユイ|Yui",
+          "유이"
+        ],
+        [
+          "リーファ|Leafa|리파",
+          "리파"
+        ],
+        [
+          "リズベット|Lisbeth",
+          "리즈벳"
+        ],
+        [
+          "ユナ|Yuna",
+          "유나"
+        ],
+        [
+          "ユージオ|ユージオ・シンセシス・サーティツー",
+          "유지오"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "체인소 맨 레제편",
+      "aliases": [
+        "チェンソーマン レゼ篇",
+        "체인소 맨 레제편"
+      ],
+      "characters": [
+        [
+          "レゼ|레제",
+          "레제"
+        ],
+        [
+          "天使の悪魔|ANGEL DEVIL|천사의 악마",
+          "천사의 악마"
+        ],
+        [
+          "ボム|BOMB",
+          "봄"
+        ],
+        [
+          "ビーム|빔",
+          "빔"
+        ],
+        [
+          "デンジ",
+          "덴지"
+        ],
+        [
+          "マキマ",
+          "마키마"
+        ],
+        [
+          "パワー",
+          "파워"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "드래곤볼",
+      "aliases": [
+        "ドラゴンボール",
+        "드래곤볼"
+      ],
+      "characters": [
+        [
+          "ランチ|런치",
+          "런치"
+        ],
+        [
+          "ブルマ|브루마",
+          "부르마"
+        ],
+        [
+          "오천크스",
+          "오천크스"
+        ],
+        [
+          "人造人間8号|인조인간 8호",
+          "인조인간 8호"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "러브 라이브!",
+      "aliases": [
+        "ラブライブ!",
+        "ラブライブ！",
+        "러브 라이브!",
+        "러브라이브"
+      ],
+      "characters": [
+        [
+          "星空凛|凛|凜|りん",
+          "호시조라 린"
+        ],
+        [
+          "小泉花陽|花陽|はなよ",
+          "코이즈미 하나요"
+        ],
+        [
+          "高坂穂乃果|穂乃果",
+          "코사카 호노카"
+        ],
+        [
+          "西木野真姫|真姫|まき",
+          "니시키노 마키"
+        ],
+        [
+          "東條希",
+          "토죠 노조미"
+        ],
+        [
+          "唐可可|唐 可可",
+          "탕 쿠쿠"
+        ],
+        [
+          "嵐千砂都|嵐 千砂都",
+          "아라시 치사토"
+        ],
+        [
+          "平安名すみれ",
+          "헤아나 스미레"
+        ],
+        [
+          "澁谷かのん",
+          "시부야 카논"
+        ],
+        [
+          "葉月恋|葉月 恋",
+          "하즈키 렌"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "유희왕 듀얼몬스터즈",
+      "aliases": [
+        "遊☆戯☆王デュエルモンスターズ",
+        "유희왕 듀얼 몬스터즈",
+        "유희왕 듀얼몬스터즈"
+      ],
+      "characters": [
+        [
+          "青眼の白龍|푸른 눈의 백룡",
+          "푸른 눈의 백룡"
+        ],
+        [
+          "真紅眼の黒竜|붉은 눈의 흑룡",
+          "붉은 눈의 흑룡"
+        ],
+        [
+          "ブラック・マジシャン|블랙 매지션",
+          "블랙 매지션"
+        ],
+        [
+          "オシリスの天空竜",
+          "오시리스의 천공룡"
+        ],
+        [
+          "オベリスクの巨神兵",
+          "오벨리스크의 거신병"
+        ],
+        [
+          "ラーの翼神竜",
+          "라의 익신룡"
+        ],
+        [
+          "超魔導剣士-ブラック・パラディン",
+          "초마도검사 블랙 팔라딘"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "Fate/kaleid liner 프리즈마☆이리야",
+      "aliases": [
+        "Fate/kaleid liner プリズマ☆イリヤ",
+        "Fate/kaleid liner 프리즈마☆이리야"
+      ],
+      "characters": [
+        [
+          "イリヤスフィール・フォン・アインツベルン|イリヤ",
+          "이리야스필 폰 아인츠베른"
+        ],
+        [
+          "美遊・エーデルフェルト|美遊",
+          "미유 에델펠트"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "신 테니스의 왕자",
+      "aliases": [
+        "新テニスの王子様",
+        "신 테니스의 왕자"
+      ],
+      "characters": [
+        [
+          "不二周助",
+          "후지 슈스케"
+        ],
+        [
+          "幸村精市",
+          "유키무라 세이이치"
+        ],
+        [
+          "手塚国光",
+          "테즈카 쿠니미츠"
+        ],
+        [
+          "白石蔵ノ介",
+          "시라이시 쿠라노스케"
+        ],
+        [
+          "越前リョーマ",
+          "에치젠 료마"
+        ],
+        [
+          "跡部景吾",
+          "아토베 케이고"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "벽람항로",
+      "aliases": [
+        "アズールレーン",
+        "벽람항로"
+      ],
+      "characters": [
+        [
+          "アウグスト・フォン・パーセヴァル",
+          "아우구스트 폰 파르제발"
+        ],
+        [
+          "ニュージャージー",
+          "뉴저지"
+        ],
+        [
+          "ビスマルク",
+          "비스마르크"
+        ],
+        [
+          "プリンツ・ハインリヒ",
+          "프린츠 하인리히"
+        ],
+        [
+          "ラフィー",
+          "라피"
+        ],
+        [
+          "ロドニー",
+          "로드니"
+        ],
+        [
+          "三笠",
+          "미카사"
+        ],
+        [
+          "山城",
+          "야마시로"
+        ],
+        [
+          "島風",
+          "시마카제"
+        ],
+        [
+          "逸仙",
+          "일선"
+        ],
+        [
+          "駿河",
+          "스루가"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "game"
+    },
+    {
+      "work": "동방 프로젝트",
+      "aliases": [
+        "東方Project",
+        "Touhou Project",
+        "동방 프로젝트"
+      ],
+      "characters": [
+        [
+          "古明地さとり",
+          "코메이지 사토리"
+        ],
+        [
+          "古明地こいし",
+          "코메이지 코이시"
+        ],
+        [
+          "Reimu Hakurei",
+          "하쿠레이 레이무"
+        ],
+        [
+          "十六夜咲夜|Sakuya Izayoi",
+          "이자요이 사쿠야"
+        ],
+        [
+          "パチュリー・ノーレッジ|Patchouli Knowledge",
+          "파츄리 널릿지"
+        ],
+        [
+          "火焔猫燐|Rin Kaenbyou",
+          "카엔뵤 린"
+        ],
+        [
+          "鈴仙・優曇華院・イナバ|Reisen Udongein Inaba",
+          "레이센 우동게인 이나바"
+        ],
+        [
+          "藤原妹紅",
+          "후지와라노 모코우"
+        ],
+        [
+          "射命丸文",
+          "샤메이마루 아야"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "game"
+    },
+    {
+      "work": "장송의 프리렌",
+      "aliases": [
+        "葬送のフリーレン",
+        "장송의 프리렌"
+      ],
+      "characters": [
+        [
+          "ミミック|Mimic",
+          "미믹"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "진격의 거인",
+      "aliases": [
+        "進撃の巨人",
+        "Attack On Titan",
+        "진격의 거인"
+      ],
+      "characters": [
+        [
+          "Colossal Titan|超大型巨人",
+          "초대형 거인"
+        ],
+        [
+          "Levi|리바이",
+          "리바이"
+        ],
+        [
+          "エレン",
+          "에렌 예거"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "디지몬 어드벤처",
+      "aliases": [
+        "デジモンアドベンチャー",
+        "디지몬 어드벤처"
+      ],
+      "characters": [
+        [
+          "ブイモン|브이몬",
+          "브이몬"
+        ],
+        [
+          "ガブモン|가부몬",
+          "파피몬"
+        ],
+        [
+          "テイルモン|테일몬",
+          "가트몬"
+        ],
+        [
+          "パタモン|파타몬",
+          "파닥몬"
+        ],
+        [
+          "オメガモン|오메가몬",
+          "오메가몬"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "뉴 팬티 & 스타킹 with 가터벨트",
+      "aliases": [
+        "New PANTY & STOCKING with GARTERBELT",
+        "뉴 팬티 & 스타킹 with 가터벨트"
+      ],
+      "characters": [
+        [
+          "パンティ|팬티",
+          "팬티"
+        ],
+        [
+          "ストッキング|스타킹",
+          "스타킹"
+        ],
+        [
+          "スキャンティ|스캔티",
+          "스캔티"
+        ],
+        [
+          "ニーソックス|니삭스",
+          "니삭스"
+        ],
+        [
+          "폴리에스테르",
+          "폴리에스테르"
+        ],
+        [
+          "폴리우레탄",
+          "폴리우레탄"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "가면라이더 고스트",
+      "aliases": [
+        "仮面ライダーゴースト",
+        "가면라이더 고스트"
+      ],
+      "characters": [
+        [
+          "仮面ライダーゴースト|가면라이더 고스트",
+          "가면라이더 고스트"
+        ],
+        [
+          "仮面ライダースペクター|가면라이더 스펙터",
+          "가면라이더 스펙터"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "tokusatsu",
+      "title_is_character": true
+    },
+    {
+      "work": "마법소녀 마도카☆마기카",
+      "aliases": [
+        "魔法少女まどか☆マギカ",
+        "마법소녀 마도카☆마기카",
+        "마법소녀 마도카 마기카"
+      ],
+      "characters": [
+        [
+          "佐倉杏子",
+          "사쿠라 쿄코"
+        ],
+        [
+          "巴マミ",
+          "토모에 마미"
+        ],
+        [
+          "暁美ほむら|악마 호무라|호무라",
+          "아케미 호무라"
+        ],
+        [
+          "美樹さやか",
+          "미키 사야카"
+        ],
+        [
+          "鹿目まどか|얼티밋 마도카",
+          "카나메 마도카"
+        ],
+        [
+          "環いろは",
+          "타마키 이로하"
+        ],
+        [
+          "百江なぎさ|모모에 나기사",
+          "모모에 나기사"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "나초네코",
+      "aliases": [
+        "Nachoneko",
+        "ナチョネコ",
+        "나초네코"
+      ],
+      "characters": [
+        [
+          "Nachoneko|ナチョネコ|나초네코",
+          "나초네코"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "vtuber",
+      "title_is_character": true
+    },
+    {
+      "work": "기동전사 건담 GQuuuuuuX",
+      "aliases": [
+        "機動戦士Gundam GQuuuuuuX",
+        "기동전사 건담 GQuuuuuuX",
+        "기동전사 Gundam GQuuuuuuX"
+      ],
+      "characters": [
+        [
+          "ハロ|하로",
+          "하로"
+        ],
+        [
+          "アマテ・ユズリハ|マチュ|아마테 유즈리하",
+          "아마테 유즈리하"
+        ],
+        [
+          "シャリア・ブル|샤리아 불",
+          "샤리아 불"
+        ],
+        [
+          "ニャアン|냐안",
+          "냐안"
+        ],
+        [
+          "シュウジ・イトウ|슈우지 이토",
+          "슈우지 이토"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "문호 스트레이 독스",
+      "aliases": [
+        "文豪ストレイドッグス",
+        "문호 스트레이 독스"
+      ],
+      "characters": [
+        [
+          "太宰治|太宰さん",
+          "다자이 오사무"
+        ],
+        [
+          "中原中也",
+          "나카하라 츄야"
+        ],
+        [
+          "中島敦",
+          "나카지마 아츠시"
+        ],
+        [
+          "芥川龍之介",
+          "아쿠타가와 류노스케"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "에반게리온 신극장판",
+      "aliases": [
+        "ヱヴァンゲリヲン新劇場版",
+        "에반게리온 신극장판"
+      ],
+      "characters": [
+        [
+          "エヴァンゲリオン初号機",
+          "에반게리온 초호기"
+        ],
+        [
+          "アスカ",
+          "시키나미 아스카 랑그레이"
+        ],
+        [
+          "シンジ",
+          "이카리 신지"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "【최애의 아이】",
+      "aliases": [
+        "【推しの子】",
+        "【최애의 아이】",
+        "최애의 아이"
+      ],
+      "characters": [
+        [
+          "MEMちょ|MEM쵸",
+          "MEM쵸"
+        ],
+        [
+          "寿みなみ|고토부키 미나미",
+          "고토부키 미나미"
         ]
       ],
       "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
@@ -63121,13 +64049,6 @@
       "characters": [
         [
           [
-            "パチュリー・ノーレッジ",
-            "파츄리 널릿지"
-          ],
-          "파츄리 널릿지"
-        ],
-        [
-          [
             "メルラン・プリズムリバー",
             "메를랑 프리즘리버"
           ],
@@ -63153,20 +64074,6 @@
             "레바테인"
           ],
           "레바테인"
-        ],
-        [
-          [
-            "古明地こいし",
-            "코메이지 코이시"
-          ],
-          "코메이지 코이시"
-        ],
-        [
-          [
-            "古明地さとり",
-            "코메이지 사토리"
-          ],
-          "코메이지 사토리"
         ],
         [
           [
@@ -66886,13 +67793,6 @@
             "브리프"
           ],
           "브리프"
-        ],
-        [
-          [
-            "ブルマ",
-            "부르마"
-          ],
-          "부르마"
         ],
         [
           [
@@ -71018,13 +71918,6 @@
         ],
         [
           [
-            "ガブモン",
-            "파피몬"
-          ],
-          "파피몬"
-        ],
-        [
-          [
             "ガルダモン",
             "가루다몬"
           ],
@@ -71123,13 +72016,6 @@
         ],
         [
           [
-            "テイルモン",
-            "가트몬"
-          ],
-          "가트몬"
-        ],
-        [
-          [
             "テントモン",
             "텐타몬"
           ],
@@ -71162,13 +72048,6 @@
             "버드라몬"
           ],
           "버드라몬"
-        ],
-        [
-          [
-            "パタモン",
-            "파닥몬"
-          ],
-          "파닥몬"
         ],
         [
           [
@@ -115174,13 +116053,6 @@
       "medium": "anime",
       "aliases": [],
       "characters": [
-        [
-          [
-            "ユイ",
-            "유이"
-          ],
-          "유이"
-        ],
         [
           [
             "須郷伸之",
@@ -164099,13 +164971,6 @@
             "입체기동장치"
           ],
           "입체기동장치"
-        ],
-        [
-          [
-            "超大型巨人",
-            "초대형 거인"
-          ],
-          "초대형 거인"
         ],
         [
           [
@@ -218878,1357 +219743,8 @@
   "learned": {
     "version": "learned-aliases-v1",
     "min_support": 2,
-    "aliases": [
-      {
-        "kind": "character",
-        "original": "ヘスティア",
-        "ko": "헤스티아",
-        "work": "던전에서 만남을 추구하면 안 되는 걸까",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "一色いろは",
-        "ko": "잇시키 이로하",
-        "work": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "support": 3
-      },
-      {
-        "kind": "character",
-        "original": "坂田銀時",
-        "ko": "사카타 긴토키",
-        "work": "은혼",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "岡部倫太郎",
-        "ko": "오카베 린타로",
-        "work": "슈타인즈 게이트",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "旅人",
-        "ko": "여행자",
-        "work": "원신",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "木之本桜",
-        "ko": "키노모토 사쿠라",
-        "work": "카드캡터 사쿠라",
-        "support": 5
-      },
-      {
-        "kind": "character",
-        "original": "桜ミク",
-        "ko": "하츠네 미쿠",
-        "work": "하츠네 미쿠",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "殺生丸",
-        "ko": "셋쇼마루",
-        "work": "이누야샤",
-        "support": 3
-      },
-      {
-        "kind": "character",
-        "original": "水野愛",
-        "ko": "미즈노 아이",
-        "work": "좀비 랜드 사가",
-        "support": 3
-      },
-      {
-        "kind": "character",
-        "original": "源さくら",
-        "ko": "미나모토 사쿠라",
-        "work": "좀비 랜드 사가",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "犬夜叉",
-        "ko": "이누야샤",
-        "work": "이누야샤",
-        "support": 5
-      },
-      {
-        "kind": "character",
-        "original": "由比ヶ浜結衣",
-        "ko": "유이가하마 유이",
-        "work": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "support": 3
-      },
-      {
-        "kind": "character",
-        "original": "真菰",
-        "ko": "마코모",
-        "work": "귀멸의 칼날",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "神楽",
-        "ko": "카구라",
-        "work": "은혼",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "空条承太郎",
-        "ko": "쿠죠 죠타로",
-        "work": "죠죠의 기묘한 모험",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "錆兎",
-        "ko": "사비토",
-        "work": "귀멸의 칼날",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "錦木千束",
-        "ko": "니시키기 치사토",
-        "work": "리코리스 리코일",
-        "support": 2
-      },
-      {
-        "kind": "character",
-        "original": "雪ノ下雪乃",
-        "ko": "유키노시타 유키노",
-        "work": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "support": 4
-      },
-      {
-        "kind": "character",
-        "original": "雪ミク",
-        "ko": "하츠네 미쿠",
-        "work": "하츠네 미쿠",
-        "support": 4
-      },
-      {
-        "kind": "character",
-        "original": "霧切響子",
-        "ko": "키리기리 쿄코",
-        "work": "단간론파 희망의 학교와 절망의 고교생",
-        "support": 3
-      },
-      {
-        "kind": "franchise",
-        "original": "Blue Archive",
-        "ko": "블루 아카이브",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "FULLMETAL ALCHEMIST",
-        "ko": "강철의 연금술사",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "HUNTER×HUNTER",
-        "ko": "헌터×헌터",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "ONE PIECE",
-        "ko": "원피스",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "ウマ娘 プリティーダービー",
-        "ko": "우마무스메 프리티 더비",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "ジョジョの奇妙な冒険",
-        "ko": "죠죠의 기묘한 모험",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "プリンセスコネクト! Re：Dive",
-        "ko": "프린세스코넥트 ! Re：Dive",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "原神",
-        "ko": "원신",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "桜ミク",
-        "ko": "하츠네 미쿠",
-        "work": null,
-        "support": 2
-      },
-      {
-        "kind": "franchise",
-        "original": "犬夜叉",
-        "ko": "이누야샤",
-        "work": null,
-        "support": 5
-      },
-      {
-        "kind": "franchise",
-        "original": "銀魂",
-        "ko": "은혼",
-        "work": null,
-        "support": 5
-      },
-      {
-        "kind": "franchise",
-        "original": "鬼滅の刃",
-        "ko": "귀멸의 칼날",
-        "work": null,
-        "support": 4
-      }
-    ],
-    "examples": [
-      {
-        "figure_id": 63,
-        "name_original": "D:キラーワイフ - シークレットポリス 1/7スケールフィギュア",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "D: 킬러 와이프"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 64,
-        "name_original": "ウンファ:タクティカル・アップ 1/7スケールフィギュア",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "은화"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 65,
-        "name_original": "エクス・アルビオ  1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "엑스 알비오"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 66,
-        "name_original": "でびでび・でびる 1/2スケールソフビフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "데비데비 데빌"
-        ],
-        "figure_form": "soft_vinyl"
-      },
-      {
-        "figure_id": 67,
-        "name_original": "加賀美ハヤト 1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "카가미 하야토"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 68,
-        "name_original": "不破湊  1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "후와 미나토"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 69,
-        "name_original": "レイン・パターソン  1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "레인 패터슨"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 70,
-        "name_original": "花畑チャイカ 1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "하나바타케 차이카"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 71,
-        "name_original": "叢雲カゲツ 1/7スケールフィギュア",
-        "franchise_ko": "니지산지",
-        "characters_ko": [
-          "무라쿠모 카게츠"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 72,
-        "name_original": "常守 朱&狡噛 慎也 1/7スケールフィギュア",
-        "franchise_ko": "PSYCHO-PASS",
-        "characters_ko": [
-          "츠네모리 아카네",
-          "코가미 신야"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 73,
-        "name_original": "吉徳×F:NEX 桜ミク -日本人形- 1/4スケールフィギュア",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 75,
-        "name_original": "牧瀬紅莉栖&岡部倫太郎 1/7スケールフィギュア",
-        "franchise_ko": "슈타인즈 게이트",
-        "characters_ko": [
-          "마키세 크리스",
-          "오카베 린타로"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 80,
-        "name_original": "七海千秋 illustration by めつぶしあんこ 1/7スケールフィギュア",
-        "franchise_ko": "슈퍼 단간론파 2: 안녕히 절망학원",
-        "characters_ko": [
-          "나나미 치아키"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 81,
-        "name_original": "霧切響子 illustration by めつぶしあんこ 1/7スケールフィギュア",
-        "franchise_ko": "단간론파 희망의 학교와 절망의 고교생",
-        "characters_ko": [
-          "키리기리 쿄코"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 82,
-        "name_original": "楪いのり 1/7スケールフィギュア",
-        "franchise_ko": "길티 크라운",
-        "characters_ko": [
-          "유즈리하 이노리"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 83,
-        "name_original": "雪ノ下雪乃 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유키노시타 유키노"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 84,
-        "name_original": "由比ヶ浜結衣 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유이가하마 유이"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 85,
-        "name_original": "一色いろは 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "잇시키 이로하"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 86,
-        "name_original": "小木曽雪菜 1/7スケールフィギュア",
-        "franchise_ko": "화이트 앨범 2",
-        "characters_ko": [
-          "오기소 세츠나"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 87,
-        "name_original": "冬馬かずさ 1/7スケールフィギュア",
-        "franchise_ko": "화이트 앨범 2",
-        "characters_ko": [
-          "토우마 카즈사"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 153,
-        "name_original": "鬼滅の刃 真菰",
-        "franchise_ko": "귀멸의 칼날",
-        "characters_ko": [
-          "마코모"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 154,
-        "name_original": "鬼滅の刃 錆兎",
-        "franchise_ko": "귀멸의 칼날",
-        "characters_ko": [
-          "사비토"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 413,
-        "name_original": "機動戦士ガンダムSEED ニャンとも大きなニャンダムSEED  ①キラ・ヤマト　②アスラン・ザラ　③ラクス・クライン",
-        "franchise_ko": "기동전사 건담 SEED",
-        "characters_ko": [
-          "아스란 자라",
-          "키라 야마토",
-          "라크스 클라인"
-        ],
-        "figure_form": "soft_vinyl"
-      },
-      {
-        "figure_id": 512,
-        "name_original": "銀魂 坂田銀時",
-        "franchise_ko": "은혼",
-        "characters_ko": [
-          "사카타 긴토키"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 671,
-        "name_original": "機動戦士ガンダム ニャンとも大きな機動戦士ニャンダム　①ガンダム　②シャア専用ザク",
-        "franchise_ko": "기동전사 건담",
-        "characters_ko": [
-          "건담"
-        ],
-        "figure_form": "soft_vinyl"
-      },
-      {
-        "figure_id": 714,
-        "name_original": "銀魂 神楽",
-        "franchise_ko": "은혼",
-        "characters_ko": [
-          "카구라"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 738,
-        "name_original": "ジョジョの奇妙な冒険 スターダストクルセイダース 空条承太郎",
-        "franchise_ko": "죠죠의 기묘한 모험",
-        "characters_ko": [
-          "쿠죠 죠타로"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 747,
-        "name_original": "銀魂 坂田銀時【再販】",
-        "franchise_ko": "은혼",
-        "characters_ko": [
-          "사카타 긴토키"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 953,
-        "name_original": "ハイキュー!! 月島 蛍",
-        "franchise_ko": "하이큐!!",
-        "characters_ko": [
-          "츠키시마 케이"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 963,
-        "name_original": "TVアニメ「らんま1/2」 シャンプー",
-        "franchise_ko": "란마 ½",
-        "characters_ko": [
-          "샴푸"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 965,
-        "name_original": "犬夜叉 殺生丸",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "셋쇼마루"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 966,
-        "name_original": "犬夜叉 犬夜叉",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "이누야샤"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1012,
-        "name_original": "ONE PIECE ドンキホーテ・ドフラミンゴ",
-        "franchise_ko": "원피스",
-        "characters_ko": [
-          "돈키호테 도플라밍고"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1036,
-        "name_original": "鬼滅の刃 錆兎【再販】",
-        "franchise_ko": "귀멸의 칼날",
-        "characters_ko": [
-          "사비토"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1037,
-        "name_original": "鬼滅の刃 真菰【再販】",
-        "franchise_ko": "귀멸의 칼날",
-        "characters_ko": [
-          "마코모"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1064,
-        "name_original": " 原神 ゴロー",
-        "franchise_ko": "원신",
-        "characters_ko": [
-          "고로"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1065,
-        "name_original": "原神 楓原万葉",
-        "franchise_ko": "원신",
-        "characters_ko": [
-          "카에데하라 카즈하"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1094,
-        "name_original": "銀魂 志村新八",
-        "franchise_ko": "은혼",
-        "characters_ko": [
-          "시무라 신파치"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1121,
-        "name_original": "進撃の巨人 エレン・イェーガー むむっとVer.",
-        "franchise_ko": "진격의 거인",
-        "characters_ko": [
-          "에렌 예거"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1146,
-        "name_original": "ジョジョの奇妙な冒険 スターダストクルセイダース 空条承太郎【再販】",
-        "franchise_ko": "죠죠의 기묘한 모험",
-        "characters_ko": [
-          "쿠죠 죠타로"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1271,
-        "name_original": "鋼の錬金術師 FULLMETAL ALCHEMIST ロイ・マスタング",
-        "franchise_ko": "강철의 연금술사",
-        "characters_ko": [
-          "로이 머스탱"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1272,
-        "name_original": "鋼の錬金術師 FULLMETAL ALCHEMIST エドワード・エルリック",
-        "franchise_ko": "강철의 연금술사",
-        "characters_ko": [
-          "에드워드 엘릭"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1275,
-        "name_original": "ヤマトガールズコレクション 宇宙戦艦ヤマト ヤマトよ永遠に REBEL3199 森雪デザリアムスーツVer.",
-        "franchise_ko": "우주전함 야마토",
-        "characters_ko": [
-          "모리 유키"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1285,
-        "name_original": "銀魂 神楽【再販】",
-        "franchise_ko": "은혼",
-        "characters_ko": [
-          "카구라"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 1398,
-        "name_original": "アニメ25周年記念 木之本桜 1/7スケールフィギュア",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "키노모토 사쿠라"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1423,
-        "name_original": "フィービー 1/7スケールフィギュア",
-        "franchise_ko": "명조: 워더링 웨이브",
-        "characters_ko": [
-          "페비"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1434,
-        "name_original": "ルーミア illustration by 羽々斬 1/7スケールフィギュア",
-        "franchise_ko": "동방 프로젝트",
-        "characters_ko": [
-          "루미아"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1450,
-        "name_original": "周防有希 1/7スケールフィギュア",
-        "franchise_ko": "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
-        "characters_ko": [
-          "스오우 유키"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1457,
-        "name_original": "ギロチン 1/7スケールフィギュア",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "길로틴"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1492,
-        "name_original": "服部平次&遠山和葉 1/7スケールフィギュア",
-        "franchise_ko": "명탐정 코난",
-        "characters_ko": [
-          "핫토리 헤이지",
-          "토야마 카즈하"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1493,
-        "name_original": "新島真 1/7スケールフィギュア",
-        "franchise_ko": "페르소나 5",
-        "characters_ko": [
-          "니지마 마코토"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1516,
-        "name_original": "羽前 京香 1/7スケールフィギュア",
-        "franchise_ko": "마도정병의 슬레이브",
-        "characters_ko": [
-          "우젠 쿄카"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1520,
-        "name_original": "内田優空 1/7スケールフィギュア",
-        "franchise_ko": "치토세 군은 라무네병 속에",
-        "characters_ko": [
-          "우치다 유아"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 1533,
-        "name_original": "大鳳 浴衣ver. 1/7スケールフィギュア",
-        "franchise_ko": "벽람항로",
-        "characters_ko": [
-          "다이호"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4813,
-        "name_original": "どきゅーと　カードキャプターさくら～クリアカード編～　超特大ぬいぐるみ　木之本桜",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "키노모토 사쿠라"
-        ],
-        "figure_form": "plush"
-      },
-      {
-        "figure_id": 4827,
-        "name_original": "P丸様。 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "P마루사마.",
-        "characters_ko": [
-          "P마루사마."
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4833,
-        "name_original": "リコリス・リコイル 錦木千束～バンドver.～ 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "리코리스 리코일",
-        "characters_ko": [
-          "니시키기 치사토"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4863,
-        "name_original": "ブルーアーカイブ -Blue Archive- 銀鏡イオリ 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "블루 아카이브",
-        "characters_ko": [
-          "시로미 이오리"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4869,
-        "name_original": "ブルーアーカイブ -Blue Archive- 美甘ネル(バニーガール) 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "블루 아카이브",
-        "characters_ko": [
-          "미카모 네루"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4879,
-        "name_original": "デート・ア・バレット 時崎狂三～ガンナーver.～ 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "데이트 앤 바레트",
-        "characters_ko": [
-          "토키사키 쿠루미"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4882,
-        "name_original": "桜ミク ～桜妖精ver.～ 1/7スケールフィギュア【完全受注生産】",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 4897,
-        "name_original": "どきゅーと「たまこまーけっと」超特大ぬいぐるみ デラ・モチマッヅィ",
-        "franchise_ko": "타마코 마켓",
-        "characters_ko": [
-          "데라 모치마쯔이"
-        ],
-        "figure_form": "plush"
-      },
-      {
-        "figure_id": 4898,
-        "name_original": "どきゅーと「中二病でも恋がしたい！」超特大ぬいぐるみ 小鳥遊六花",
-        "franchise_ko": "중2병이라도 사랑이 하고 싶어!",
-        "characters_ko": [
-          "타카나시 릿카"
-        ],
-        "figure_form": "plush"
-      },
-      {
-        "figure_id": 4904,
-        "name_original": "どきゅーと 雪ミク 超特大ぬいぐるみ",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "plush"
-      },
-      {
-        "figure_id": 4982,
-        "name_original": "霧切響子フィギュア~カップラーメンver.~",
-        "franchise_ko": "단간론파 희망의 학교와 절망의 고교생",
-        "characters_ko": [
-          "키리기리 쿄코"
-        ],
-        "figure_form": "lottery_goods"
-      },
-      {
-        "figure_id": 4983,
-        "name_original": "霧切響子フィギュア~カップラーメンver.~(全1種)全高 約18cm",
-        "franchise_ko": "단간론파 희망의 학교와 절망의 고교생",
-        "characters_ko": [
-          "키리기리 쿄코"
-        ],
-        "figure_form": "lottery_goods"
-      },
-      {
-        "figure_id": 5032,
-        "name_original": "劇場版ダンジョンに出会いを求めるのは間違っているだろうか -オリオンの矢- ヘスティア1/7スケールフィギュア",
-        "franchise_ko": "던전에서 만남을 추구하면 안 되는 걸까",
-        "characters_ko": [
-          "헤스티아"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5081,
-        "name_original": "木之本桜 1/7スケールフィギュア",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "키노모토 사쿠라"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5181,
-        "name_original": "勝利の女神:NIKKE ぬーどるストッパーフィギュアーブランー",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "블랑"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5185,
-        "name_original": "HUNTER×HUNTER ぬーどるストッパーフィギュアーイルミー",
-        "franchise_ko": "헌터×헌터",
-        "characters_ko": [
-          "일루미"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5193,
-        "name_original": "アークナイツ ぬーどるストッパーフィギュアーテキサス・意志ver.ー",
-        "franchise_ko": "명일방주",
-        "characters_ko": [
-          "텍사스"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5200,
-        "name_original": "勝利の女神:NIKKE ぬーどるストッパーフィギュアーノワールー",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "누아르"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5201,
-        "name_original": "犬夜叉(アニメ) ぬーどるストッパーフィギュア―犬夜叉―vol.2",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "이누야샤"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5206,
-        "name_original": "ウマ娘 プリティーダービー ぬーどるストッパーフィギュアーアーモンドアイー",
-        "franchise_ko": "우마무스메 프리티 더비",
-        "characters_ko": [
-          "아몬드 아이"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5213,
-        "name_original": "犬夜叉(アニメ) ぬーどるストッパーフィギュア―殺生丸―vol.2",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "셋쇼마루",
-          "이누야샤"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5215,
-        "name_original": "ウマ娘 プリティーダービー ぬーどるストッパーフィギュアーラッキーライラックー",
-        "franchise_ko": "우마무스메 프리티 더비",
-        "characters_ko": [
-          "럭키 라일락"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5429,
-        "name_original": "犬夜叉 ぬーどるストッパーフィギュア-犬夜叉-",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "이누야샤"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5465,
-        "name_original": "ペコリーヌ 「プリンセスコネクト! Re：Dive」 1/7スケールフィギュア",
-        "franchise_ko": "프린세스코넥트 ! Re：Dive",
-        "characters_ko": [
-          "페코리누"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5466,
-        "name_original": "キャル 「プリンセスコネクト! Re：Dive」 1/7スケールフィギュア",
-        "franchise_ko": "프린세스코넥트 ! Re：Dive",
-        "characters_ko": [
-          "칼"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5498,
-        "name_original": "ゾンビランドサガ リベンジ 水野愛 -ウエディングドレス- 1/7スケールフィギュア",
-        "franchise_ko": "좀비 랜드 사가",
-        "characters_ko": [
-          "미즈노 아이"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5770,
-        "name_original": "HUNTER×HUNTER ぬーどるストッパーフィギュア-クロロ=ルシルフル-",
-        "franchise_ko": "헌터×헌터",
-        "characters_ko": [
-          "클로로 루실후르"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5785,
-        "name_original": "ぬーどるストッパーフィギュア－リューク－",
-        "franchise_ko": "데스노트",
-        "characters_ko": [
-          "류크"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5789,
-        "name_original": "ぬーどるストッパーフィギュア―シンデレラ―",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "신데렐라"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5790,
-        "name_original": "ぬーどるストッパーフィギュア―プリバティ：アンカインド・メイド―",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "프리바티"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5791,
-        "name_original": "ぬーどるストッパーフィギュア―D：キラーワイフ―",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "D: 킬러 와이프"
-        ],
-        "figure_form": "noodle_stopper"
-      },
-      {
-        "figure_id": 5966,
-        "name_original": "画眉丸 1/7スケールフィギュア",
-        "franchise_ko": "지옥락",
-        "characters_ko": [
-          "가비마루"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 5978,
-        "name_original": "ヘスティア -白無垢- 1/7スケールフィギュア",
-        "franchise_ko": "던전에서 만남을 추구하면 안 되는 걸까",
-        "characters_ko": [
-          "헤스티아"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6031,
-        "name_original": "草薙素子 1/7スケールフィギュア",
-        "franchise_ko": "공각기동대",
-        "characters_ko": [
-          "쿠사나기 모토코"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6039,
-        "name_original": "高木さん 桜和装ver. 1/7スケールフィギュア",
-        "franchise_ko": "장난을 잘 치는 타카기 양",
-        "characters_ko": [
-          "타카기"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6110,
-        "name_original": "由比ヶ浜結衣 -白無垢- 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유이가하마 유이"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6118,
-        "name_original": "一色いろは -白無垢- 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "잇시키 이로하"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6121,
-        "name_original": "雪ノ下雪乃 -白無垢- 1/7スケールフィギュア",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유키노시타 유키노"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6126,
-        "name_original": "源さくら 水野愛 紺野純子 限定複製サインイラスト付き 1/7スケールフィギュアセット",
-        "franchise_ko": "좀비 랜드 사가",
-        "characters_ko": [
-          "미즈노 아이",
-          "미나모토 사쿠라"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6127,
-        "name_original": "源さくら 1/7スケールフィギュア",
-        "franchise_ko": "좀비 랜드 사가",
-        "characters_ko": [
-          "미나모토 사쿠라"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6128,
-        "name_original": "水野愛 1/7スケールフィギュア",
-        "franchise_ko": "좀비 랜드 사가",
-        "characters_ko": [
-          "미즈노 아이"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6142,
-        "name_original": "犬夜叉 犬夜叉【再販】",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "이누야샤"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 6143,
-        "name_original": "犬夜叉 殺生丸【再販】",
-        "franchise_ko": "이누야샤",
-        "characters_ko": [
-          "셋쇼마루"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 6151,
-        "name_original": "るかっぷ ONE PIECE コビー",
-        "franchise_ko": "원피스",
-        "characters_ko": [
-          "코비"
-        ],
-        "figure_form": "chibi_figure"
-      },
-      {
-        "figure_id": 6272,
-        "name_original": "굿스마일아츠 상하이 승리의여신니케 블랑 포츈 익스프레스 1/7 완성품 피규어(샵특전)",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "블랑"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6287,
-        "name_original": "[입고완료][단독특전] 승리의여신니케 모더니아 세컨드어펙션 굿스마일 [MH특전] 0427",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "모더니아"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6289,
-        "name_original": "[예약판매] PV342 승리의여신니케 소다 트윙클링 바니 쿼터스케일 코토부키야 0671",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "소다"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6299,
-        "name_original": "스피리테일 승리의여신니케 바이퍼 1/6 완성품 피규어",
-        "franchise_ko": "승리의 여신: 니케",
-        "characters_ko": [
-          "바이퍼"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6302,
-        "name_original": "(입고완료)굿스마일컴퍼니 넨도로이드 달링인더프랑키스 제로투(2차 재판)",
-        "franchise_ko": "달링 인 더 프랑키스",
-        "characters_ko": [
-          "제로투"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6313,
-        "name_original": "굿스마일아츠상하이 1/7 스케일 피규어 명일방주 첸 더 돈스트리크 정예화 2 Ver.",
-        "franchise_ko": "명일방주",
-        "characters_ko": [
-          "첸"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6368,
-        "name_original": "G.S.Collection 一色いろは 原作Ver.",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "잇시키 이로하"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6369,
-        "name_original": "ねんどろいど 後藤ひとり 承認欲求モンスターVer.",
-        "franchise_ko": "봇치 더 록!",
-        "characters_ko": [
-          "고토 히토리"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6509,
-        "name_original": "ねんどろいど 旅人（空）",
-        "franchise_ko": "원신",
-        "characters_ko": [
-          "여행자"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6510,
-        "name_original": "ねんどろいど 旅人（蛍）",
-        "franchise_ko": "원신",
-        "characters_ko": [
-          "여행자"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6511,
-        "name_original": "ねんどろいど ウェンティ",
-        "franchise_ko": "원신",
-        "characters_ko": [
-          "벤티"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6590,
-        "name_original": "ねんどろいど 雪ノ下雪乃",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유키노시타 유키노"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6591,
-        "name_original": "ねんどろいど 由比ヶ浜結衣",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유이가하마 유이"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6619,
-        "name_original": "錦木千束 キービジュアルVer.",
-        "franchise_ko": "리코리스 리코일",
-        "characters_ko": [
-          "니시키기 치사토"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6633,
-        "name_original": "ねんどろいど スーパークリーク",
-        "franchise_ko": "우마무스메 프리티 더비",
-        "characters_ko": [
-          "슈퍼 크릭"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6643,
-        "name_original": "【BOX】ねんどろいどさぷらいず 木之本桜コレクション（6個入）",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "키노모토 사쿠라"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6644,
-        "name_original": "ねんどろいどさぷらいず 木之本桜コレクション",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "키노모토 사쿠라"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6659,
-        "name_original": "ねんどろいど 雪ミク Sweet Snow Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6681,
-        "name_original": "雪ミク Yukiiro Pop Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "scale_figure"
-      },
-      {
-        "figure_id": 6712,
-        "name_original": "ねんどろいどどーる 鏡音リン 劣等上等Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "카가미네 린"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6713,
-        "name_original": "ねんどろいどどーる 鏡音レン 劣等上等Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "카가미네 렌"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6770,
-        "name_original": "ねんどろいど 雪ミク いちご白無垢Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6787,
-        "name_original": "ねんどろいど 岡部倫太郎 2.0",
-        "franchise_ko": "슈타인즈 게이트",
-        "characters_ko": [
-          "오카베 린타로"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6794,
-        "name_original": "ねんどろいど 李小狼 友枝小学校制服Ver.",
-        "franchise_ko": "카드캡터 사쿠라",
-        "characters_ko": [
-          "리 샤오랑"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6795,
-        "name_original": "ねんどろいど 初音ミクシンフォニー 2025 札幌公演Ver.",
-        "franchise_ko": "하츠네 미쿠",
-        "characters_ko": [
-          "하츠네 미쿠"
-        ],
-        "figure_form": "nendoroid"
-      },
-      {
-        "figure_id": 6819,
-        "name_original": "雪ノ下雪乃 原作第6巻表紙絵Ver.",
-        "franchise_ko": "역시 내 청춘 러브코메디는 잘못됐다.",
-        "characters_ko": [
-          "유키노시타 유키노"
-        ],
-        "figure_form": "scale_figure"
-      }
-    ],
+    "aliases": [],
+    "examples": [],
     "product_words": [
       "1/1スケール",
       "1/4スケールフィギュア",
@@ -220303,5 +219819,5 @@
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "a6b2eeb0ac74de5caa7dff54065b70b4140262fa13c0c0867d6c0c6f1f74fcba"
+  "fingerprint": "7b476dd468b759195f3545c5357d3c9d3c1f2b7d71cfa082106b0634f2fe8e41"
 }

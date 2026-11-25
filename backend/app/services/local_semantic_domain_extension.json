@@ -571,7 +571,8 @@
     {
       "work": "닌자보이 란타로",
       "aliases": [
-        "忍たま乱太郎"
+        "忍たま乱太郎",
+        "닌자보이 란타로"
       ],
       "characters": [
         [
@@ -589,8 +590,26 @@
         [
           "福富しんべヱ",
           "후쿠토미 신베"
+        ],
+        [
+          "山田利吉|利吉",
+          "야마다 리키치"
+        ],
+        [
+          "天鬼",
+          "텐키"
+        ],
+        [
+          "土井先生",
+          "도이 한스케"
+        ],
+        [
+          "雑渡昆奈門|雑渡",
+          "잣토 콘나몬"
         ]
-      ]
+      ],
+      "medium": "anime",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "현실주의 용사의 왕국 재건기",
@@ -1083,7 +1102,8 @@
     {
       "work": "학원 아이돌마스터",
       "aliases": [
-        "学園アイドルマスター"
+        "学園アイドルマスター",
+        "학원 아이돌마스터"
       ],
       "characters": [
         [
@@ -1109,8 +1129,34 @@
         [
           "有村麻央",
           "아리무라 마오"
+        ],
+        [
+          "花海佑芽|하나미 우메",
+          "하나미 우메"
+        ],
+        [
+          "十王星南|주오 세나",
+          "주오 세나"
+        ],
+        [
+          "紫雲清夏|시운 스미카",
+          "시운 스미카"
+        ],
+        [
+          "秦谷美鈴|하타야 미스즈",
+          "하타야 미스즈"
+        ],
+        [
+          "倉本千奈|쿠라모토 치나",
+          "쿠라모토 치나"
+        ],
+        [
+          "葛城リーリヤ|카츠라기 릴리야",
+          "카츠라기 릴리야"
         ]
-      ]
+      ],
+      "medium": "game",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "괴수 8호",
@@ -1400,7 +1446,8 @@
     {
       "work": "체인소 맨",
       "aliases": [
-        "チェンソーマン"
+        "チェンソーマン",
+        "체인소 맨"
       ],
       "characters": [
         [
@@ -1422,9 +1469,19 @@
         [
           "早川アキ",
           "하야카와 아키"
+        ],
+        [
+          "체인소 맨",
+          "체인소 맨"
+        ],
+        [
+          "サムライソード|사무라이 소드",
+          "사무라이 소드"
         ]
       ],
-      "title_is_character": true
+      "title_is_character": true,
+      "medium": "anime",
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them."
     },
     {
       "work": "나츠메 우인장",
@@ -1606,7 +1663,9 @@
       "work": "도검난무",
       "aliases": [
         "刀剣乱舞ONLINE",
-        "刀剣乱舞"
+        "刀剣乱舞",
+        "刀剣乱舞-ONLINE-",
+        "도검난무"
       ],
       "characters": [
         [
@@ -1616,9 +1675,42 @@
         [
           "山姥切長義",
           "야만바기리 쵸우기"
+        ],
+        [
+          "三日月宗近",
+          "미카즈키 무네치카"
+        ],
+        [
+          "五虎退",
+          "고코타이"
+        ],
+        [
+          "獅子王",
+          "시시오"
+        ],
+        [
+          "石切丸",
+          "이시키리마루"
+        ],
+        [
+          "加州清光",
+          "카슈 키요미츠"
+        ],
+        [
+          "燭台切光忠",
+          "쇼쿠다이키리 미츠타다"
+        ],
+        [
+          "鶴丸国永",
+          "츠루마루 쿠니나가"
+        ],
+        [
+          "大倶利伽羅",
+          "오오쿠리카라"
         ]
       ],
-      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it."
+      "provenance": "Added 2026-11-24 from widely used Korean spellings to replace wrong local-model readings; review before relying on it.",
+      "medium": "game"
     },
     {
       "work": "옆집 천사님 때문에 어느샌가 인간적으로 타락한 사연",
@@ -1724,6 +1816,26 @@
         [
           "スルト",
           "수르트"
+        ],
+        [
+          "ホシグマ",
+          "호시구마"
+        ],
+        [
+          "ミヅキ",
+          "미즈키"
+        ],
+        [
+          "エンテレケイア",
+          "엔텔레키아"
+        ],
+        [
+          "バグパイプ",
+          "백파이프"
+        ],
+        [
+          "マドロック",
+          "마드록"
         ]
       ],
       "provenance": "Work and medium confirmed by the project owner 2026-11-24; character spellings from widely used Korean releases, review before relying on them."
@@ -3528,6 +3640,705 @@
         [
           "メタリカ|메탈리카",
           "메탈리카"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "사카모토 데이즈",
+      "aliases": [
+        "SAKAMOTO DAYS",
+        "사카모토 데이즈"
+      ],
+      "characters": [
+        [
+          "坂本太郎|坂本さん|사카모토 타로",
+          "사카모토 타로"
+        ],
+        [
+          "大佛|오사라기",
+          "오사라기"
+        ],
+        [
+          "神々廻|시시바",
+          "시시바"
+        ],
+        [
+          "楽|가쿠",
+          "가쿠"
+        ],
+        [
+          "陸少糖|루 샤오탕",
+          "루 샤오탕"
+        ],
+        [
+          "勢羽夏生|세바 나츠키",
+          "세바 나츠키"
+        ],
+        [
+          "勢羽真冬|세바 마후유",
+          "세바 마후유"
+        ],
+        [
+          "赤尾晶|아카오 아키라",
+          "아카오 아키라"
+        ],
+        [
+          "篁|타카무라",
+          "타카무라"
+        ],
+        [
+          "虎丸尚|토라마루 나오",
+          "토라마루 나오"
+        ],
+        [
+          "南雲|나구모",
+          "나구모"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "소드 아트 온라인",
+      "aliases": [
+        "ソードアート・オンライン",
+        "Sword Art Online",
+        "소드 아트 온라인"
+      ],
+      "characters": [
+        [
+          "キリト|Kirito",
+          "키리토"
+        ],
+        [
+          "アスナ|Asuna",
+          "아스나"
+        ],
+        [
+          "アリス|Alice",
+          "앨리스"
+        ],
+        [
+          "ユイ|Yui",
+          "유이"
+        ],
+        [
+          "リーファ|Leafa|리파",
+          "리파"
+        ],
+        [
+          "リズベット|Lisbeth",
+          "리즈벳"
+        ],
+        [
+          "ユナ|Yuna",
+          "유나"
+        ],
+        [
+          "ユージオ|ユージオ・シンセシス・サーティツー",
+          "유지오"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "체인소 맨 레제편",
+      "aliases": [
+        "チェンソーマン レゼ篇",
+        "체인소 맨 레제편"
+      ],
+      "characters": [
+        [
+          "レゼ|레제",
+          "레제"
+        ],
+        [
+          "天使の悪魔|ANGEL DEVIL|천사의 악마",
+          "천사의 악마"
+        ],
+        [
+          "ボム|BOMB",
+          "봄"
+        ],
+        [
+          "ビーム|빔",
+          "빔"
+        ],
+        [
+          "デンジ",
+          "덴지"
+        ],
+        [
+          "マキマ",
+          "마키마"
+        ],
+        [
+          "パワー",
+          "파워"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "드래곤볼",
+      "aliases": [
+        "ドラゴンボール",
+        "드래곤볼"
+      ],
+      "characters": [
+        [
+          "ランチ|런치",
+          "런치"
+        ],
+        [
+          "ブルマ|브루마",
+          "부르마"
+        ],
+        [
+          "오천크스",
+          "오천크스"
+        ],
+        [
+          "人造人間8号|인조인간 8호",
+          "인조인간 8호"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "러브 라이브!",
+      "aliases": [
+        "ラブライブ!",
+        "ラブライブ！",
+        "러브 라이브!",
+        "러브라이브"
+      ],
+      "characters": [
+        [
+          "星空凛|凛|凜|りん",
+          "호시조라 린"
+        ],
+        [
+          "小泉花陽|花陽|はなよ",
+          "코이즈미 하나요"
+        ],
+        [
+          "高坂穂乃果|穂乃果",
+          "코사카 호노카"
+        ],
+        [
+          "西木野真姫|真姫|まき",
+          "니시키노 마키"
+        ],
+        [
+          "東條希",
+          "토죠 노조미"
+        ],
+        [
+          "唐可可|唐 可可",
+          "탕 쿠쿠"
+        ],
+        [
+          "嵐千砂都|嵐 千砂都",
+          "아라시 치사토"
+        ],
+        [
+          "平安名すみれ",
+          "헤아나 스미레"
+        ],
+        [
+          "澁谷かのん",
+          "시부야 카논"
+        ],
+        [
+          "葉月恋|葉月 恋",
+          "하즈키 렌"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "유희왕 듀얼몬스터즈",
+      "aliases": [
+        "遊☆戯☆王デュエルモンスターズ",
+        "유희왕 듀얼 몬스터즈",
+        "유희왕 듀얼몬스터즈"
+      ],
+      "characters": [
+        [
+          "青眼の白龍|푸른 눈의 백룡",
+          "푸른 눈의 백룡"
+        ],
+        [
+          "真紅眼の黒竜|붉은 눈의 흑룡",
+          "붉은 눈의 흑룡"
+        ],
+        [
+          "ブラック・マジシャン|블랙 매지션",
+          "블랙 매지션"
+        ],
+        [
+          "オシリスの天空竜",
+          "오시리스의 천공룡"
+        ],
+        [
+          "オベリスクの巨神兵",
+          "오벨리스크의 거신병"
+        ],
+        [
+          "ラーの翼神竜",
+          "라의 익신룡"
+        ],
+        [
+          "超魔導剣士-ブラック・パラディン",
+          "초마도검사 블랙 팔라딘"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "Fate/kaleid liner 프리즈마☆이리야",
+      "aliases": [
+        "Fate/kaleid liner プリズマ☆イリヤ",
+        "Fate/kaleid liner 프리즈마☆이리야"
+      ],
+      "characters": [
+        [
+          "イリヤスフィール・フォン・アインツベルン|イリヤ",
+          "이리야스필 폰 아인츠베른"
+        ],
+        [
+          "美遊・エーデルフェルト|美遊",
+          "미유 에델펠트"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "신 테니스의 왕자",
+      "aliases": [
+        "新テニスの王子様",
+        "신 테니스의 왕자"
+      ],
+      "characters": [
+        [
+          "不二周助",
+          "후지 슈스케"
+        ],
+        [
+          "幸村精市",
+          "유키무라 세이이치"
+        ],
+        [
+          "手塚国光",
+          "테즈카 쿠니미츠"
+        ],
+        [
+          "白石蔵ノ介",
+          "시라이시 쿠라노스케"
+        ],
+        [
+          "越前リョーマ",
+          "에치젠 료마"
+        ],
+        [
+          "跡部景吾",
+          "아토베 케이고"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "벽람항로",
+      "aliases": [
+        "アズールレーン",
+        "벽람항로"
+      ],
+      "characters": [
+        [
+          "アウグスト・フォン・パーセヴァル",
+          "아우구스트 폰 파르제발"
+        ],
+        [
+          "ニュージャージー",
+          "뉴저지"
+        ],
+        [
+          "ビスマルク",
+          "비스마르크"
+        ],
+        [
+          "プリンツ・ハインリヒ",
+          "프린츠 하인리히"
+        ],
+        [
+          "ラフィー",
+          "라피"
+        ],
+        [
+          "ロドニー",
+          "로드니"
+        ],
+        [
+          "三笠",
+          "미카사"
+        ],
+        [
+          "山城",
+          "야마시로"
+        ],
+        [
+          "島風",
+          "시마카제"
+        ],
+        [
+          "逸仙",
+          "일선"
+        ],
+        [
+          "駿河",
+          "스루가"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "game"
+    },
+    {
+      "work": "동방 프로젝트",
+      "aliases": [
+        "東方Project",
+        "Touhou Project",
+        "동방 프로젝트"
+      ],
+      "characters": [
+        [
+          "古明地さとり",
+          "코메이지 사토리"
+        ],
+        [
+          "古明地こいし",
+          "코메이지 코이시"
+        ],
+        [
+          "Reimu Hakurei",
+          "하쿠레이 레이무"
+        ],
+        [
+          "十六夜咲夜|Sakuya Izayoi",
+          "이자요이 사쿠야"
+        ],
+        [
+          "パチュリー・ノーレッジ|Patchouli Knowledge",
+          "파츄리 널릿지"
+        ],
+        [
+          "火焔猫燐|Rin Kaenbyou",
+          "카엔뵤 린"
+        ],
+        [
+          "鈴仙・優曇華院・イナバ|Reisen Udongein Inaba",
+          "레이센 우동게인 이나바"
+        ],
+        [
+          "藤原妹紅",
+          "후지와라노 모코우"
+        ],
+        [
+          "射命丸文",
+          "샤메이마루 아야"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "game"
+    },
+    {
+      "work": "장송의 프리렌",
+      "aliases": [
+        "葬送のフリーレン",
+        "장송의 프리렌"
+      ],
+      "characters": [
+        [
+          "ミミック|Mimic",
+          "미믹"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "진격의 거인",
+      "aliases": [
+        "進撃の巨人",
+        "Attack On Titan",
+        "진격의 거인"
+      ],
+      "characters": [
+        [
+          "Colossal Titan|超大型巨人",
+          "초대형 거인"
+        ],
+        [
+          "Levi|리바이",
+          "리바이"
+        ],
+        [
+          "エレン",
+          "에렌 예거"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "디지몬 어드벤처",
+      "aliases": [
+        "デジモンアドベンチャー",
+        "디지몬 어드벤처"
+      ],
+      "characters": [
+        [
+          "ブイモン|브이몬",
+          "브이몬"
+        ],
+        [
+          "ガブモン|가부몬",
+          "파피몬"
+        ],
+        [
+          "テイルモン|테일몬",
+          "가트몬"
+        ],
+        [
+          "パタモン|파타몬",
+          "파닥몬"
+        ],
+        [
+          "オメガモン|오메가몬",
+          "오메가몬"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "뉴 팬티 & 스타킹 with 가터벨트",
+      "aliases": [
+        "New PANTY & STOCKING with GARTERBELT",
+        "뉴 팬티 & 스타킹 with 가터벨트"
+      ],
+      "characters": [
+        [
+          "パンティ|팬티",
+          "팬티"
+        ],
+        [
+          "ストッキング|스타킹",
+          "스타킹"
+        ],
+        [
+          "スキャンティ|스캔티",
+          "스캔티"
+        ],
+        [
+          "ニーソックス|니삭스",
+          "니삭스"
+        ],
+        [
+          "폴리에스테르",
+          "폴리에스테르"
+        ],
+        [
+          "폴리우레탄",
+          "폴리우레탄"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "가면라이더 고스트",
+      "aliases": [
+        "仮面ライダーゴースト",
+        "가면라이더 고스트"
+      ],
+      "characters": [
+        [
+          "仮面ライダーゴースト|가면라이더 고스트",
+          "가면라이더 고스트"
+        ],
+        [
+          "仮面ライダースペクター|가면라이더 스펙터",
+          "가면라이더 스펙터"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "tokusatsu",
+      "title_is_character": true
+    },
+    {
+      "work": "마법소녀 마도카☆마기카",
+      "aliases": [
+        "魔法少女まどか☆マギカ",
+        "마법소녀 마도카☆마기카",
+        "마법소녀 마도카 마기카"
+      ],
+      "characters": [
+        [
+          "佐倉杏子",
+          "사쿠라 쿄코"
+        ],
+        [
+          "巴マミ",
+          "토모에 마미"
+        ],
+        [
+          "暁美ほむら|악마 호무라|호무라",
+          "아케미 호무라"
+        ],
+        [
+          "美樹さやか",
+          "미키 사야카"
+        ],
+        [
+          "鹿目まどか|얼티밋 마도카",
+          "카나메 마도카"
+        ],
+        [
+          "環いろは",
+          "타마키 이로하"
+        ],
+        [
+          "百江なぎさ|모모에 나기사",
+          "모모에 나기사"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "나초네코",
+      "aliases": [
+        "Nachoneko",
+        "ナチョネコ",
+        "나초네코"
+      ],
+      "characters": [
+        [
+          "Nachoneko|ナチョネコ|나초네코",
+          "나초네코"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "vtuber",
+      "title_is_character": true
+    },
+    {
+      "work": "기동전사 건담 GQuuuuuuX",
+      "aliases": [
+        "機動戦士Gundam GQuuuuuuX",
+        "기동전사 건담 GQuuuuuuX",
+        "기동전사 Gundam GQuuuuuuX"
+      ],
+      "characters": [
+        [
+          "ハロ|하로",
+          "하로"
+        ],
+        [
+          "アマテ・ユズリハ|マチュ|아마테 유즈리하",
+          "아마테 유즈리하"
+        ],
+        [
+          "シャリア・ブル|샤리아 불",
+          "샤리아 불"
+        ],
+        [
+          "ニャアン|냐안",
+          "냐안"
+        ],
+        [
+          "シュウジ・イトウ|슈우지 이토",
+          "슈우지 이토"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "문호 스트레이 독스",
+      "aliases": [
+        "文豪ストレイドッグス",
+        "문호 스트레이 독스"
+      ],
+      "characters": [
+        [
+          "太宰治|太宰さん",
+          "다자이 오사무"
+        ],
+        [
+          "中原中也",
+          "나카하라 츄야"
+        ],
+        [
+          "中島敦",
+          "나카지마 아츠시"
+        ],
+        [
+          "芥川龍之介",
+          "아쿠타가와 류노스케"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "에반게리온 신극장판",
+      "aliases": [
+        "ヱヴァンゲリヲン新劇場版",
+        "에반게리온 신극장판"
+      ],
+      "characters": [
+        [
+          "エヴァンゲリオン初号機",
+          "에반게리온 초호기"
+        ],
+        [
+          "アスカ",
+          "시키나미 아스카 랑그레이"
+        ],
+        [
+          "シンジ",
+          "이카리 신지"
+        ]
+      ],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "medium": "anime"
+    },
+    {
+      "work": "【최애의 아이】",
+      "aliases": [
+        "【推しの子】",
+        "【최애의 아이】",
+        "최애의 아이"
+      ],
+      "characters": [
+        [
+          "MEMちょ|MEM쵸",
+          "MEM쵸"
+        ],
+        [
+          "寿みなみ|고토부키 미나미",
+          "고토부키 미나미"
         ]
       ],
       "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",

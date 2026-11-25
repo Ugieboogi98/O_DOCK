@@ -399,6 +399,123 @@
         "original": "HUNTER×HUNTER",
         "reference_urls": []
       }
+    },
+    {
+      "aliases": [
+        "椎名唯華"
+      ],
+      "ko": "시이나 유이카",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "フレン・E・ルスタリオ"
+      ],
+      "ko": "프렌 E 루스타리오",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "三枝明那"
+      ],
+      "ko": "사에구사 아키나",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "天宮こころ"
+      ],
+      "ko": "아마미야 코코로",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "小柳ロウ"
+      ],
+      "ko": "코야나기 로우",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "小清水透"
+      ],
+      "ko": "코시미즈 토루",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "栞葉るり"
+      ],
+      "ko": "시오리하 루리",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "魔使マオ"
+      ],
+      "ko": "마츠카이 마오",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "니지산지",
+        "original": "にじさんじ",
+        "reference_urls": []
+      }
+    },
+    {
+      "aliases": [
+        "太宰治"
+      ],
+      "ko": "다자이 오사무",
+      "incorrect_ko": [],
+      "provenance": "agent_curated 2026-11-25 from catalog titles lacking a character; Korean labels follow Korean releases and the spellings sellers use; review before relying on them.",
+      "franchise": {
+        "ko": "문호 스트레이 독스",
+        "original": "文豪ストレイドッグス",
+        "reference_urls": []
+      }
     }
   ]
 }

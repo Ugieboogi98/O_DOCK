@@ -8,6 +8,8 @@ import re
 import unicodedata
 
 # フィギュアー名前ー / フィギュア―名前― (noodle stoppers, prize lines): dashes around the character name.
+# Assortments and boxed lines: the work title there is not a single hero figure.
+COLLECTION = re.compile(r'(?i)vol\.?\s*\d|\bbox\b|コレクション|collection|セット|세트|全\d+種|\d+종')
 BRACKETED_NAME = re.compile(r'(フィギュア)[ー―－](.+?)[ー―－](?=\s|$|[（(【\[])')
 
 
@@ -87,6 +89,8 @@ def title_hints(source, grounded, groups=None):
             continue
         self_title = group.get('title_is_character') and (not work or
             any(norm(a) == norm(work['original']) for a in group['aliases']))
+        if self_title and COLLECTION.search(title):
+            self_title = False  # 체인소 맨 CHAIN SPIRITS VOL.4 names the line, not one figure of the hero
         group_subject = BRACKETED_NAME.sub(r'\1 \2 ', title) if self_title else subject
         for aliases, ko in group['characters']:
             names = aliases.split('|') if isinstance(aliases, str) else list(aliases)
