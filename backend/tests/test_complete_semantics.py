@@ -71,7 +71,7 @@ def test_validation_retry_is_bounded_and_saved(catalog, monkeypatch):
         model = 'offline-test'
         def __call__(self, source):
             calls.append(source)
-            return {'name_ko': 'Example 77' if len(calls) == 1 else '예시 77',
+            return {'name_ko': 'Example Seventy-Seven' if len(calls) == 1 else '예시 77',
                     'franchise': None, 'characters': [], 'figure_form': None}
     monkeypatch.setattr(runner, 'Extractor', Extractor)
     runner.main()

@@ -131,6 +131,14 @@ def foreign_letters(value):
     return False
 
 
+def latin_kept(source, title):
+    """A Latin-only product name (KAITO, C.C., D-STYLE DEATH SAURER) has nothing to translate;
+    keeping it unchanged is the correct title. Only the exact source text qualifies."""
+    original = (source or {}).get('name_original') or ''
+    return (isinstance(title, str) and title.strip() == original.strip() and bool(re.search('[A-Za-z]', original))
+            and re.fullmatch(r'[\x20-\x7e -ÿ -⁯Ⅰ-ⅿ☀-⛿！-～　]+', original.strip()) is not None)
+
+
 def korean(value):
     return (isinstance(value, str) and 0 < len(value.strip()) <= 1500 and bool(re.search('[가-힣]', value))
             and not re.search(JAPANESE_TEXT_PATTERN,value) and not re.search('[\u0400-\u052f]',value)
@@ -202,7 +210,7 @@ def validate_result(source, result):
     if not isinstance(result, dict) or set(result) != {'name_ko', 'franchise', 'characters', 'figure_form'}:
         return {}, ['INVALID_RESULT_FIELDS']
     title = result.get('name_ko')
-    if not korean(title):
+    if not (korean(title) or latin_kept(source, title)):
         reject('KOREAN_TITLE_REQUIRED_OR_JAPANESE_REMAINS', 'name_ko')
     elif len(title) > max(200, len(source['name_original']) * 6):
         reject('TITLE_TOO_LONG', 'name_ko')

@@ -390,3 +390,15 @@ def test_described_outfit_version_is_not_named_as_character(tmp_path):
               'characters': [sakura], 'figure_form': None}
     p.name_explicit_relations(source, ground, {})
     assert [c['ko'] for c in ground['characters']] == ['키노모토 사쿠라']
+
+
+def test_latin_only_title_is_kept_but_changed_latin_is_not():
+    from app.services.semantic_rules import validate_result
+    empty = {'franchise': None, 'characters': [], 'figure_form': None}
+    for title in ('KAITO', 'C.C.', 'D-STYLE IRONKONG  ［Clear Parts Append］'):
+        fields, _ = validate_result({'name_original': title}, {'name_ko': title, **empty})
+        assert fields['translation_status'] == 'ready', title
+    fields, _ = validate_result({'name_original': 'KAITO'}, {'name_ko': 'KAITO V3', **empty})
+    assert fields['translation_status'] != 'ready'
+    fields, _ = validate_result({'name_original': 'ねんどろいど KAITO'}, {'name_ko': 'ねんどろいど KAITO', **empty})
+    assert fields['translation_status'] != 'ready'

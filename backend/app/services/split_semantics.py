@@ -7,7 +7,7 @@ from app.services.semantic_errors import SemanticError
 from app.services.local_semantic_grounding import candidates
 from app.services.local_semantic_lexicon import title_hints,translation_input
 from app.services.ollama_semantics import schema
-from app.services.semantic_rules import validate_result,context_candidates,normalize,version_name,JAPANESE_TEXT_PATTERN
+from app.services.semantic_rules import validate_result,context_candidates,normalize,version_name,korean,JAPANESE_TEXT_PATTERN
 from app.services.kana_hangul import to_hangul,is_kana
 from app.services.semantic_neighbors import learned_candidates,NgramIndex
 
@@ -343,7 +343,8 @@ class Pipeline:
             original=source['name_original'];exact=self.dictionary['titles'].get(original)
             context={k:source.get(k) for k in ('manufacturer','franchise','product_line')}
             if exact and exact.get('context')==context and translation_valid(source,exact['ko']):return {'name_ko':exact['ko'],'method':'validated_dictionary','seconds':0}
-            if translation_valid(source,original):return {'name_ko':original,'method':'already_korean','seconds':0}
+            if translation_valid(source,original):
+                return {'name_ko':original,'method':'already_korean' if korean(original) else 'source_latin','seconds':0}
             ground=grounded_dictionary(source,self.dictionary);hints=title_hints(source,ground)
             composed=translation_input(source,hints)
             if composed!=original and composition_complete(composed) and translation_valid(source,composed):

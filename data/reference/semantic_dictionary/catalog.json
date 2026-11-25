@@ -51,7 +51,7 @@
     },
     {
       "file": "local_semantic_title_terms.json",
-      "sha256": "16ac4accd6e8add9058cad83a33e9b68ec9739bbfc91682d8465e116ab5569da"
+      "sha256": "452edf47d8bbba1d8f2c25cc562b6bda46fea6e39f3b55f4396cd871f86ce3c5"
     },
     {
       "file": "local_semantic_tuning_lexicon.json",
@@ -75,7 +75,7 @@
     },
     {
       "file": "semantic_rules.py",
-      "sha256": "cecb7aa470f259f47b4861f90b0c33f8aeb36019c6fb6eccd0f4b1a054522616"
+      "sha256": "ba5055af18a66afca74ce4149e476be7df80bf7010b7fa9394dc727f4a8ef3ac"
     },
     {
       "file": "semantic_recovery_dictionary.json",
@@ -279683,7 +279683,7 @@
         "original": "木之本桜",
         "ko": "키노모토 사쿠라",
         "work": "카드캡터 사쿠라",
-        "support": 8
+        "support": 9
       },
       {
         "kind": "character",
@@ -280411,7 +280411,7 @@
         "original": "初音ミク",
         "ko": "하츠네 미쿠",
         "work": null,
-        "support": 32
+        "support": 35
       },
       {
         "kind": "franchise",
@@ -293853,6 +293853,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6350,
+        "name_original": "G.S.Collection 初音ミク チアリーディングVer.",
+        "franchise_ko": "하츠네 미쿠",
+        "characters_ko": [
+          "하츠네 미쿠"
+        ],
+        "figure_form": "scale_figure"
+      },
+      {
         "figure_id": 6355,
         "name_original": "G.S.Collection [SC] 木之本桜 My First Sparkle",
         "franchise_ko": "카드캡터 사쿠라",
@@ -294156,6 +294165,15 @@
       {
         "figure_id": 6402,
         "name_original": "ねんどろいど 初音ミク V6",
+        "franchise_ko": "하츠네 미쿠",
+        "characters_ko": [
+          "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6403,
+        "name_original": "ねんどろいど 初音ミク マジカルミライ 2025Ver.",
         "franchise_ko": "하츠네 미쿠",
         "characters_ko": [
           "하츠네 미쿠"
@@ -294814,6 +294832,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6530,
+        "name_original": "ねんどろいど 初音ミク ワールドイズマイン 2024Ver.",
+        "franchise_ko": "하츠네 미쿠",
+        "characters_ko": [
+          "하츠네 미쿠"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6532,
         "name_original": "ねんどろいどどーる デンジ",
         "franchise_ko": "체인소 맨",
@@ -295074,6 +295101,15 @@
         "franchise_ko": "장송의 프리렌",
         "characters_ko": [
           "프리렌"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
+        "figure_id": 6567,
+        "name_original": "ねんどろいど 初音ミク ピエレッタVer.",
+        "franchise_ko": "하츠네 미쿠",
+        "characters_ko": [
+          "하츠네 미쿠"
         ],
         "figure_form": "nendoroid"
       },
@@ -296152,6 +296188,15 @@
         "figure_form": "nendoroid"
       },
       {
+        "figure_id": 6798,
+        "name_original": "ねんどろいど 木之本桜 CLEAR Ver.",
+        "franchise_ko": "카드캡터 사쿠라",
+        "characters_ko": [
+          "키노모토 사쿠라"
+        ],
+        "figure_form": "nendoroid"
+      },
+      {
         "figure_id": 6799,
         "name_original": "ねんどろいど リヴァイ・アッカーマン The Final Season Ver.",
         "franchise_ko": "진격의 거인",
@@ -296387,5 +296432,5 @@
     ]
   },
   "policy": "No automatic promotion of single model guesses. Learned aliases need agreement across validated products. Character scope stays in source rules.",
-  "fingerprint": "213615069e2dfd336259ae2a77b3758510534fd0e3237f4b0321ebc983b38a78"
+  "fingerprint": "514d082c7ee64534db81b02fb6a2282bac0a10839efdfcbf537010ba92d74242"
 }
