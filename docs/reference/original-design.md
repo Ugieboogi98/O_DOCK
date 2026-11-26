@@ -1,4 +1,4 @@
-# Figure Archive AI — 최종 프로젝트 기획 및 기술 설계서
+# O_DOCK — 최종 프로젝트 기획 및 기술 설계서
 
 > **프로젝트:** SSAFY AI 코어 프로젝트 2회차 — RAG 기반 도메인 지식 서비스  
 > **도메인:** 피규어 제품 정보 아카이브 · 가격 비교 · 중고 시세 · RAG 질의응답  
@@ -323,7 +323,7 @@
 ## 9. 프로젝트 디렉터리 구조
 
 ```text
-figure-archive-ai/
+Project_O_DOCK_V1/
 ├── frontend/                     # Vue 3 + Vite
 │   ├── src/
 │   │   ├── components/
@@ -369,7 +369,7 @@ figure-archive-ai/
 
 ### 10.1 필수 기능 F2001~F2012
 
-| ID | 원본 명세 요구사항 | Figure Archive AI 구현 |
+| ID | 원본 명세 요구사항 | O_DOCK 구현 |
 |---|---|---|
 | F2001 | 항목 메타데이터 적재 | 8개 제조사 제품 데이터 100건 이상 준비 및 검색 텍스트 구성 |
 | F2002 | 메타데이터 임베딩 색인 | `figure_metadata` ChromaDB 컬렉션, 중복 없는 재색인 |

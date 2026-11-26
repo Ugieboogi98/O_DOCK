@@ -28,7 +28,7 @@ def literal(v):
 def export(path):
     dialect = postgresql.dialect()
     lines = [
-        "-- Figure Archive AI: restore into a new empty PostgreSQL database.",
+        "-- O_DOCK: restore into a new empty PostgreSQL database.",
         "BEGIN;",
         "SET standard_conforming_strings = on;",
     ]

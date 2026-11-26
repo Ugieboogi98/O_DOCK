@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     price_max_age_hours: int = 168
     collection_delay_seconds: float = 2.0
     request_timeout: int = 20
-    user_agent: str = "FigureArchiveResearch/1.0 (+local educational project)"
+    user_agent: str = "O_DOCKResearch/1.0 (+local educational project)"
 
     @model_validator(mode="after")
     def validate_settings(self):

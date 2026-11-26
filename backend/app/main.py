@@ -57,7 +57,7 @@ async def private_api_cache_policy(request, call_next):
 
 @app.exception_handler(Exception)
 def unexpected_error(request, exc):
-    logging.getLogger("figure_archive").error(
+    logging.getLogger("odock").error(
         "request_failed type=%s path=%s", type(exc).__name__, request.url.path
     )
     return JSONResponse(

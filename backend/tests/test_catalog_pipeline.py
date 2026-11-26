@@ -328,13 +328,13 @@ def test_failed_enrichment_keeps_current_source_queued(isolated, monkeypatch):
 def test_robots_wildcards_longest_rule_and_agent_precedence():
     rules = robots_rules(
         "User-agent: *\nDisallow: /collections/*sort_by*\nAllow: /\nCrawl-delay: 20",
-        "FigureArchiveResearch",
+        "O_DOCKResearch",
     )
     assert not robots_allowed(rules, CATALOG + "?sort_by=x")
     assert robots_allowed(rules, CATALOG + "?page=2")
     rules = robots_rules(
-        "User-agent: *\nAllow: /\nUser-agent: FigureArchiveResearch\nDisallow: /",
-        "FigureArchiveResearch/1.0",
+        "User-agent: *\nAllow: /\nUser-agent: O_DOCKResearch\nDisallow: /",
+        "O_DOCKResearch/1.0",
     )
     assert not robots_allowed(rules, P1)
     rules = robots_rules("User-agent: *\nDisallow: /a\nAllow: /a$", "test")

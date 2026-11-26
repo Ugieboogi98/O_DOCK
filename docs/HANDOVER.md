@@ -1,4 +1,4 @@
-# Figure Archive AI 후속 개발 결과 · 2026-10-22
+# O_DOCK 후속 개발 결과 · 2026-10-22
 
 ## 적용 결과와 검증 범위
 
@@ -45,12 +45,12 @@ DB 스키마 마이그레이션은 추가하지 않는다. 기존 이미지·문
 
 ## 적용 방법 · Windows Git Bash
 
-압축 안 `patch/`의 **내용물**을 기존 `C:\Users\SSAFY\Desktop\figure-archive-ai` 폴더에 덮어쓴다. `patch` 폴더 자체를 프로젝트 안에 넣는 방식이 아니다. 기존 `.env`는 그대로 둔다. `source/`는 전체 수정 소스이며, 새 PC 구성이나 코드 열람용이다. 기존 프로젝트를 새 폴더로 옮기거나 프로젝트명을 바꾸지 않는다.
+압축 안 `patch/`의 **내용물**을 기존 `C:\Users\SSAFY\Desktop\O_DOCK_Migration_20261109_123236\Project_O_DOCK_V1` 폴더에 덮어쓴다. `patch` 폴더 자체를 프로젝트 안에 넣는 방식이 아니다. 기존 `.env`는 그대로 둔다. `source/`는 전체 수정 소스이며, 새 PC 구성이나 코드 열람용이다. 기존 프로젝트를 새 폴더로 옮기거나 프로젝트명을 바꾸지 않는다.
 
 먼저 기존 프로젝트 폴더에서 PostgreSQL 백업을 저장한다. 실패하거나 파일 크기가 0이면 적용을 진행하지 말고 연결 상태를 확인한다.
 
 ```bash
-cd ~/Desktop/figure-archive-ai
+cd ~/Desktop/O_DOCK_Migration_20261109_123236/Project_O_DOCK_V1
 export MSYS_NO_PATHCONV=1
 mkdir -p backups
 docker compose exec -T postgres sh -c 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Fc' > "backups/before_update_$(date +%Y%m%d_%H%M%S).dump"

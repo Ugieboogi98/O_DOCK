@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Figure Archive AI",
+    "title": "O_DOCK",
     "description": "공식 제품 아카이브 · 가격 관측 · 근거 기반 질의응답",
     "version": "1.0.0"
   },

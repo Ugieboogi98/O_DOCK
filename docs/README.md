@@ -1,5 +1,8 @@
 # 문서 안내
 
+- [작업 이력 요약 (10-21 ~ 11-26)](reports/WORK_HISTORY_20261126.md): 모든 보고서를 시간 순서로 정리. 처음 읽을 문서.
+- [로컬 모델 학습 기록](reports/MODEL_TRAINING_RECORD_20261126.md): QLoRA 학습 내용·결과·교훈. 대용량 학습 산출물은 보존하지 않음.
+
 - [로컬 번역·분류 구축 결과](reports/LOCAL_SEMANTICS_20261111.md): 실제 GPU 실행·앱/대기열 연결·학습 후보와 미완료 학습.
 
 - [프로젝트 구조와 경로 이전표](PROJECT_STRUCTURE.md): 현재 디렉터리와 실행 진입점의 기준.

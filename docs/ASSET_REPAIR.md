@@ -27,10 +27,10 @@
 
 ## 적용
 
-이번 압축은 앞선 수집기 수정까지 포함하는 누적 버전이다. `patch/`의 내용물을 **기존** `figure-archive-ai` 폴더에 덮어쓴다. `.env`와 기존 Docker 볼륨은 유지한다. `docs/HANDOVER.md`의 PostgreSQL 백업 절차도 참고한다.
+이번 압축은 앞선 수집기 수정까지 포함하는 누적 버전이다. `patch/`의 내용물을 **기존** `Project_O_DOCK_V1` 폴더에 덮어쓴다. `.env`와 기존 Docker 볼륨은 유지한다. `docs/HANDOVER.md`의 PostgreSQL 백업 절차도 참고한다.
 
 ```bash
-cd ~/Desktop/figure-archive-ai
+cd ~/Desktop/O_DOCK_Migration_20261109_123236/Project_O_DOCK_V1
 export MSYS_NO_PATHCONV=1
 docker compose config --quiet
 docker compose up -d --build --no-deps backend
